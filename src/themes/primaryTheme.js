@@ -3,11 +3,17 @@
 
 import { createTheme, responsiveFontSizes } from "@mui/material";
 
+// Import inter font (body)
 import '@fontsource/inter'; // Defaults to weight 400
-import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import '@fontsource/inter/700.css';
+
+// Import plus jakarta sans (headings)
+import '@fontsource/plus-jakarta-sans'; // Defaults to weight 400
+import '@fontsource/plus-jakarta-sans/500.css';
+import '@fontsource/plus-jakarta-sans/600.css';
+import '@fontsource/plus-jakarta-sans/700.css';
 
 let theme = createTheme({
     breakpoints: {
@@ -21,105 +27,98 @@ let theme = createTheme({
     },
 
     palette: {
+        mode: 'dark',
         primary: {
-            main: '#ff5aa7', // From --title-gradient start
-            light: '#f7a059', // From --title-gradient end
-            dark: '#ff5aa7',
+            main: '#5356FF',
+            light: '#DFF5FF',
+            dark: '#378CE7',
             contrastText: '#ffffff',
         },
         secondary: {
-            main: '#4cb6fd', // From --team-header-gradient start
-            light: '#4bff93', // From --team-header-gradient end
-            dark: '#4cb6fd',
+            main: '#378CE7',
+            light: '#67C6E3',
+            dark: '#004ba0',
             contrastText: '#ffffff',
         },
         background: {
-            default: '#101010', // From body background gradient start
-            paper: '#232323', // From body background gradient end
+            default: '#121212',
+            paper: '#1d1d1d',
         },
         text: {
-            primary: '#ffffff', // From --text-color
-            secondary: '#88cded', // From --p-color
+            primary: '#ffffff',
+            secondary: '#DFF5FF',
         },
-
+        icons: '#DFF5FF',
+        cardBackground: '#1f1f1f',
+        overviewCard: '#2b2b2a',
+        postBackground: '#1f1f1f',
+        customRadio: {
+            borderUnchecked: '1px solid #ffffff',
+            borderChecked: '2px solid #3f51b5',
+        },
+        sidebar: {
+            header: '#2b2b2b',
+            background: '#1f1f1f',
+            iconColor: '#ffffff',
+            highlight: '#378CE7',
+            highlightHover: '#67C6E3',
+        }
     },
     typography: {
-        fontFamily: 'Arial, sans-serif',
+        fontFamily: 'Inter, Arial, sans-serif',
         h1: {
-            fontFamily: 'Inter, Arial, sans-serif',
+            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
             fontWeight: 700,
-            fontSize: '2.95rem',
-            background: 'linear-gradient(to right, #ff5aa7, #f7a059)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            color: 'transparent',
+            fontSize: '3rem',
+            '@media (max-width:600px)': {
+                fontSize: '2.5rem',
+            },
         },
         h2: {
-            fontFamily: 'Inter, Arial, sans-serif',
+            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
             fontWeight: 600,
-            fontSize: '2.45rem',
-            background: 'linear-gradient(to right, #4cb6fd, #4bff93)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            color: 'transparent',
+            fontSize: '2.5rem',
+            '@media (max-width:600px)': {
+                fontSize: '2rem',
+            },
         },
         h3: {
-            fontFamily: 'Inter, Arial, sans-serif',
+            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
             fontWeight: 500,
-            fontSize: '1.75rem',
-            background: 'linear-gradient(to right, #38f4d8, #2ebac6)',
-            WebkitBackgroundClip: 'text',
-            backgroundClip: 'text',
-            color: 'transparent',
+            fontSize: '2rem',
+            '@media (max-width:600px)': {
+                fontSize: '1.75rem',
+            },
         },
         h4: {
-            fontFamily: 'Inter, Arial, sans-serif',
-            color: '#38f4d8',
+            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
             fontWeight: 400,
             fontSize: '1.75rem',
+            '@media (max-width:600px)': {
+                fontSize: '1.5rem',
+            },
         },
         h5: {
-            fontFamily: 'Inter, Arial, sans-serif',
-            color: '#2ebac6',
+            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
             fontWeight: 400,
             fontSize: '1.5rem',
+            '@media (max-width:600px)': {
+                fontSize: '1.25rem',
+            },
         },
         h6: {
-            fontFamily: 'Inter, Arial, sans-serif',
-            color: '#2ebac6',
+            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
             fontWeight: 400,
             fontSize: '1.25rem',
+            '@media (max-width:600px)': {
+                fontSize: '1rem',
+            },
         },
         body1: {
-            fontFamily: 'Arial, sans-serif',
-            fontSize: '1.12rem',
+            fontFamily: 'Inter, Arial, sans-serif',
         },
         body2: {
-            fontFamily: 'Arial, sans-serif',
-            fontSize: '1.12rem',
-        },
-    },
-    components: {
-        MuiButton: {
-            styleOverrides: {
-                root: {
-                    fontWeight: 'bold',
-                    textTransform: 'none',
-                    borderRadius: '5px',
-                    padding: '10px 20px',
-                    fontSize: '1em',
-                    marginRight: '11px',
-                    transition: 'transform 0.3s ease',
-                },
-                containedPrimary: {
-                    background: 'linear-gradient(to right, #ff5aa7, #f7a059)',
-                    backgroundSize: '500% 500%',
-                    animation: 'movingGradient 15s linear infinite alternate',
-                },
-                containedSecondary: {
-                    background: 'linear-gradient(to right, #ff9a76, #ffcd56)',
-                },
-            },
+            fontFamily: 'Inter, Arial, sans-serif',
         },
     },
 });

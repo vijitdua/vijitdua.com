@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./screens/HomePage";
 import {routes} from "./configs/routesConfig";
+import {theme} from "./themes/primaryTheme";
 import ProjectsPage from "./screens/ProjectsPage";
 import ExperiencePage from "./screens/ExperiencePage";
 import NoPage from "./screens/NoPage";

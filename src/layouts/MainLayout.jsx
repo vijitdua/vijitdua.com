@@ -1,7 +1,6 @@
 import {theme} from "../themes/primaryTheme";
 import {Box, useMediaQuery} from "@mui/material";
 import TopNavBarDesktop from "../components/layout/TopNavBarDesktop";
-import Footer from "../components/layout/Footer";
 import TopNavBarMobile from "../components/layout/TopNavBarMobile";
 
 
