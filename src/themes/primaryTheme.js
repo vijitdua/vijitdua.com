@@ -53,6 +53,7 @@ let theme = createTheme({
             primary: '#DFF5FF',
             secondary: '#ccf1ff',
         },
+        socials: '#ccf1ff',
         icons: '#DFF5FF',
     },
     typography: {
@@ -95,16 +96,16 @@ let theme = createTheme({
             fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 400,
             color: '#DFF5FF',
-        },
+        }, // ccf1ff
         body1: {
             fontFamily: 'Arial, sans-serif',
             fontSize: '1.12rem',
-            color: '#ccf1ff',
+            color: '#F8F8F8',
         },
         body2: {
             fontFamily: 'Arial, sans-serif',
             fontSize: '1.12rem',
-            color: '#ccf1ff',
+            color: '#F8F8F8',
         },
     },
 });
