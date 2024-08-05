@@ -34,17 +34,17 @@ function PageMenuItems(item, index, numberOfItems) {
             color="inherit"
             sx={{
                 textDecoration: 'none',
-                position: 'relative', // Ensure each button is positioned relative to allow gradient clipping
                 background: 'linear-gradient(to right, #9ef7f7, #fc8bef)', // Gradient applied to all buttons
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
                 textFillColor: 'transparent',
+                transition: '0.3s',
                 // Adjust the gradient spread across all items
                 backgroundSize: `calc(100% * ${numberOfItems})`,
                 backgroundPosition: `calc(${index} * 100% / ${numberOfItems}) 0`,
                 '&:hover': {
-                    // No need to set backgroundColor to transparent; the default hover effect will apply
+                    transform: 'scale(1.1)',
                 },
             }}
         >
@@ -71,7 +71,11 @@ function TopNavBarDesktop() {
                 }}>
 
                     {/* Components to the left */}
-                    <Box>
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'flex-start',
+                    }}>
                         {/*No components here yet, just creating blank space */}
                     </Box>
 

@@ -8,7 +8,16 @@ import MailIcon from '@mui/icons-material/Mail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import React from "react";
+import {Box} from "@mui/material";
+
+const CustomIcon = ({ src, ...props }) => (
+    <Box
+        component="img"
+        src={src}
+        alt="icon"
+        sx={{ width: 24, height: 24, ...props.sx }}
+    />
+);
 
 /**
  * Array of objects to be parsed into the menu displays, displays at the start / top of menu's
@@ -46,5 +55,6 @@ export const endMenuItems = [
     {icon: <XIcon/>, route: socialLinks.twitter,},
     {icon: <InstagramIcon/>, route: socialLinks.instagram,},
     {icon: <LinkedInIcon/>, route: socialLinks.linkedIn,},
+    {icon: <CustomIcon src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png'/>, route: socialLinks.discord,},
     {icon: <MailIcon/>, route: socialLinks.email,},
 ];

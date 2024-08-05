@@ -12,6 +12,7 @@ export const socialLinks = {
     email: 'mailto:inbox@vijitdua.com',
     twitter: 'https://x.com/vijitdua',
     instagram: 'https://instagram.com/vijitdua',
+    discord: 'https://discordapp.com/users/933604018951974924',
     instagramPhotography: 'https://instagram.com/vijitcam',
     threads: 'https://threads.net/vijitdua',
     linkedIn: 'https://linkedin.com/in/vijitdua',
