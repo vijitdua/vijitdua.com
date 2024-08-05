@@ -8,6 +8,7 @@ import ProjectsPage from "./screens/ProjectsPage";
 import ExperiencePage from "./screens/ExperiencePage";
 import NoPage from "./screens/NoPage";
 import SocialsPage from "./screens/SocialsPage";
+import Resume from "./screens/Resume";
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route index element={<MainLayout> <HomePage/> </MainLayout>}/>
                     <Route path={routes.projects} element={<MainLayout> <ProjectsPage/> </MainLayout>}/>
                     <Route path={routes.experience} element={<MainLayout> <ExperiencePage/> </MainLayout>}/>
+                    <Route path={routes.resume} element={<MainLayout> <Resume/> </MainLayout>}/>
                     <Route path={routes.socials} element={<MainLayout> <SocialsPage/> </MainLayout>}/>
                     <Route path='*' element={<NoPage/>}/>
                 </Route>

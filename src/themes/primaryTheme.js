@@ -76,7 +76,7 @@ let theme = createTheme({
         },
         h3: {
             fontFamily: 'Inter, Arial, sans-serif',
-            fontWeight: 500,
+            fontWeight: 600,
             fontSize: '1.75rem',
             WebkitBackgroundClip: 'text',
             backgroundClip: 'text',
@@ -84,7 +84,7 @@ let theme = createTheme({
         },
         h4: {
             fontFamily: 'Inter, Arial, sans-serif',
-            fontWeight: 400,
+            fontWeight: 500,
             color: '#DFF5FF',
         },
         h5: {

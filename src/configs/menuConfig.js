@@ -37,8 +37,8 @@ const CustomIcon = ({ src, ...props }) => (
  */
 export const pagesMenu = [
     {text: 'Home', route: routes.home, },
-    {text: 'Projects', route: routes.projects, },
-    {text: 'Experience', route: routes.experience, },
+    // {text: 'Projects', route: routes.projects, },
+    // {text: 'Experience', route: routes.experience, },
     {text: 'Resume', route: routes.resume, },
     {text: 'Socials', route: routes.socials, },
 ];
