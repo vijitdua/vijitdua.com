@@ -28,7 +28,7 @@ function MainLayout({children}) {
                 {mobileView ? <TopNavBarMobile/> : <TopNavBarDesktop/>}
             </Box>
             <Box sx={{
-                mt: '1rem',
+                mt: '3rem',
             }}>
                 {children}
             </Box>
