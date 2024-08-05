@@ -44,81 +44,67 @@ let theme = createTheme({
             default: '#121212',
             paper: '#1d1d1d',
         },
+        appBar: {
+            defaultBackground: 'transparent',
+            elevatedBackground: '#1d1d1d',
+            textGradient: 'linear-gradient(to right, #9ef7f7, #fc8bef)', // use as variable
+        },
         text: {
-            primary: '#ffffff',
-            secondary: '#DFF5FF',
+            primary: '#DFF5FF',
+            secondary: '#ccf1ff',
         },
         icons: '#DFF5FF',
-        cardBackground: '#1f1f1f',
-        overviewCard: '#2b2b2a',
-        postBackground: '#1f1f1f',
-        customRadio: {
-            borderUnchecked: '1px solid #ffffff',
-            borderChecked: '2px solid #3f51b5',
-        },
-        sidebar: {
-            header: '#2b2b2b',
-            background: '#1f1f1f',
-            iconColor: '#ffffff',
-            highlight: '#378CE7',
-            highlightHover: '#67C6E3',
-        }
     },
     typography: {
-        fontFamily: 'Inter, Arial, sans-serif',
+        fontFamily: 'Inter, Plus Jakarta Sans, Arial, sans-serif',
         h1: {
-            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
+            fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 700,
-            fontSize: '3rem',
-            '@media (max-width:600px)': {
-                fontSize: '2.5rem',
-            },
+            fontSize: '2.95rem',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            color: '#DFF5FF',
         },
         h2: {
-            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
+            fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 600,
-            fontSize: '2.5rem',
-            '@media (max-width:600px)': {
-                fontSize: '2rem',
-            },
+            fontSize: '2.45rem',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            color: '#DFF5FF',
         },
         h3: {
-            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
+            fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 500,
-            fontSize: '2rem',
-            '@media (max-width:600px)': {
-                fontSize: '1.75rem',
-            },
+            fontSize: '1.75rem',
+            WebkitBackgroundClip: 'text',
+            backgroundClip: 'text',
+            color: '#DFF5FF',
         },
         h4: {
-            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
+            fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: '1.75rem',
-            '@media (max-width:600px)': {
-                fontSize: '1.5rem',
-            },
+            color: '#DFF5FF',
         },
         h5: {
-            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
+            fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: '1.5rem',
-            '@media (max-width:600px)': {
-                fontSize: '1.25rem',
-            },
+            color: '#DFF5FF',
         },
         h6: {
-            fontFamily: 'Plus Jakarta Sans, Arial, sans-serif',
+            fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 400,
-            fontSize: '1.25rem',
-            '@media (max-width:600px)': {
-                fontSize: '1rem',
-            },
+            color: '#DFF5FF',
         },
         body1: {
-            fontFamily: 'Inter, Arial, sans-serif',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '1.12rem',
+            color: '#ccf1ff',
         },
         body2: {
-            fontFamily: 'Inter, Arial, sans-serif',
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '1.12rem',
+            color: '#ccf1ff',
         },
     },
 });

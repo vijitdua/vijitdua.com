@@ -1,15 +1,15 @@
 // URLs to project routes
 export const routes = {
     home: '/',
-    socials: '/socials',
     projects: '/projects',
     experience: '/experience',
     resume: '/resume',
+    socials: '/socials',
 };
 
 // URLs to all social links
 export const socialLinks = {
-    email: 'mailto:inbox@vijitdua.xyz',
+    email: 'mailto:inbox@vijitdua.com',
     twitter: 'https://x.com/vijitdua',
     instagram: 'https://instagram.com/vijitdua',
     instagramPhotography: 'https://instagram.com/vijitcam',
@@ -17,4 +17,5 @@ export const socialLinks = {
     linkedIn: 'https://linkedin.com/in/vijitdua',
     youtubeMain: 'https://youtube.com/@vijitdua?sub_confirmation=1',
     youtubeGaming: 'https://youtube.com/funnyizer',
+    twitch: 'https://twitch.com/funnyizer',
 };

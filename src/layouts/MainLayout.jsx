@@ -18,19 +18,15 @@ function MainLayout({children}) {
             flexDirection: 'column',
             minHeight: '100vh',
             width: '100vw',
-            overflow: 'auto',
         }}>
             <Box sx={{
                 position: 'sticky',
                 top: 0,
                 width: '100%',
-                zIndex: 1100,
             }}>
                 {mobileView ? <TopNavBarMobile/> : <TopNavBarDesktop/>}
             </Box>
             <Box sx={{
-                flex: 1,
-                overflowY: 'auto',
             }}>
                 {children}
             </Box>
