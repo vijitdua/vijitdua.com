@@ -144,6 +144,9 @@ function TopNavBarMobile() {
                             color: 'inherit',  // Inherit color from parent
                         }}
                     >
+                        <Typography variant='h2' component='h1'>
+                            Vijit
+                        </Typography>
                         {/*No components here yet, just creating blank space */}
                     </Box>
 

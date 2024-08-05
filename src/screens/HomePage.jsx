@@ -1,5 +1,5 @@
 import {Typography, Link, Divider, Box, Container, Avatar, useMediaQuery} from "@mui/material";
-import {socialLinks} from "../configs/routesConfig";
+import {routes, socialLinks} from "../configs/routesConfig";
 import {theme} from "../themes/primaryTheme";
 import Quote from "../components/typography/Quote";
 import Collapsible from "../components/typography/Collapsible";
@@ -91,6 +91,9 @@ function MyQuotes({mobileView}) {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '3rem',
+                padding: '0.6rem',
+                backgroundColor: 'home.block',
+                borderRadius: '1rem',
             }}>
                 {/*<Avatar sx={{*/}
                 {/*    marginTop: mobileView ? '0rem' : '1rem',*/}
@@ -143,6 +146,9 @@ function MyGoalsInLife({mobileView}) {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '3rem',
+                padding: '0.6rem',
+                backgroundColor: 'home.block',
+                borderRadius: '1rem',
             }}>
                 {/*<Avatar sx={{*/}
                 {/*    marginTop: mobileView ? '0rem' : '1rem',*/}
@@ -266,6 +272,9 @@ function InterestingQuestion({mobileView}) {
                 justifyContent: 'center',
                 alignItems: 'center',
                 gap: '3rem',
+                padding: '0.6rem',
+                backgroundColor: 'home.block',
+                borderRadius: '1rem',
             }}>
                 {/*<Avatar sx={{*/}
                 {/*    marginTop: mobileView ? '0rem' : '1rem',*/}
@@ -344,17 +353,18 @@ function HomePage() {
                 <Box sx={{
                     m: '3rem 0',
                 }}>
-                    <Quote quote={'Anyways, that’s who I am. I am Vijit.\n' +
-                        'Thanks for taking the time to get to know me :)'}/>
+                    <Typography> Anyways, that’s who I am. I am Vijit. </Typography>
+                    <Typography>Thanks for taking the time to get to know me :)</Typography>
                 </Box>
 
-
-                <Divider/>
 
                 <Box sx={{
                     m: '3rem 0',
                 }}>
-                    <Quote quote={'Projects, Portfolios, and less text walls coming to this website soon!'}/>
+                    <Typography>Projects, Portfolios, and less text walls coming to this website soon!</Typography>
+
+                    <Typography>Checkout my socials at <Link href={routes.socials}
+                                                             target="_blank"> https://vijitdua.com/socials</Link>.</Typography>
                 </Box>
 
             </Box>

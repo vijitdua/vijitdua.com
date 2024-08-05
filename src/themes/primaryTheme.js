@@ -46,8 +46,7 @@ let theme = createTheme({
         },
         appBar: {
             defaultBackground: 'transparent',
-            elevatedBackground: '#1d1d1d',
-            textGradient: 'linear-gradient(to right, #9ef7f7, #fc8bef)', // use as variable
+            elevatedBackground: '#707aff',
         },
         text: {
             primary: '#DFF5FF',
@@ -55,6 +54,9 @@ let theme = createTheme({
         },
         socials: '#ccf1ff',
         icons: '#DFF5FF',
+        home: {
+            block: '#696fbf',
+        }
     },
     typography: {
         fontFamily: 'Inter, Plus Jakarta Sans, Arial, sans-serif',
@@ -111,5 +113,7 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
+// #707aff darker first
+document.body.style.background = 'linear-gradient(135deg, #7d86ff 45%, #ea9afc 55%)';
 
 export { theme };

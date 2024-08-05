@@ -65,21 +65,12 @@ function TopNavBarDesktop() {
             }}>
                 <Toolbar sx={{
                     display: 'grid',
-                    gridTemplateColumns: '1fr auto 1fr',
+                    gridTemplateColumns: 'auto 1fr',
                     alignItems: 'center',
                     padding: 0,
                 }}>
 
-                    {/* Components to the left */}
-                    <Box sx={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        justifyContent: 'flex-start',
-                    }}>
-                        {/*No components here yet, just creating blank space */}
-                    </Box>
-
-                    {/* Components in the middle */}
+                    {/* Components in the start */}
 
                     <Box sx={{
                         display: 'flex',
