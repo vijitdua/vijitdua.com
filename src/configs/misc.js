@@ -1,0 +1,1 @@
+export const bio = 'Aspiring Tech Mogul & Change Catalyst, Occasional YouTube star (not really)';

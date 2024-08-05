@@ -34,7 +34,7 @@ function PageMenuItems(item, index, numberOfItems) {
             color="inherit"
             sx={{
                 textDecoration: 'none',
-                background: 'linear-gradient(to right, #9ef7f7, #fc8bef)', // Gradient applied to all buttons
+                background: 'linear-gradient(to right, #9ff, #fff)', // Gradient applied to all buttons
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

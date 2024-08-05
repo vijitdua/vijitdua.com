@@ -19,4 +19,5 @@ export const socialLinks = {
     youtubeMain: 'https://youtube.com/@vijitdua?sub_confirmation=1',
     youtubeGaming: 'https://youtube.com/funnyizer',
     twitch: 'https://twitch.com/funnyizer',
+    github: 'https://github.com/vijitdua',
 };

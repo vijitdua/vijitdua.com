@@ -23,10 +23,12 @@ function MainLayout({children}) {
                 position: 'sticky',
                 top: 0,
                 width: '100%',
+                zIndex: 1,
             }}>
                 {mobileView ? <TopNavBarMobile/> : <TopNavBarDesktop/>}
             </Box>
             <Box sx={{
+                mt: '1rem',
             }}>
                 {children}
             </Box>

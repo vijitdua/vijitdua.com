@@ -1,4 +1,5 @@
 import {socialLinks, routes} from "./routesConfig";
+import {Box} from "@mui/material";
 
 
 // Icon imports only
@@ -8,14 +9,17 @@ import MailIcon from '@mui/icons-material/Mail';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import {Box} from "@mui/material";
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import {Link} from "react-router-dom";
+import {GitHub} from "@mui/icons-material";
+import LanguageIcon from '@mui/icons-material/Language';
 
 const CustomIcon = ({ src, ...props }) => (
     <Box
         component="img"
         src={src}
         alt="icon"
-        sx={{ width: 24, height: 24, ...props.sx }}
+        sx={{ width: 24, height: 24, borderRadius: 5, ...props.sx}}
     />
 );
 
@@ -57,4 +61,53 @@ export const endMenuItems = [
     {icon: <LinkedInIcon/>, route: socialLinks.linkedIn,},
     {icon: <CustomIcon src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png'/>, route: socialLinks.discord,},
     {icon: <MailIcon/>, route: socialLinks.email,},
+];
+
+
+/**
+ *
+ * @NecessaryFields name, icon, route
+ *
+ * @Fields
+ * - `name` : Displays the name of the menu option
+ * - `icon` : Display Icon for Menu Option
+ * - `route` : Redirect url when menu option clicked
+ */
+export const socialsList = [
+    {name: 'X / Twitter', icon: <XIcon/>, route: socialLinks.twitter,},
+    {name: 'Instagram', icon: <InstagramIcon/>, route: socialLinks.instagram,},
+    {name: 'Photography Page', icon: <InstagramIcon/>, route: socialLinks.instagramPhotography,},
+    {name: 'Threads', icon: <CustomIcon src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/threads-white-icon.png'/>, route: socialLinks.threads,},
+    {name: 'Discord', icon: <CustomIcon src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/discord-white-icon.png'/>, route: socialLinks.discord,},
+];
+
+/**
+ *
+ * @NecessaryFields name, icon, route
+ *
+ * @Fields
+ * - `name` : Displays the name of the menu option
+ * - `icon` : Display Icon for Menu Option
+ * - `route` : Redirect url when menu option clicked
+ */
+export const contentList = [
+    {name: 'Vijit Dua (Main)', icon: <YouTubeIcon/>, route: socialLinks.youtubeMain,},
+    {name: 'Funnyizer (Gaming & 2nd)', icon: <YouTubeIcon/>, route: socialLinks.youtubeGaming,},
+    {name: 'Live Streams', icon: <CustomIcon src='https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/twitch-white-icon.png'/>, route: socialLinks.twitch,},
+];
+
+/**
+ *
+ * @NecessaryFields name, icon, route
+ *
+ * @Fields
+ * - `name` : Displays the name of the menu option
+ * - `icon` : Display Icon for Menu Option
+ * - `route` : Redirect url when menu option clicked
+ */
+export const professionalSocials = [
+    {name: 'Personal Webpage', icon: <LanguageIcon/>, route: routes.home,},
+    {name: 'LinkedIn', icon: <LinkedInIcon/>, route: socialLinks.linkedIn,},
+    {name: 'GitHub', icon: <GitHub/>, route: socialLinks.github,},
+    {name: 'InnoMate', icon: <CustomIcon src={`${process.env.PUBLIC_URL}/assets/innomate.png`}/>, route: 'https://innomate.today',},
 ];

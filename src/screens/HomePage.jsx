@@ -1,33 +1,11 @@
-import {Typography} from "@mui/material";
+import {Typography, Link, Divider, Box, Container} from "@mui/material";
 
-function HomePage(){
-    return (
-        <>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
-            <Typography variant="h1" > hi </Typography>
+function HomePage() {
+        return (
+            <Container maxWidth="md">
 
-        </>
-    );
+            </Container>
+        );
 }
 
 export default HomePage;
