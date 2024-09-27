@@ -46,7 +46,7 @@ let theme = createTheme({
         },
         appBar: {
             defaultBackground: 'transparent',
-            elevatedBackground: '#707aff',
+            elevatedBackground: '#1d1d1d',
         },
         text: {
             primary: '#DFF5FF',
@@ -54,9 +54,6 @@ let theme = createTheme({
         },
         socials: '#ccf1ff',
         icons: '#DFF5FF',
-        home: {
-            block: '#696fbf',
-        }
     },
     typography: {
         fontFamily: 'Inter, Plus Jakarta Sans, Arial, sans-serif',
@@ -87,16 +84,19 @@ let theme = createTheme({
         h4: {
             fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 500,
+            fontSize: '1.5rem',
             color: '#DFF5FF',
         },
         h5: {
             fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 400,
+            fontSize: '1.2rem',
             color: '#DFF5FF',
         },
         h6: {
             fontFamily: 'Inter, Arial, sans-serif',
             fontWeight: 400,
+            fontSize: '1.12rem',
             color: '#DFF5FF',
         }, // ccf1ff
         body1: {
@@ -113,7 +113,5 @@ let theme = createTheme({
 });
 
 theme = responsiveFontSizes(theme);
-// #707aff darker first
-document.body.style.background = 'linear-gradient(135deg, #7d86ff 45%, #ea9afc 55%)';
 
 export { theme };
