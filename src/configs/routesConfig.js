@@ -1,9 +1,10 @@
 // URLs to project routes
 export const routes = {
     home: '/',
-    projects: '/projects',
-    experience: '/experience',
-    resume: '/resume',
+    experience: '/#experience',
+    projects: '/#projects',
+    resume: '/#resume',
+    contact: '/#contact',
     socials: '/socials',
 };
 

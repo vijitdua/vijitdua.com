@@ -36,10 +36,11 @@ const CustomIcon = ({ src, ...props }) => (
  * - `noMobile` : Don't render component in mobile if true
  */
 export const pagesMenu = [
-    {text: 'Home', route: routes.home, },
-    // {text: 'Projects', route: routes.projects, },
-    // {text: 'Experience', route: routes.experience, },
+    {text: 'About', route: routes.home, },
+    {text: 'Experience', route: routes.experience, },
+    {text: 'Projects', route: routes.projects, },
     {text: 'Resume', route: routes.resume, },
+    {text: 'Contact', route: routes.contact,},
     {text: 'Socials', route: routes.socials, },
 ];
 

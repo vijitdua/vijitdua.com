@@ -34,7 +34,7 @@ function PageMenuItems(item, index, numberOfItems) {
             color="inherit"
             sx={{
                 textDecoration: 'none',
-                background: 'linear-gradient(to right, #9ff, #fff)', // Gradient applied to all buttons
+                background: 'linear-gradient(to right, #9ff, #555)', // Gradient applied to all buttons
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -48,7 +48,9 @@ function PageMenuItems(item, index, numberOfItems) {
                 },
             }}
         >
-            <Typography variant="h3">
+            <Typography variant="h4" component="h1" sx={{
+                textTransform: 'none', // Ensure text is not capitalized
+            }}>
                 {item.text}
             </Typography>
         </Button>);

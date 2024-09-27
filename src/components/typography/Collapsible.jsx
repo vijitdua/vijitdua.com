@@ -3,7 +3,7 @@ import { Typography, IconButton, Collapse } from '@mui/material';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
-function Collapsible({ children, title }) {
+function Collapsible({ title, children }) {
     const [open, setOpen] = useState(false);
 
     const handleToggle = () => {
@@ -13,13 +13,13 @@ function Collapsible({ children, title }) {
     return (
         <>
             <div style={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }} onClick={handleToggle}>
-                <IconButton size="small" style={{ marginRight: '8px', transition: 'transform 0.3s' }}>
+                <IconButton size="small" style={{ marginRight: '0.01rem', transition: 'transform 0.3s' }}>
                     {open ? <ArrowDropDownIcon /> : <ArrowRightIcon />}
                 </IconButton>
                 <Typography variant="h6">{title}</Typography>
             </div>
             <Collapse in={open}>
-                <div style={{ marginTop: '8px', marginLeft: '4rem'}}>
+                <div style={{ marginTop: '0.25rem', marginLeft: '2rem'}}>
                     {children}
                 </div>
             </Collapse>
