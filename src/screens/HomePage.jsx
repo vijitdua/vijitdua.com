@@ -87,7 +87,6 @@ function HomePage() {
 
                     <Divider/>
 
-                    <Divider/>
                 </Box>
 
             </Container>
