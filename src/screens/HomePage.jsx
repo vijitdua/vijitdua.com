@@ -4,6 +4,7 @@ import {theme} from "../themes/primaryTheme";
 import Quote from "../components/typography/Quote";
 import Collapsible from "../components/typography/Collapsible";
 import FormatQuoteIcon from '@mui/icons-material/FormatQuote';
+import MainLayout from "../layouts/MainLayout";
 
 
 function Introduction({mobileView}) {
@@ -69,26 +70,28 @@ function HomePage() {
     const mobileView = useMediaQuery(theme.breakpoints.down('md'));
 
     return (
-        <Container maxWidth="lg">
+        <MainLayout>
+            <Container maxWidth="lg">
 
-            <Box sx={{
-                '& > *': {
-                    m: mobileView ? '1rem 0' : '2.5rem 0',
-                }
-            }}>
+                <Box sx={{
+                    '& > *': {
+                        m: mobileView ? '1rem 0' : '2.5rem 0',
+                    }
+                }}>
 
-                <Typography variant="h1" gutterBottom sx={{textAlign: 'center'}}>
-                    About Me
-                </Typography>
+                    <Typography variant="h1" gutterBottom sx={{textAlign: 'center'}}>
+                        About Me
+                    </Typography>
 
-                <Introduction mobileView={mobileView}/>
+                    <Introduction mobileView={mobileView}/>
 
-                <Divider/>
+                    <Divider/>
 
-                <Divider/>
-            </Box>
+                    <Divider/>
+                </Box>
 
-        </Container>
+            </Container>
+        </MainLayout>
     );
 }
 
