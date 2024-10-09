@@ -11,7 +11,6 @@ import MailIcon from "@mui/icons-material/Mail";
 function Section({title, items}) {
     return (<Box sx={{
             marginBottom: '2rem',
-            color: 'socials',
         }}>
             {/* Section title */}
             <Typography variant='h5' sx={{
@@ -50,7 +49,6 @@ function SocialsPage() {
                 alignItems: 'center',
                 gap: '1rem',
                 mb: '1rem',
-                color: 'socials',
             }}>
                 <Avatar alt="Vijit Dua" src={`${process.env.PUBLIC_URL}/assets/pfp.png`} sx={{
                     height: '7rem',
@@ -73,7 +71,7 @@ function SocialsPage() {
                 </Typography>
 
                 <SocialMediaOvalItem
-                    item={{name: 'About Me', icon: <InfoIcon/>, route: routes.home,}} index={1}
+                    item={{name: 'About Me', icon: <InfoIcon/>, route: routes.aboutMe,}} index={1}
                     key={1}/>
             </Box>
 

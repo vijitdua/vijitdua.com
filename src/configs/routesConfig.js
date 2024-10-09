@@ -1,10 +1,9 @@
 // URLs to project routes
 export const routes = {
     home: '/',
-    experience: '/#experience',
-    projects: '/#projects',
-    resume: '/#resume',
-    contact: '/#contact',
+    aboutMe: '/about',
+    portfolio: '/portfolio',
+    projects: '/projects',
     socials: '/socials',
 };
 
@@ -21,4 +20,5 @@ export const socialLinks = {
     youtubeGaming: 'https://youtube.com/funnyizer',
     twitch: 'https://twitch.com/funnyizer',
     github: 'https://github.com/vijitdua',
+    innogreet: 'https://innogreet.com/',
 };
