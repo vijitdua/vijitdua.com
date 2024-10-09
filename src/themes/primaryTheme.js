@@ -52,7 +52,6 @@ let theme = createTheme({
             primary: '#DFF5FF',
             secondary: '#ccf1ff',
         },
-        socials: '#ccf1ff',
         icons: '#DFF5FF',
     },
     typography: {
@@ -111,6 +110,8 @@ let theme = createTheme({
         },
     },
 });
+
+document.body.style.background = 'linear-gradient(120deg, #242424 45%, #1d1d1d 55%)';
 
 theme = responsiveFontSizes(theme);
 

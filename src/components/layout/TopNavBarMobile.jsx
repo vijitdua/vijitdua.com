@@ -99,11 +99,13 @@ function TopNavBarMobile() {
                      backgroundColor: 'mobileAppBarBurgerMenu.background',
                  }}
             >
+
                 {/* Items at the top */}
                 <Box sx={{
                     marginTop: '5rem',
                     '& > *': {
                         padding: '1rem 0rem',
+                        mt: '1rem',
                     }
                 }}>
                     {pagesMenu.map((item, index) => PageMenuItems(item, index))}
@@ -145,7 +147,7 @@ function TopNavBarMobile() {
                         }}
                     >
                         <Typography variant='h2' component='h1'>
-                            Vijit
+                            Vijit Dua
                         </Typography>
                         {/*No components here yet, just creating blank space */}
                     </Box>

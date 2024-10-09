@@ -12,7 +12,7 @@ function MenuItemsWithIcons(item, index) {
             color="inherit"
             sx={{
                 textDecoration: 'none', // Remove underline
-                color: 'inherit', // Inherit color from parent
+                color: '#fff'
             }}
         >
             {item.icon}
