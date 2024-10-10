@@ -80,7 +80,7 @@ function ProjectsCollection() {
             <Grid container spacing={4}>
                 <AnimatePresence>
                     {filteredProjects.map((project, index) => (
-                        <Grid item xs={12} sm={6} md={4} key={project.route}>
+                        <Grid item xs={12} sm={6} md={4} lg={3} key={project.route}>
                             {/* Pass the index to ProjectCard to control delay */}
                             <ProjectCard project={project} onProjectClick={handleProjectClick} index={index} />
                         </Grid>
