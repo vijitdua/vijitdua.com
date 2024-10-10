@@ -39,7 +39,7 @@ export const projects = [
     {
         title: 'AutoMap',
         route: 'KAIST-research-project',
-        tagline: 'Automated Road Mapping with AI, KAIST Summer Research Project',
+        tagline: 'AI Road Map Generation from Satellite images',
         category: 'Deep Learning',
         sourceCode: 'https://github.com/vijitdua/KAIST-Deep-Learning-Research-UNet-Statalite-Road-Identification',
         Component: KAISTResearchProjectComponent,

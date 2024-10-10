@@ -82,7 +82,7 @@ function ProjectsCollection() {
                     {filteredProjects.map((project, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={project.route}>
                             {/* Pass the index to ProjectCard to control delay */}
-                            <ProjectCard project={project} onProjectClick={handleProjectClick} index={index} />
+                            <ProjectCard project={project} onProjectClick={handleProjectClick} index={index}/>
                         </Grid>
                     ))}
                 </AnimatePresence>
@@ -95,7 +95,7 @@ function ProjectsCollection() {
                     onClose={handleDrawerClose}
                     PaperProps={{ sx: { width: mobileView ? '100%' : '50%' } }}
                 >
-                    {selectedProject && <ProjectDetailedPage project={selectedProject} onClose={handleDrawerClose}/>}
+                    {selectedProject && <ProjectDetailedPage project={selectedProject} onClose={handleDrawerClose} notDrawer={false}/>}
                 </Drawer>
             )}
         </Box>
