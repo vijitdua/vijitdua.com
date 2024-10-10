@@ -10,7 +10,7 @@ import NoPage from "../../screens/NoPage";
 import {routes} from "../../configs/routesConfig";
 import Divider from '@mui/material/Divider';
 
-function ProjectDetailedPage({ project: propProject, onClose }) {
+function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }) {
     const navigate = useNavigate();
 
     function handleGoBack (){
@@ -23,7 +23,6 @@ function ProjectDetailedPage({ project: propProject, onClose }) {
     }
 
     const { projectName } = useParams();
-    const mobileView = useMediaQuery(theme.breakpoints.down('md'));
 
     const project = propProject || projects.find((p) => p.route === projectName);
 
@@ -45,7 +44,7 @@ function ProjectDetailedPage({ project: propProject, onClose }) {
                 marginBottom: '1rem',
             }}
         >
-            {!mobileView && onClose && (
+            {!notDrawer && onClose && (
                 <Button
                     variant="contained"
                     color="error"
@@ -56,7 +55,7 @@ function ProjectDetailedPage({ project: propProject, onClose }) {
                 </Button>
             )}
 
-            {mobileView && (
+            {notDrawer && (
                 <Button
                     variant="contained"
                     color="secondary"
@@ -128,7 +127,7 @@ function ProjectDetailedPage({ project: propProject, onClose }) {
     );
 
     // If on mobile or if no propProject is provided, render inside MainLayout
-    if (mobileView || !propProject) {
+    if (notDrawer || !propProject) {
         return <MainLayout>{content}</MainLayout>;
     }
 

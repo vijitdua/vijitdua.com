@@ -11,7 +11,7 @@ const multimediaData = [
     { type: 'gif', url: 'https://example.com/animation2.gif' },
 ];
 
-function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 4000 }) {
+function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 5000 }) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     // Function to go to the next item
@@ -43,7 +43,7 @@ function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 4000 }
                         sx={{
                             width: '100%',
                             height: '100%',
-                            objectFit: 'cover', // Ensures the media fills the container
+                            objectFit: 'contain', // Ensures the media is fully visible
                         }}
                     />
                 );

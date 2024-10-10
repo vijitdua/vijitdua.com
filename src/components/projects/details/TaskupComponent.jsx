@@ -4,10 +4,13 @@ import React from "react";
 
 const multimediaData = [
     { type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/image-1.jpg` },
-    { type: 'video', url: 'https://www.youtube.com/embed/s_a5ya_JwBQ' },
+    {type: 'gif', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/check-task.gif` },
     { type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/image-2.jpg` },
+    {type: 'gif', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/add-friend.gif` },
     { type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/image-3.jpg` },
-    { type: 'gif', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/image-4.jpg`},
+    {type: 'gif', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/create-task.gif` },
+    { type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/image-4.jpg`},
+    { type: 'video', url: 'https://www.youtube.com/embed/s_a5ya_JwBQ' },
 ];
 
 function TaskupComponent(){
