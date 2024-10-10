@@ -1,5 +1,5 @@
 import React from 'react';
-import {Navigate, useParams} from 'react-router-dom';
+import {Navigate, useNavigate, useParams} from 'react-router-dom';
 import { projects } from '../../configs/projectsConfig';
 import MainLayout from '../../layouts/MainLayout';
 import { Box, Typography, Button, Container, IconButton } from '@mui/material';
@@ -11,6 +11,17 @@ import {routes} from "../../configs/routesConfig";
 import Divider from '@mui/material/Divider';
 
 function ProjectDetailedPage({ project: propProject, onClose }) {
+    const navigate = useNavigate();
+
+    function handleGoBack (){
+        console.log("HI")
+        if (window.history.length > 1) {
+            navigate(-1); // Go back to the previous URL in history
+        } else {
+            navigate('/projects'); // If no history, fallback to /projects
+        }
+    }
+
     const { projectName } = useParams();
     const mobileView = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -38,7 +49,7 @@ function ProjectDetailedPage({ project: propProject, onClose }) {
                 <Button
                     variant="contained"
                     color="error"
-                    href={routes.projects}
+                    onClick={onClose}
                     sx={{ position: 'fixed', top: '5px', right: '10px', opacity: 0.8, zIndex: 10,}}
                 >
                     <Close />
@@ -49,7 +60,7 @@ function ProjectDetailedPage({ project: propProject, onClose }) {
                 <Button
                     variant="contained"
                     color="secondary"
-                    href={routes.projects}
+                    onClick={handleGoBack}
                     sx={{ position: 'fixed', left: '10px', opacity: 0.8, zIndex: 10,}}
                 >
                     <ArrowBack />

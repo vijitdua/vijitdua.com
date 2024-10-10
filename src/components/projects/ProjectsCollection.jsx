@@ -33,19 +33,25 @@ function ProjectsCollection() {
             : projects.filter((project) => (project.category || 'Uncategorized') === selectedCategory);
 
     const handleProjectClick = (project) => {
+        const currentUrl = window.location.pathname; // Save the current URL before navigating
         if (mobileView) {
             navigate(`/projects/${project.route}`);
         } else {
             setSelectedProject(project);
             setDrawerOpen(true);
-            window.history.replaceState(null, '', `/projects/${project.route}`);
+            window.history.pushState({ prevUrl: currentUrl }, '', `/projects/${project.route}`); // Push new state with the current URL
         }
     };
 
     const handleDrawerClose = () => {
+        const previousState = window.history.state?.prevUrl; // Get the previous URL from state
         setDrawerOpen(false);
         setSelectedProject(null);
-        navigate('/projects', { replace: true });
+        if (previousState) {
+            navigate(previousState, { replace: true }); // Navigate to the previous URL
+        } else {
+            navigate('/projects', { replace: true }); // Fallback to /projects if no previous state
+        }
     };
 
     // Close the drawer when URL changes (e.g., when user clicks the browser back button)
@@ -89,7 +95,7 @@ function ProjectsCollection() {
                     onClose={handleDrawerClose}
                     PaperProps={{ sx: { width: mobileView ? '100%' : '50%' } }}
                 >
-                    {selectedProject && <ProjectDetailedPage project={selectedProject} onClose={handleDrawerClose} />}
+                    {selectedProject && <ProjectDetailedPage project={selectedProject} onClose={handleDrawerClose}/>}
                 </Drawer>
             )}
         </Box>
