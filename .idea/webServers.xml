@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="b30ebff8-aacd-49c4-aa92-666179442a99" name="Digital Ocean – www.vijitdua.com">
+        <fileTransfer accessType="SFTP" host="134.209.120.171" port="22" sshConfigId="06883f30-c846-4456-9a1d-085dc0e7f668" sshConfig="Digital Ocean – vijitdua.com">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" isUseSudo="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
