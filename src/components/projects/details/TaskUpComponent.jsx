@@ -13,7 +13,7 @@ const multimediaData = [
     { type: 'video', url: 'https://www.youtube.com/embed/s_a5ya_JwBQ' },
 ];
 
-function TaskupComponent(){
+function TaskUpComponent(){
     return (
         <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
 
@@ -50,4 +50,4 @@ function TaskupComponent(){
     );
 }
 
-export default TaskupComponent;
+export default TaskUpComponent;

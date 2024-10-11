@@ -9,8 +9,11 @@ import { useMediaQuery } from '@mui/material';
 import NoPage from "../../screens/NoPage";
 import {routes} from "../../configs/routesConfig";
 import Divider from '@mui/material/Divider';
+import {Helmet} from "react-helmet";
+import {env} from "../../configs/envConfig";
 
 function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }) {
+
     const navigate = useNavigate();
 
     function handleGoBack (){
@@ -32,6 +35,19 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
         );
     }
 
+    function PageMeta() {
+        return (
+            <Helmet>
+                <title>Vijit Dua | {project.title} </title>
+                <link rel="canonical" href={routes.projects + '/' + project.route}/>
+                <meta
+                    name='description'
+                    content={project.title + ' by Vijit: ' + project.tagline}
+                />
+            </Helmet>
+        );
+    }
+
     const { title, tagline, sourceCode, projectUrl, image, Component } = project;
 
     const content = (
@@ -44,6 +60,7 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
                 marginBottom: '1rem',
             }}
         >
+            <PageMeta/>
             {!notDrawer && onClose && (
                 <Button
                     variant="contained"
