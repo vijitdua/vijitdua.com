@@ -1,6 +1,7 @@
 import {Box, Typography} from "@mui/material";
 import MultimediaCarousel from "../../collections/MultimediaCarousel";
 import React from "react";
+import Divider from "@mui/material/Divider";
 
 const multimediaData = [
     { type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/task-up/image-1.jpg` },
@@ -24,6 +25,10 @@ function TaskUpComponent(){
                 TaskUp is a competitive task management app developed during HackDavis 2024, designed to integrate collaboration and competition into productivity. Built in just 24 hours, the app allows users to track tasks, compete with others, and collaborate on shared goals.
             </Typography>
 
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
+
             <Typography variant="body1" paragraph>
                 <strong>Details / Technology </strong>
             </Typography>
@@ -39,12 +44,19 @@ function TaskUpComponent(){
                 <li>DevOps & hosting: AWS EC2, Docker, NGINX, Cloudflare (SSL, DNS).</li>
             </ul>
 
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
 
             <Typography variant="body1" paragraph>
                 <strong>Media</strong>
             </Typography>
 
             <MultimediaCarousel data={multimediaData}/>
+
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
 
         </Box>
     );

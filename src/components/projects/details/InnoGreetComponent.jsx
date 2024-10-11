@@ -2,6 +2,7 @@ import {Box, Link, Typography} from "@mui/material";
 import MultimediaCarousel from "../../collections/MultimediaCarousel";
 import React from "react";
 import {socialLinks} from "../../../configs/routesConfig";
+import Divider from "@mui/material/Divider";
 
 function InnoGreetComponent(){
     return (
@@ -21,6 +22,10 @@ function InnoGreetComponent(){
                 You can checkout InnoGreet yourself right <Link href={socialLinks.innogreet}>here</Link>
             </Typography>
 
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
+
             <Typography variant="body1" paragraph>
                 <strong>Details / Technology </strong>
             </Typography>
@@ -36,11 +41,19 @@ function InnoGreetComponent(){
                 <li>Database: PostgreSQL, MongoDB (for in-app messages only).</li>
             </ul>
 
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
+
             <Typography variant="body1" paragraph>
-                <strong>Media</strong>
+                <strong>Launching January 2025</strong>
             </Typography>
 
-            <MultimediaCarousel/>
+            {/*<MultimediaCarousel/>*/}
+
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
 
         </Box>
     );

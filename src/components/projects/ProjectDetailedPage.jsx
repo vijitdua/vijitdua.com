@@ -39,7 +39,7 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
         return (
             <Helmet>
                 <title>Vijit Dua | {project.title} </title>
-                <link rel="canonical" href={routes.projects + '/' + project.route}/>
+                <link rel="canonical" href={env.siteLocation + routes.projects + '/' + project.route}/>
                 <meta
                     name='description'
                     content={project.title + ' by Vijit: ' + project.tagline}

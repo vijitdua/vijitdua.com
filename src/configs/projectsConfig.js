@@ -24,6 +24,7 @@ export const projects = [
     {
         title: 'InnoGreet',
         route: 'innogreet',
+        image: `${process.env.PUBLIC_URL}/assets/projects/innogreet/banner-logo.png`,
         tagline: '(Active Startup Project) Find your perfect collaborator.',
         category: 'Active',
         projectUrl: `https://innogreet.com`,
@@ -32,13 +33,14 @@ export const projects = [
     {
         title: 'TeamSync',
         route: 'team-sync',
-        tagline: 'Streamlined Team Management',
+        tagline: '(In Progress) Streamlined Team Management.',
         sourceCode: 'https://github.com/vijitdua/team-sync',
         Component: TeamSyncComponent,
     },
     {
         title: 'AutoMap',
         route: 'KAIST-research-project',
+        image: `${process.env.PUBLIC_URL}/assets/projects/KAIST-research-project/banner-logo.png`,
         tagline: 'AI Road Map Generation from Satellite images',
         category: 'Deep Learning',
         sourceCode: 'https://github.com/vijitdua/KAIST-Deep-Learning-Research-UNet-Statalite-Road-Identification',
@@ -47,7 +49,7 @@ export const projects = [
     {
         title: 'TaskUp',
         route: 'task-up',
-        image: `${process.env.PUBLIC_URL}/assets/projects/task-up/logo.jpg`,
+        image: `${process.env.PUBLIC_URL}/assets/projects/task-up/banner-logo.jpg`,
         tagline: 'Competitive Task Tracking, HackDavis \'24',
         category: 'Hackathon',
         projectUrl: `https://devpost.com/software/taskup-fi8jkh`,
@@ -57,7 +59,8 @@ export const projects = [
     {
         title: 'Multiplayer TicTacToe',
         route: 'tic-tac-toe',
-        tagline: 'Multiplayer Webgame',
+        image: `${process.env.PUBLIC_URL}/assets/projects/tic-tac-toe/banner-logo.png`,
+        tagline: 'Full-Stack Multiplayer Webgame',
         sourceCode: 'https://github.com/vijitdua/Multiplayer-TicTacToe',
         Component: TicTacToeComponent,
     }
