@@ -1,7 +1,10 @@
-import {Container} from "@mui/material";
+import {Box, Container, Grid} from "@mui/material";
 import MainLayout from "../layouts/MainLayout";
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
+import MainSections from "../components/home/MainSections";
+import IntroductionSection from "../components/home/IntroductionSection";
+import ProfileSection from "../components/home/ProfileSection";
 
 function PageMeta() {
     return (
@@ -17,13 +20,23 @@ function PageMeta() {
     );
 }
 
-function HomePage(){
+function HomePage() {
     return (
         <MainLayout>
-            <PageMeta/>
-            <Container maxWidth="xl">
+            <PageMeta />
+            <Container maxWidth="lg" sx={{ marginTop: '4rem' }}>
+                <Grid container spacing={4} alignItems="center">
+                    <Grid item xs={12} md={6}>
+                        <IntroductionSection />
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <ProfileSection />
+                    </Grid>
+                </Grid>
 
-
+                <Box sx={{mt: '5rem'}}>
+                    <MainSections />
+                </Box>
 
             </Container>
         </MainLayout>
