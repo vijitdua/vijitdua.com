@@ -18,7 +18,7 @@ import TeamSyncComponent from "../components/projects/details/TeamSyncComponent"
 import InnoGreetComponent from "../components/projects/details/InnoGreetComponent";
 import KAISTResearchProjectComponent from "../components/projects/details/KAISTResearchProjectComponent";
 import TicTacToeComponent from "../components/projects/details/TicTacToeComponent";
-import TaskupComponent from "../components/projects/details/TaskupComponent";
+import TaskUpComponent from "../components/projects/details/TaskUpComponent";
 
 export const projects = [
     {
@@ -52,7 +52,7 @@ export const projects = [
         category: 'Hackathon',
         projectUrl: `https://devpost.com/software/taskup-fi8jkh`,
         sourceCode: 'https://github.com/vijitdua/HackDavis2024-TaskUp',
-        Component: TaskupComponent,
+        Component: TaskUpComponent,
     },
     {
         title: 'Multiplayer TicTacToe',

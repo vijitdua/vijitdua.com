@@ -10,10 +10,27 @@ import ProjectsPage from './screens/ProjectsPage';
 import AboutPage from './screens/AboutPage';
 import PortfolioPage from './screens/PortfolioPage';
 import ProjectDetailedPage from './components/projects/ProjectDetailedPage';
+import {Helmet} from "react-helmet";
+import {env} from './configs/envConfig';
+
+function AppMeta() {
+    return (
+        <Helmet>
+            <title>Vijit Dua</title>
+            <link rel="canonical" href={env.siteLocation}/>
+            <meta
+                name='description'
+                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship.
+            I'm all about blending coding with dream to kick off something cool in the future."
+            />
+        </Helmet>
+    );
+}
 
 function App() {
     return (
         <ThemeProvider theme={theme}>
+            <AppMeta/>
             <CssBaseline />
             {/* Begin browser routes */}
             <Routes>
