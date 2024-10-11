@@ -20,7 +20,7 @@ let theme = createTheme({
         values: {
             xs: 0,     // Extra-small devices (small phones)
             sm: 750,   // Small devices (mobiles)
-            md: 1050,  // Medium devices (tablets)
+            md: 1120,  // Medium devices (tablets)
             lg: 1280,  // Large devices (desktops)
             xl: 1920,  // Extra-large devices (very large screens)
         },

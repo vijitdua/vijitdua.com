@@ -12,6 +12,7 @@ import PortfolioPage from './screens/PortfolioPage';
 import ProjectDetailedPage from './components/projects/ProjectDetailedPage';
 import {Helmet} from "react-helmet";
 import {env} from './configs/envConfig';
+import ExperiencePage from "./screens/ExperiencePage";
 
 function AppMeta() {
     return (
@@ -39,6 +40,7 @@ function App() {
                     <Route index element={<HomePage />} />
                     <Route path={routes.aboutMe} element={<AboutPage />} />
                     <Route path={routes.portfolio} element={<PortfolioPage />} />
+                    <Route path={routes.experience} element={<ExperiencePage />} />
                     <Route path={routes.projects} element={<ProjectsPage />} />
                     <Route path={routes.socials} element={<SocialsPage />} />
                     {/* Project detail route */}
