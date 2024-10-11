@@ -1,28 +1,21 @@
-import {Box, Divider} from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import React from "react";
 
-
-function IcarusWebDevExperienceComponent(){
+function IcarusWebDevExperienceComponent() {
     return (
         <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
-
             <ul>
-                <li>Selected among 18 students worldwide for the prestigious summer research program at KAIST, focusing
-                    on deep learning research.
-                </li>
-                <li>Developed UNet and Attention UNet models to automate road infrastructure detection using satellite
-                    imagery, aimed at reducing manual labor in road mapping.
-                </li>
-                <li>Achieved a strong 0.73 F1 score on the final model.</li>
-                <li>Curated and preprocessed data from datasets like Massachusetts and SpaceNet, correcting known errors
-                    for model enhancement.
-                </li>
+                <li>Led a team of six software engineers and one designer, in a fast-paced startup environment.</li>
+                <li>Delivered first deployment in 14 days, ahead of 1-month timeline.</li>
+                <li>Worked as a full-stack engineer, utilizing React.js & Material UI for front-end development, alongside Node.js (primarily) & Python for back-end development.</li>
+                <li>Maintained automated deployment pipelines through GitHub CI.</li>
+                <li>Managed Linux server deployment with NGINX, overseeing Cloudflare configurations.</li>
+                <li>Developed internal tools including a web admin panel & custom Discord bot integrated with a Node.js CRUD backend for streamlined administrative features for team management.</li>
             </ul>
 
             <Box sx={{ width: '100%' }}>
-                <Divider variant="middle" sx={{mb:'1rem'}}/>
+                <Divider variant="middle" sx={{ mb: '1rem' }} />
             </Box>
-
         </Box>
     );
 }
