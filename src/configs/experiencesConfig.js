@@ -1,4 +1,5 @@
-import TaskUpComponent from "../components/projects/details/TaskUpComponent";
+import KAISTResearchExperienceComponent from "../components/experience/details/KAISTResearchExperienceComponent";
+import IcarusWebDevExperienceComponent from "../components/experience/details/IcarusWebDevExperienceComponent";
 
 /**
  * Array of objects representing work experiences
@@ -26,6 +27,7 @@ export const experiences = [
         logo: `${process.env.PUBLIC_URL}/assets/experiences/icarus-logo.png`,
         description: "Led a Web Development team of 6, and managed Dev. Ops.",
         category: "Technical",
+        Component: IcarusWebDevExperienceComponent,
         year: 2024
     },
     {
@@ -36,6 +38,7 @@ export const experiences = [
         description: "Developed UNet models for road detection.",
         route: "kaist-deep-learning-research",
         category: "Research",
+        Component: KAISTResearchExperienceComponent,
         year: 2024
     },
     {

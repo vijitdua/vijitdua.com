@@ -45,7 +45,7 @@ function PortfolioPage() {
                 </Box>
 
                 <Container maxWidth="lg">
-                    <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
+                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center' }}>
                         Experience
                     </Typography>
                     <ExperienceTimeline/>

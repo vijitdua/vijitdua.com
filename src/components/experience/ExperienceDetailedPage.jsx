@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { experiences } from '../../configs/experiencesConfig';
 import MainLayout from '../../layouts/MainLayout';
-import { Box, Typography, Avatar, Button } from '@mui/material';
+import {Box, Typography, Avatar, Button, Divider} from '@mui/material';
 import { ArrowBack, Close } from '@mui/icons-material';
 import NoPage from '../../screens/NoPage';
 
@@ -25,7 +25,7 @@ function ExperienceDetailedPage({ experience: propExperience, onClose, notDrawer
     };
 
     const content = (
-        <Box sx={{ padding: '2rem', maxWidth: '800px', margin: '0 auto' }}>
+        <Box sx={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', width: '100%' }}>
             {!notDrawer && onClose && (
                 <Button
                     variant="contained"
@@ -61,6 +61,10 @@ function ExperienceDetailedPage({ experience: propExperience, onClose, notDrawer
             <Typography variant="body1" paragraph>
                 {description}
             </Typography>
+
+            <Box sx={{ width: '100%' }}>
+                <Divider variant="middle" sx={{mb:'1rem'}}/>
+            </Box>
 
             {/* Render the custom component if it exists */}
             {Component && <Component />}
