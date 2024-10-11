@@ -37,7 +37,7 @@ function ExperienceItem({ experience, index, onClick }) {
                 sx={{
                     position: 'relative',
                     display: 'flex',
-                    justifyContent: isMobile ? 'center' : alignLeft ? 'flex-end' : 'flex-start',
+                    justifyContent: isMobile ? 'flex-start' : alignLeft ? 'flex-end' : 'flex-start',
                     alignItems: 'center',
                     marginBottom: '4rem',
                     width: '100%',
