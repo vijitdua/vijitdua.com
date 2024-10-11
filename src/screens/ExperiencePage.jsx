@@ -1,23 +1,23 @@
+import {Container} from "@mui/material";
+import MainLayout from "../layouts/MainLayout";
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
 import {routes} from "../configs/routesConfig";
-import {Container} from "@mui/material";
-import MainLayout from "../layouts/MainLayout";
 
 function PageMeta() {
     return (
         <Helmet>
-            <title>Vijit Dua | Portfolio</title>
-            <link rel="canonical" href={env.siteLocation + routes.portfolio}/>
+            <title>Vijit Dua | Experience</title>
+            <link rel="canonical" href={env.siteLocation + routes.experience}/>
             <meta
                 name='description'
-                content="Vijit Dua's Professional Portfolio. Full Stack Developer."
+                content="Vijit Dua's Work Experience."
             />
         </Helmet>
     );
 }
 
-function PortfolioPage(){
+function ExperiencePage(){
     return (
         <MainLayout>
             <PageMeta/>
@@ -30,4 +30,4 @@ function PortfolioPage(){
     );
 }
 
-export default PortfolioPage;
+export default ExperiencePage;
