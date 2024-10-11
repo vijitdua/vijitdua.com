@@ -6,7 +6,7 @@ import { useMediaQuery } from '@mui/material';
 import { theme } from '../../themes/primaryTheme';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
-import ProjectDetailedPage from "./ProjectDetailedPage"; // Import AnimatePresence
+import ProjectDetailedPage from './ProjectDetailedPage';
 
 function ProjectsCollection() {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -17,9 +17,22 @@ function ProjectsCollection() {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Helper function to parse category strings into arrays
+    function getCategories(item) {
+        let categories = item.category || 'Uncategorized';
+        if (typeof categories === 'string') {
+            categories = categories.split(',').map((cat) => cat.trim());
+        }
+        return categories;
+    }
+
     // Get the list of all project categories
     useEffect(() => {
-        const categoriesSet = new Set(projects.map((project) => project.category || 'Uncategorized'));
+        const categoriesSet = new Set();
+        projects.forEach((project) => {
+            const categories = getCategories(project);
+            categories.forEach((cat) => categoriesSet.add(cat));
+        });
         setCategories(['All', ...Array.from(categoriesSet).sort()]);
     }, []);
 
@@ -30,27 +43,30 @@ function ProjectsCollection() {
     const filteredProjects =
         selectedCategory === 'All'
             ? projects
-            : projects.filter((project) => (project.category || 'Uncategorized') === selectedCategory);
+            : projects.filter((project) => {
+                const categories = getCategories(project);
+                return categories.includes(selectedCategory);
+            });
 
     const handleProjectClick = (project) => {
-        const currentUrl = window.location.pathname; // Save the current URL before navigating
+        const currentUrl = window.location.pathname;
         if (mobileView) {
             navigate(`/projects/${project.route}`);
         } else {
             setSelectedProject(project);
             setDrawerOpen(true);
-            window.history.pushState({ prevUrl: currentUrl }, '', `/projects/${project.route}`); // Push new state with the current URL
+            window.history.pushState({ prevUrl: currentUrl }, '', `/projects/${project.route}`);
         }
     };
 
     const handleDrawerClose = () => {
-        const previousState = window.history.state?.prevUrl; // Get the previous URL from state
+        const previousState = window.history.state?.prevUrl;
         setDrawerOpen(false);
         setSelectedProject(null);
         if (previousState) {
-            navigate(previousState, { replace: true }); // Navigate to the previous URL
+            navigate(previousState, { replace: true });
         } else {
-            navigate('/projects', { replace: true }); // Fallback to /projects if no previous state
+            navigate('/projects', { replace: true });
         }
     };
 
@@ -69,7 +85,7 @@ function ProjectsCollection() {
                 variant="scrollable"
                 scrollButtons="auto"
                 aria-label="project categories"
-                sx={{ marginBottom: '2rem'}}
+                sx={{ marginBottom: '2rem' }}
             >
                 {categories.map((category) => (
                     <Tab key={category} label={category} value={category} />
@@ -82,7 +98,7 @@ function ProjectsCollection() {
                     {filteredProjects.map((project, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={project.route}>
                             {/* Pass the index to ProjectCard to control delay */}
-                            <ProjectCard project={project} onProjectClick={handleProjectClick} index={index}/>
+                            <ProjectCard project={project} onProjectClick={handleProjectClick} index={index} />
                         </Grid>
                     ))}
                 </AnimatePresence>
@@ -95,7 +111,13 @@ function ProjectsCollection() {
                     onClose={handleDrawerClose}
                     PaperProps={{ sx: { width: mobileView ? '100%' : '50%' } }}
                 >
-                    {selectedProject && <ProjectDetailedPage project={selectedProject} onClose={handleDrawerClose} notDrawer={false}/>}
+                    {selectedProject && (
+                        <ProjectDetailedPage
+                            project={selectedProject}
+                            onClose={handleDrawerClose}
+                            notDrawer={false}
+                        />
+                    )}
                 </Drawer>
             )}
         </Box>

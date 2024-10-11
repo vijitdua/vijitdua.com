@@ -18,15 +18,31 @@ function ExperienceTimeline() {
     const navigate = useNavigate();
     const location = useLocation();
 
+    // Helper function to parse category strings into arrays
+    function getCategories(item) {
+        let categories = item.category || 'Uncategorized';
+        if (typeof categories === 'string') {
+            categories = categories.split(',').map((cat) => cat.trim());
+        }
+        return categories;
+    }
+
     useEffect(() => {
-        const categoriesSet = new Set(experiences.map((exp) => exp.category || 'Uncategorized'));
+        const categoriesSet = new Set();
+        experiences.forEach((exp) => {
+            const categories = getCategories(exp);
+            categories.forEach((cat) => categoriesSet.add(cat));
+        });
         setCategories(['All', ...Array.from(categoriesSet).sort()]);
     }, []);
 
     const filteredExperiences =
         selectedCategory === 'All'
             ? experiences
-            : experiences.filter((exp) => (exp.category || 'Uncategorized') === selectedCategory);
+            : experiences.filter((exp) => {
+                const categories = getCategories(exp);
+                return categories.includes(selectedCategory);
+            });
 
     // Prepare experiences with cumulative index for sequential animations
     const experiencesWithIndex = filteredExperiences.map((experience, index) => ({
@@ -77,7 +93,7 @@ function ExperienceTimeline() {
     };
 
     return (
-        <Box sx={{ padding: '2rem', position: 'relative', marginBottom: '7rem',}}>
+        <Box sx={{ padding: '2rem', position: 'relative', marginBottom: '7rem' }}>
             <Tabs
                 value={selectedCategory}
                 onChange={handleCategoryChange}
