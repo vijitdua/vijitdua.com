@@ -77,7 +77,7 @@ function ExperienceTimeline() {
     };
 
     return (
-        <Box sx={{ padding: '2rem', position: 'relative' }}>
+        <Box sx={{ padding: '2rem', position: 'relative', marginBottom: '7rem',}}>
             <Tabs
                 value={selectedCategory}
                 onChange={handleCategoryChange}
@@ -105,6 +105,7 @@ function ExperienceTimeline() {
                         transform: 'translateX(-50%)',
                         width: '6px', // Thicker line
                         backgroundColor: 'grey.400',
+                        bottom: '50px',
                     }}
                 />
             )}
