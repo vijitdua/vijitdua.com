@@ -21,7 +21,7 @@ let theme = createTheme({
             xs: 0,     // Extra-small devices (small phones)
             sm: 750,   // Small devices (mobiles)
             md: 1120,  // Medium devices (tablets)
-            lg: 1280,  // Large devices (desktops)
+            lg: 1500,  // Large devices (desktops)
             xl: 1920,  // Extra-large devices (very large screens)
         },
     },
