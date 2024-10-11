@@ -1,5 +1,3 @@
-// configs/experiencesConfig.js
-
 import TaskUpComponent from "../components/projects/details/TaskUpComponent";
 
 /**
@@ -20,5 +18,44 @@ import TaskUpComponent from "../components/projects/details/TaskUpComponent";
  */
 
 export const experiences = [
-
+    {
+        title: "Team Lead - Web Development",
+        route: "icarus-web-development",
+        company: "Icarus Development",
+        date: "July 2024 - September 2024",
+        logo: `${process.env.PUBLIC_URL}/assets/experiences/icarus-logo.png`,
+        description: "Led a Web Development team of 6, and managed Dev. Ops.",
+        category: "Technical",
+        year: 2024
+    },
+    {
+        title: "Deep Learning Researcher",
+        company: "KAIST",
+        date: "July 2024 - July 2024",
+        logo: `${process.env.PUBLIC_URL}/assets/experiences/kaist-logo.png`,
+        description: "Developed UNet models for road detection.",
+        route: "kaist-deep-learning-research",
+        category: "Research",
+        year: 2024
+    },
+    {
+        title: "Mobile Developer Intern",
+        company: "Icarus Development",
+        logo: `${process.env.PUBLIC_URL}/assets/experiences/icarus-logo.png`,
+        date: "June 2024 - July 2024",
+        description: "Developed a social app for iOS & Android.",
+        route: "icarus-mobile-development",
+        category: "Technical",
+        year: 2024
+    },
+    {
+        title: "Volunteer Peer Tutor",
+        company: "SchoolHouse.world",
+        logo: `${process.env.PUBLIC_URL}/assets/experiences/schoolhouse-logo.png`,
+        date: "August 2022 - January 2023",
+        description: "Tutored AP Physics & SAT with top ratings.",
+        route: "schoolhouse-peer-tutor",
+        category: "Volunteer",
+        year: 2022
+    }
 ];
