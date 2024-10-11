@@ -1,8 +1,9 @@
-import {Container} from "@mui/material";
+import {Container, Typography} from "@mui/material";
 import MainLayout from "../layouts/MainLayout";
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
 import {routes} from "../configs/routesConfig";
+import ExperienceTimeline from "../components/experience/ExperienceTimeline";
 
 function PageMeta() {
     return (
@@ -20,11 +21,12 @@ function PageMeta() {
 function ExperiencePage(){
     return (
         <MainLayout>
-            <PageMeta/>
+            <PageMeta />
             <Container maxWidth="xl">
-
-
-
+                <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
+                    Experience
+                </Typography>
+                <ExperienceTimeline />
             </Container>
         </MainLayout>
     );
