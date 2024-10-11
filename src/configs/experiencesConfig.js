@@ -1,5 +1,7 @@
 import KAISTResearchExperienceComponent from "../components/experience/details/KAISTResearchExperienceComponent";
 import IcarusWebDevExperienceComponent from "../components/experience/details/IcarusWebDevExperienceComponent";
+import IcarusMobileDevExperienceComponent from "../components/experience/details/IcarusMobileDevExperienceComponent";
+import SchoolHouseTutorExperienceComponent from "../components/experience/details/SchoolHouseTutorExperienceComponent";
 
 /**
  * Array of objects representing work experiences
@@ -37,7 +39,7 @@ export const experiences = [
         logo: `${process.env.PUBLIC_URL}/assets/experiences/kaist-logo.png`,
         description: "Developed UNet models for road detection.",
         route: "kaist-deep-learning-research",
-        category: "Research",
+        category: "Technical, Research",
         Component: KAISTResearchExperienceComponent,
         year: 2024
     },
@@ -49,6 +51,7 @@ export const experiences = [
         description: "Developed a social app for iOS & Android.",
         route: "icarus-mobile-development",
         category: "Technical",
+        Component: IcarusMobileDevExperienceComponent,
         year: 2024
     },
     {
@@ -59,6 +62,7 @@ export const experiences = [
         description: "Tutored AP Physics & SAT with top ratings.",
         route: "schoolhouse-peer-tutor",
         category: "Volunteer",
+        Component: SchoolHouseTutorExperienceComponent,
         year: 2022
     }
 ];

@@ -22,7 +22,7 @@ function ExperiencePage(){
     return (
         <MainLayout>
             <PageMeta />
-            <Container maxWidth="xl">
+            <Container maxWidth="lg">
                 <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
                     Experience
                 </Typography>

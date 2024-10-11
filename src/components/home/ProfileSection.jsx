@@ -59,7 +59,7 @@ function Bubble() {
                 height: `${size}px`,
                 backgroundColor: 'rgba(83, 86, 255, 0.3)', // Semi-transparent primary color
                 borderRadius: '50%',
-                zIndex: 50,
+                zIndex: 3,
             }}
         />
     );
