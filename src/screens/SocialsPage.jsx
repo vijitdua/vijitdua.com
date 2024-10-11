@@ -1,11 +1,11 @@
 import {contentList, professionalSocials, socialsList} from "../configs/menuConfig";
 import {Avatar, Box, Container, Typography} from "@mui/material";
-import SocialMediaOvalItem from "../components/MenuItems/SocialMediaOvalItem";
+import SocialMediaOvalItem from "../components/menu-items/SocialMediaOvalItem";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import {routes, socialLinks} from "../configs/routesConfig";
 import InfoIcon from '@mui/icons-material/Info';
 import {bio} from "../configs/misc";
-import MenuItemsWithIcons from "../components/MenuItems/MenuItemsWithIcons";
+import MenuItemsWithIcons from "../components/menu-items/MenuItemsWithIcons";
 import MailIcon from "@mui/icons-material/Mail";
 import MainLayout from "../layouts/MainLayout";
 

@@ -1,6 +1,6 @@
 import {endMenuItems, pagesMenu} from "../../configs/menuConfig";
 import {AppBar, Box, Button, Toolbar, Typography, useScrollTrigger, useTheme} from "@mui/material";
-import MenuItemsWithIcons from "../MenuItems/MenuItemsWithIcons";
+import MenuItemsWithIcons from "../menu-items/MenuItemsWithIcons";
 import {cloneElement} from "react";
 import {Link} from "react-router-dom";
 

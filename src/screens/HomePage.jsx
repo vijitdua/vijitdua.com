@@ -1,10 +1,11 @@
-import {Box, Container, Grid} from "@mui/material";
+import {Box, Container, Grid, useMediaQuery} from "@mui/material";
 import MainLayout from "../layouts/MainLayout";
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
 import MainSections from "../components/home/MainSections";
 import IntroductionSection from "../components/home/IntroductionSection";
 import ProfileSection from "../components/home/ProfileSection";
+import {theme} from "../themes/primaryTheme";
 
 function PageMeta() {
     return (
@@ -21,18 +22,26 @@ function PageMeta() {
 }
 
 function HomePage() {
+    const mobileView = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <MainLayout>
             <PageMeta />
             <Container maxWidth="lg" sx={{ marginTop: '4rem' }}>
-                <Grid container spacing={4} alignItems="center">
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: mobileView ? 'column-reverse' : 'row',
+                    justifyContent: mobileView ? 'center' : 'space-around',
+                    alignItems: mobileView ? 'center' : 'center',
+                    width: '100%',
+                    gap: '3rem',
+                }}>
                     <Grid item xs={12} md={6}>
                         <IntroductionSection />
                     </Grid>
                     <Grid item xs={12} md={6}>
                         <ProfileSection />
                     </Grid>
-                </Grid>
+                </Box>
 
                 <Box sx={{mt: '5rem'}}>
                     <MainSections />
