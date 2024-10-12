@@ -53,14 +53,14 @@ function ExperienceItem({ experience, index, onClick }) {
                     className="experience-content"
                     sx={{
                         padding: '1rem',
-                        maxWidth: '45%',
+                        maxWidth: isMobile? '100%' : '45%',
                         flex: 1,
                         textAlign: 'left',
                         backgroundColor: 'transparent',
                         transition: 'transform 0.3s',
                     }}
                 >
-                    <Box sx={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
+                    <Box sx={{ display: 'flex', flexDirection: isMobile? 'column' : 'row', alignItems: isMobile? 'left' : 'center', marginBottom: '1rem' }}>
                         <Avatar src={logo} alt={company} sx={{ width: 56, height: 56, marginRight: '1rem' }} />
                         <Box>
                             <Typography variant="h6" sx={{ color: 'white' }}>

@@ -72,17 +72,30 @@ function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 5000 }
                 display: 'flex',
                 alignItems: 'center',
                 position: 'relative',
-                width: '800px', // Set fixed width
-                height: '450px', // Set fixed height (16:9 aspect ratio for typical media)
+                width: '100%',  // Scale to available width
+                maxWidth: '800px',  // Max width of 800px
+                aspectRatio: '16 / 9',  // Maintains 16:9 aspect ratio
                 margin: '0 auto',
                 overflow: 'hidden',
-                backgroundColor: '#000', // Optional: to provide a background in case of small images
+                backgroundColor: '#000',  // Optional: provide a background for small images
             }}
         >
             {/* Left arrow button */}
             <IconButton
                 onClick={handlePrev}
-                sx={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', zIndex: 1, opacity: 0.7 }}
+                sx={{
+                    position: 'absolute',
+                    left: '10px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    zIndex: 1,
+                    opacity: 0.7,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a subtle background for better visibility
+                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)', // Adds a slight shadow
+                    '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darkens on hover
+                    },
+                }}
             >
                 <ArrowBack fontSize="large" />
             </IconButton>
@@ -95,7 +108,19 @@ function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 5000 }
             {/* Right arrow button */}
             <IconButton
                 onClick={handleNext}
-                sx={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', zIndex: 1, opacity: 0.7 }}
+                sx={{
+                    position: 'absolute',
+                    right: '10px',
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    zIndex: 1,
+                    opacity: 0.7,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a subtle background for better visibility
+                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)', // Adds a slight shadow
+                    '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darkens on hover
+                    },
+                }}
             >
                 <ArrowForward fontSize="large" />
             </IconButton>

@@ -37,7 +37,7 @@ export const experiences = [
         company: "KAIST",
         date: "July 2024 - July 2024",
         logo: `${process.env.PUBLIC_URL}/assets/experiences/kaist-logo.png`,
-        description: "Developed UNet models for road detection.",
+        description: "Developed UNet models for road detection from satellite images.",
         route: "kaist-deep-learning-research",
         category: "Technical, Research",
         Component: KAISTResearchExperienceComponent,

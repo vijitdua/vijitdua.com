@@ -5,7 +5,7 @@ import Divider from "@mui/material/Divider";
 
 function TeamSyncComponent() {
     return (
-        <Box sx={{maxWidth: '800px', textAlign: 'justify'}}>
+        <Box sx={{textAlign: 'justify'}}>
 
             <Typography variant="h4" gutterBottom>
                 About Team Sync

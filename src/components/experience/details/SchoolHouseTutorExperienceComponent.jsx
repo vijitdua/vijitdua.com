@@ -4,7 +4,7 @@ import ArticleIcon from "@mui/icons-material/Article";
 
 function SchoolHouseTutorExperienceComponent() {
     return (
-        <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
+        <Box sx={{textAlign: 'justify' }}>
             <Button
                 variant="outlined"
                 color="secondary"

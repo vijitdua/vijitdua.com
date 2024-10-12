@@ -6,7 +6,7 @@ import Divider from "@mui/material/Divider";
 
 function InnoGreetComponent(){
     return (
-        <Box sx={{maxWidth: '800px', textAlign: 'justify'}}>
+        <Box sx={{textAlign: 'justify'}}>
 
             <Typography variant="h4" gutterBottom>
                 About InnoGreet
