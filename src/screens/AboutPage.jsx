@@ -8,64 +8,6 @@ import {theme} from "../themes/primaryTheme";
 import Quote from "../components/typography/Quote";
 import Collapsible from "../components/typography/Collapsible";
 
-
-function Introduction({mobileView}) {
-    return (
-        <Box>
-
-            {/* Profile Picture with "Hi, I'm Vijit" & Initial bio */}
-            <Box sx={{
-                display: 'flex',
-                flexDirection: mobileView ? 'column' : 'row-reverse',
-                justifyContent: mobileView ? 'center' : 'space-around',
-                alignItems: mobileView ? 'center' : 'center',
-                gap: '3rem',
-            }}>
-                <Avatar alt="Vijit Dua" src={`${process.env.PUBLIC_URL}/assets/pfp.png`} sx={{
-                    marginTop: mobileView ? '0rem' : '1rem',
-                    height: mobileView ? '10rem' : '16rem',
-                    width: mobileView ? '10rem' : '16rem',
-                    boxShadow: mobileView ? '0.3rem 0.3rem' : '0.4rem 0.4rem',
-                }}/>
-
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    width: mobileView ? '100%' : '80%',
-                    gap: '1rem',
-                }}>
-                    <Typography variant='h2'> Hi, I'm Vijit </Typography>
-                    <Typography variant="body1" sx={{textAlign: 'justify'}}>
-                        A CS student with a side quest in entrepreneurship. I'm all
-                        about blending coding with my dream to kick off something cool on my
-                        own. Outside of plotting to take over the tech world, you'll catch me
-                        hitting the pavement on my runs, flexing at the gym, crafting videos /
-                        edits for my{" "}
-                        <Link href={socialLinks.youtubeMain} target="_blank">
-                            YouTube channel
-                        </Link>
-                        , or sometimes (rarely) even producing music.
-                    </Typography>
-
-                    <Typography variant="body1" sx={{textAlign: 'justify'}}>
-                        When I'm not cooped up being productive, I tend to be an extremely
-                        outgoing person. I live for the thrill of meeting new folks and jumping
-                        into any convo, from debating the existential status of hotdogs
-                        (definitely sandwiches, right?) to unraveling the mysteries of physics.
-                    </Typography>
-
-                    <Typography variant="body1" sx={{textAlign: 'justify'}}>
-                        I'm also a part-time gamer. Mostly into BeatSaber, but anything that
-                        runs on a Mac (Whisky / Windows Game Porting Tool Kit) or Oculus Quest 2 is cool by me.
-                    </Typography>
-
-                </Box>
-            </Box>
-
-        </Box>
-    );
-}
-
 function PageMeta() {
     return (
         <Helmet>
@@ -122,6 +64,8 @@ function AboutPage() {
                                 own. Outside of plotting to take over the tech world, you'll catch me
                                 hitting the pavement on my runs, flexing at the gym, crafting videos /
                                 edits for my{' '}
+                                <Typography variant="caption" style={{ fontStyle: 'italic' }}>inactive</Typography>
+                                {' '}
                                 <Link href="https://youtube.com/@vijitdua" target="_blank">
                                     YouTube channel
                                 </Link>
@@ -134,8 +78,9 @@ function AboutPage() {
                                 (definitely sandwiches, right?) to unraveling the mysteries of physics.
                             </Typography>
                             <Typography variant="body1" paragraph>
-                                I'm also a part-time gamer. Mostly into BeatSaber, but anything that
-                                runs on a Mac or Oculus Quest 2 is cool by me.
+                                I'm also (rarely) a part-time gamer. Mostly just into BeatSaber, Population One, or
+                                Rocket League, but anything (primarily VR, MacOS, or game-porting / Whisky - MacOS) is
+                                cool by me.
                             </Typography>
                         </Box>
                     </Box>
@@ -153,29 +98,31 @@ function AboutPage() {
                         of these are self-written and keep getting updated here and there. (Click “⏵” to
                         expand)
                     </Typography>
-                    <Quote quote="Complaining doesn’t help, finding a solution does (even in unfair situations)."/>
+                    <Quote quote="<b>Complaining doesn’t help, finding a solution does (even in unfair situations).</b>"/>
                     <Collapsible title="More quotes">
                         <Quote
-                            quote="Hold yourself accountable for everything. Even if it’s not your fault, you are the one who has to change the circumstances for yourself."/>
+                            quote="<b>Hold yourself accountable for everything.</b> Even if it’s not your fault, you are the one who has to change the circumstances for yourself."/>
                         <Quote
-                            quote="It is what it is. Look for the next best thing to do, learn, and move on — don’t pointlessly dwell on what’s out of your control. Or if it’s in your control, find a solution."/>
-                        <Quote quote="Responses to scenarios matter more than the scenarios."/>
+                            quote="<b>It is what it is.</b> Look for the next best thing to do, <u>learn, and move on</u> — don’t pointlessly dwell on what’s out of your control. Or if it’s in your control, find a solution."/>
+                        <Quote quote="<b>Responses to scenarios matter more than the scenarios.</b>"/>
                         <Quote
-                            quote="Hold your beliefs strongly while equally testing other schools of thought. More often than not, the more seemingly absurd things turn out true."/>
+                            quote="Hold your beliefs strongly while equally testing other schools of thought. <b>More often than not, the more seemingly absurd things turn out true.</b>"/>
                         <Quote
-                            quote="Form your own postulates, & question everything. Go through pre-existing notions but test them instead of blind faith. We are humored by the progress we had millennia ago (witch burnings? Seriously?) who says our present situation won’t be similarly hilarious in retrospect?"/>
+                            quote="<b>Honest conflict is more important than dishonest harmony.</b>"/>
                         <Quote
-                            quote="The direct/indirect results of your actions should be persuasive enough to convince you to continue if you truly desire it. Embrace discipline, not motivation."/>
+                            quote="<b>Form your own postulates, & question everything.</b> Go through pre-existing notions but test them instead of blind faith. We are humored by the progress we had millennia ago (witch burnings? Seriously?) who says our present situation won’t be similarly hilarious in retrospect?"/>
                         <Quote
-                            quote="Slow change isn’t effective, fix the problems within yourself instantly. Step outside your comfort zones if you want to work on yourself."/>
-                        <Quote quote="Luck only favors you if you capitalize it."/>
+                            quote="The direct/indirect results of your actions should be persuasive enough to convince you to continue if you truly desire it. <b>Embrace discipline, not motivation.</b>"/>
                         <Quote
-                            quote="Efforts ≠ Merits. You need to put effort into your work, but you also need to put efforts into analyzing your efforts."/>
+                            quote="<b>Slow change isn’t effective, fix the problems within yourself instantly.</b> Step outside your comfort zones if you want to work on yourself."/>
+                        <Quote quote="<b>Luck only favors you if you capitalize it.</b>"/>
+                        <Quote
+                            quote="<b>Efforts ≠ Merits.</b> You need to put effort into your work, but you also need to put efforts into analyzing your efforts."/>
                         <Quote
                             quote="Life is recursive. If you can't strategize how to approach a problem, strategize the strategizing. The solution is just out of your vision, not impossible."/>
                         <Quote
-                            quote="No statement applies to every circumstance, but they may apply to the majority. Stop spotting exceptional situations where the statement fails. The fact you know the exceptional scenarios means you also know what the correct scenarios are. Apply the statements where they fit."/>
-                        <Quote quote="n e v e r    s e t t l e"/>
+                            quote="No statement applies to every circumstance, but they may apply to the majority. Stop spotting exceptional situations where the statement fails. The fact you know the exceptional scenarios means you also know what the correct scenarios are. <b>Apply the statements where they fit.</b>"/>
+                        <Quote quote="<b>n e v e r – s e t t l e</b>"/>
                     </Collapsible>
                 </Box>
 
