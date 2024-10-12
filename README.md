@@ -1,70 +1,186 @@
-# Getting Started with Create React App
+# Vijit Dua's Personal Portfolio Website*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the repository for my personal portfolio website hosted at [vijitdua.com](https://vijitdua.com). This website showcases my **Portfolio**, **Projects**, **Experiences**, provides insights into **who I am**, and includes a comprehensive **LinkTree/Link-in-bio page** for easy access to my social platforms.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Installation](#installation)
+- [Project Structure](#project-structure)
+- [Scripts](#scripts)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Portfolio Showcase**: A detailed overview of my professional journey, skills, and accomplishments.
+- **Projects Gallery**: An organized display of my projects with filtering options and detailed views.
+- **Experience Timeline**: A chronological representation of my work experiences and roles.
+- **About Me**: A personal introduction that gives visitors insight into who I am beyond my professional life.
+- **LinkTree / Link-in-bio Page**: A centralized hub for all my social media profiles and content platforms.
+- **Responsive Design**: Optimized for both desktop and mobile viewing.
+- **Interactive Animations**: Enhanced user experience with animations using Framer Motion.
+- **Dynamic Content**: Projects and experiences are dynamically loaded and filtered.
+- **Dark Theme**: Modern dark-themed UI using Material-UI theming.
+- **Routing**: Client-side routing with React Router DOM.
+- **SEO Friendly**: Meta tags and titles are managed with React Helmet.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: Frontend library for building user interfaces.
+- **Material-UI (MUI)**: UI component library for React.
+- **Framer Motion**: Library for animations and gestures.
+- **React Router DOM**: Declarative routing for React applications.
+- **React Helmet**: Manage document head for React apps.
+- **Digital Ocean Droplet, GitHub Actions, & Docker**: Deployment and hosting.
+- **NGINX & Cloudflare**: Web server (in Droplet) and CDN for performance and security.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+These instructions will help you set up the project on your local machine for development and testing purposes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (v14 or higher)
+- **npm** or **yarn**
+- **Git**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the repository**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone https://github.com/yourusername/vijitdua-portfolio.git
+   cd vijitdua-portfolio
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Install dependencies**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+3. **Environment Variables**
 
-## Learn More
+   Create a `.env` file in the root directory and add the following (adjust as needed):
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```env
+   REACT_APP_SITE_LOCATION=https://vijitdua.com
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Run the application**
 
-### Code Splitting
+   ```bash
+   npm start
+   # or
+   yarn start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+   The app should now be running at `http://localhost:3000`.
 
-### Analyzing the Bundle Size
+## Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
+├── public
+│   └── assets
+│       └── [images and icons]
+├── src
+│   ├── components
+│   │   ├── collections
+│   │   ├── experience
+│   │   ├── home
+│   │   ├── layout
+│   │   ├── menu-items
+│   │   ├── projects
+│   │   └── typography
+│   ├── configs
+│   ├── layouts
+│   ├── screens
+│   ├── themes
+│   ├── App.js
+│   └── index.js
+├── .env
+├── package.json
+└── README.md
+```
 
-### Making a Progressive Web App
+- **components/**: Reusable components divided into subfolders based on functionality.
+    - **home/**: Components for the home page, including introduction and profile sections.
+    - **experience/**: Components for displaying experiences and timelines.
+    - **projects/**: Components for project cards, collections, and detailed views.
+    - **menu-items/**: Components for navigation and social media links.
+    - **typography/**: Custom typography components like quotes and collapsible sections.
+- **configs/**: Configuration files for routes, projects, experiences, and miscellaneous constants.
+- **layouts/**: Layout components like `MainLayout` for consistent styling across pages.
+- **screens/**: Page components corresponding to different routes (Home, About, Portfolio, etc.).
+- **themes/**: Material-UI theme configurations and customizations.
+- **App.js**: Main application component handling routing and meta information.
+- **index.js**: Entry point of the React application.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Scripts
 
-### Advanced Configuration
+- **Start Development Server**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+  ```bash
+  npm start
+  ```
 
-### Deployment
+- **Build for Production**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+  ```bash
+  npm run build
+  ```
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Contributions are welcome! Please follow these steps:
+
+1. **Fork the repository**
+
+2. **Create a new branch**
+
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+
+3. **Make your changes**
+
+4. **Commit your changes**
+
+   ```bash
+   git commit -m "Add your message"
+   ```
+
+5. **Push to the branch**
+
+   ```bash
+   git push origin feature/YourFeature
+   ```
+
+6. **Open a Pull Request**
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+Feel free to reach out for any inquiries or collaboration opportunities.
+
+- **Email**: [inbox@vijitdua.com](mailto:inbox@vijitdua.com)
+- **LinkedIn**: [linkedin.com/in/vijitdua](https://linkedin.com/in/vijitdua)
+- **Website**: [vijitdua.com](https://vijitdua.com)
+
+---
+
+*Thank you for visiting my portfolio!*
+
+---
+
+_*README.md written by ChatGPT with minor modifications (hey I'm lazy, I already spent enough time writing the code)._
