@@ -13,9 +13,6 @@ RUN npm install
 # Copy the rest of the application code to the working directory
 COPY . .
 
-# Build the React app
-RUN NODE_OPTIONS="--max-old-space-size=512" npm run build
-
 # Install `serve` to serve the static build files
 RUN npm install -g serve
 
