@@ -50,8 +50,10 @@ jobs:
       - name: Run new Docker container
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
+            sudo docker stop www-vijitdua-com-container
+            sudo docker rm www-vijitdua-com-container
             sudo docker run -d -p 3010:3000 --restart=always --name www-vijitdua-com-container www-vijitdua-com
-          "
+            "
       # Create a GitHub Deployment event
       - name: Create Deployment
         uses: actions/github-script@v6

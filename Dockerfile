@@ -1,26 +1,21 @@
-# Use an official Node.js runtime as a parent image
-FROM node:18
+# Stage 1: Build the application
+FROM node:18 AS build
 
-# Set the working directory in the container
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+
+# Stage 2: Serve with minimal runtime environment
+FROM node:18-slim
+
+# Install 'serve' to serve the static files
+RUN npm install -g serve
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
-COPY package*.json ./
+# Copy the build artifacts from the 'build' stage
+COPY --from=build /app/build ./build
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code to the working directory
-COPY . .
-
-# Build
-RUN NODE_OPTIONS="--max-old-space-size=1024" npm run build
-
-# Install `serve` to serve the static build files
-RUN npm install -g serve
-
-# Expose the port where the app will be served
 EXPOSE 3000
-
-# Serve the static files from the build directory
 CMD ["serve", "-s", "build"]
