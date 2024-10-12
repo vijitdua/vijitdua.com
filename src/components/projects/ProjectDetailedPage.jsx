@@ -35,20 +35,20 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
         );
     }
 
+    const {title, tagline, sourceCode, projectUrl, image, Component} = project;
+
     function PageMeta() {
         return (
             <Helmet>
-                <title>Vijit Dua | {project.title} </title>
+                <title>Vijit Dua | {title} </title>
                 <link rel="canonical" href={env.siteLocation + routes.projects + '/' + project.route}/>
                 <meta
                     name='description'
-                    content={project.title + ' by Vijit: ' + project.tagline}
+                    content={title + ' by Vijit: ' + tagline}
                 />
             </Helmet>
         );
     }
-
-    const {title, tagline, sourceCode, projectUrl, image, Component} = project;
 
     const content = (
         <Box

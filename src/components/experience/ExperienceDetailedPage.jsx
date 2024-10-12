@@ -7,6 +7,9 @@ import MainLayout from '../../layouts/MainLayout';
 import {Box, Typography, Avatar, Button, Divider, Container} from '@mui/material';
 import { ArrowBack, Close } from '@mui/icons-material';
 import NoPage from '../../screens/NoPage';
+import {Helmet} from "react-helmet";
+import {env} from "../../configs/envConfig";
+import {routes} from "../../configs/routesConfig";
 
 function ExperienceDetailedPage({ experience: propExperience, onClose, notDrawer = true }) {
     const navigate = useNavigate();
@@ -20,12 +23,26 @@ function ExperienceDetailedPage({ experience: propExperience, onClose, notDrawer
 
     const { title, company, date, description, logo, Component } = experience;
 
+    function PageMeta() {
+        return (
+            <Helmet>
+                <title>Vijit Dua | {company} </title>
+                <link rel="canonical" href={env.siteLocation + routes.projects + '/' + experienceRoute}/>
+                <meta
+                    name='description'
+                    content={`Vijit Dua's work at ${company} as ${title}: ${description}`}
+                />
+            </Helmet>
+        );
+    }
+
     const handleGoBack = () => {
         navigate(-1);
     };
 
     const content = (
         <Box sx={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', width: '100%' }}>
+            <PageMeta/>
             {!notDrawer && onClose && (
                 <Button
                     variant="contained"
