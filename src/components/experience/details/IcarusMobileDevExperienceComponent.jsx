@@ -3,7 +3,7 @@ import React from "react";
 
 function IcarusMobileDevExperienceComponent() {
     return (
-        <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
+        <Box sx={{textAlign: 'justify' }}>
             <ul>
                 <li>Served as primary developer for Davis Dot, a social app designed to unite users over deep, personalized interests.</li>
                 <li>Built using TypeScript and React Native with Expo to develop for both iOS & Android platforms.</li>

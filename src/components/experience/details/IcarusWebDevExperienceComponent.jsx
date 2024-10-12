@@ -3,7 +3,7 @@ import React from "react";
 
 function IcarusWebDevExperienceComponent() {
     return (
-        <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
+        <Box sx={{ textAlign: 'justify' }}>
             <ul>
                 <li>Led a team of six software engineers and one designer, in a fast-paced startup environment.</li>
                 <li>Delivered first deployment in 14 days, ahead of 1-month timeline.</li>
