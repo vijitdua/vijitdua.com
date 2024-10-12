@@ -54,24 +54,3 @@ jobs:
             sudo docker rm www-vijitdua-com-container
             sudo docker run -d -p 3010:3000 --restart=always --name www-vijitdua-com-container www-vijitdua-com
             "
-            # Create a GitHub Deployment event
-      - name: Create Deployment
-        uses: actions/github-script@v6
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const response = await github.repos.createDeployment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              ref: context.payload.ref,  // Correct ref should be taken from payload
-              environment: 'production',
-              required_contexts: [],
-              transient_environment: false,
-              production_environment: true
-            });
-            await github.repos.createDeploymentStatus({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              deployment_id: response.data.id,
-              state: 'success'
-            });
