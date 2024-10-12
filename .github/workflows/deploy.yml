@@ -27,7 +27,7 @@ jobs:
       # Transfer the Docker image tar file to the remote server
       - name: Copy Docker image to SSH machine
         run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -o StrictHostKeyChecking=no www-vijitdua-com.tar ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/www.vijitdua.com
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" sudo -S scp -o StrictHostKeyChecking=no www-vijitdua-com.tar ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/www.vijitdua.com
 
       # Load the Docker image on the server
       - name: Load Docker image on SSH machine
