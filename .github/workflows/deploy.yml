@@ -17,7 +17,7 @@ jobs:
       # Remove existing files from the Web Frontend directory
       - name: Remove existing files from the Web Frontend directory on server
         run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "sudo rm -rf /home/www.vijitdua.com/*"
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "sudo -S rm -rf /home/www.vijitdua.com/*"
 
       # Copy new code to the server
       - name: Copy new files to SSH machine
