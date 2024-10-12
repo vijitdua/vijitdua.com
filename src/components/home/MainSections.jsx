@@ -14,7 +14,7 @@ function MainSections() {
 
     const buttons = [
         { label: 'Portfolio', route: routes.portfolio },
-        { label: 'About Me', route: routes.aboutMe },
+        { label: 'About', route: routes.aboutMe },
         { label: 'Socials', route: routes.socials },
         { label: 'Experience', route: routes.experience },
         { label: 'Projects', route: routes.projects },

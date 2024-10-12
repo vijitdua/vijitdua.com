@@ -1,22 +1,22 @@
 import React from 'react';
 import {Navigate, useNavigate, useParams} from 'react-router-dom';
-import { projects } from '../../configs/projectsConfig';
+import {projects} from '../../configs/projectsConfig';
 import MainLayout from '../../layouts/MainLayout';
-import { Box, Typography, Button, Container, IconButton } from '@mui/material';
-import { theme } from '../../themes/primaryTheme';
+import {Box, Typography, Button, Container, IconButton} from '@mui/material';
+import {theme} from '../../themes/primaryTheme';
 import {Code, Language, Close, ArrowBack} from '@mui/icons-material';
-import { useMediaQuery } from '@mui/material';
+import {useMediaQuery} from '@mui/material';
 import NoPage from "../../screens/NoPage";
 import {routes} from "../../configs/routesConfig";
 import Divider from '@mui/material/Divider';
 import {Helmet} from "react-helmet";
 import {env} from "../../configs/envConfig";
 
-function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }) {
+function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) {
 
     const navigate = useNavigate();
 
-    function handleGoBack (){
+    function handleGoBack() {
         console.log("HI")
         if (window.history.length > 1) {
             navigate(-1); // Go back to the previous URL in history
@@ -25,7 +25,7 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
         }
     }
 
-    const { projectName } = useParams();
+    const {projectName} = useParams();
 
     const project = propProject || projects.find((p) => p.route === projectName);
 
@@ -48,7 +48,7 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
         );
     }
 
-    const { title, tagline, sourceCode, projectUrl, image, Component } = project;
+    const {title, tagline, sourceCode, projectUrl, image, Component} = project;
 
     const content = (
         <Box
@@ -66,9 +66,9 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
                     variant="contained"
                     color="error"
                     onClick={onClose}
-                    sx={{ position: 'fixed', top: '5px', right: '10px', opacity: 0.8, zIndex: 10,}}
+                    sx={{position: 'fixed', top: '5px', right: '10px', opacity: 0.8, zIndex: 10,}}
                 >
-                    <Close />
+                    <Close/>
                 </Button>
             )}
 
@@ -77,9 +77,9 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
                     variant="contained"
                     color="secondary"
                     onClick={handleGoBack}
-                    sx={{ position: 'fixed', left: '10px', opacity: 0.8, zIndex: 10,}}
+                    sx={{position: 'fixed', left: '10px', opacity: 0.8, zIndex: 10,}}
                 >
-                    <ArrowBack />
+                    <ArrowBack/>
                 </Button>
             )}
 
@@ -103,12 +103,12 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
             <Typography variant="h5" color="textSecondary" gutterBottom>
                 {tagline}
             </Typography>
-            <Box sx={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+            <Box sx={{display: 'flex', gap: '1rem', marginBottom: '2rem'}}>
                 {sourceCode && (
                     <Button
                         variant="outlined"
                         color="secondary"
-                        startIcon={<Code />}
+                        startIcon={<Code/>}
                         component="a"
                         href={sourceCode}
                         target="_blank"
@@ -121,7 +121,7 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
                     <Button
                         variant="contained"
                         color="secondary"
-                        startIcon={<Language />}
+                        startIcon={<Language/>}
                         component="a"
                         href={projectUrl}
                         target="_blank"
@@ -132,13 +132,15 @@ function ProjectDetailedPage({ project: propProject, onClose, notDrawer = true }
                 )}
             </Box>
 
-            <Box sx={{ width: '100%' }}>
-                <Divider variant="middle" sx={{mb:'3rem'}}/>
+            <Box sx={{width: '100%'}}>
+                <Divider variant="middle" sx={{mb: '3rem'}}/>
             </Box>
 
 
             {/* Render the custom component if it exists */}
-            {Component && <Component />}
+            <Container maxWidth="lg">
+                {Component && <Component/>}
+            </Container>
             {/* Related projects or work can be added here */}
         </Box>
     );

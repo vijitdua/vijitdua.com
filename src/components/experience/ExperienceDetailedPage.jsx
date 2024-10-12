@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { experiences } from '../../configs/experiencesConfig';
 import MainLayout from '../../layouts/MainLayout';
-import {Box, Typography, Avatar, Button, Divider} from '@mui/material';
+import {Box, Typography, Avatar, Button, Divider, Container} from '@mui/material';
 import { ArrowBack, Close } from '@mui/icons-material';
 import NoPage from '../../screens/NoPage';
 
@@ -67,7 +67,9 @@ function ExperienceDetailedPage({ experience: propExperience, onClose, notDrawer
             </Box>
 
             {/* Render the custom component if it exists */}
-            {Component && <Component />}
+            <Container maxWidth="lg">
+                {Component && <Component />}
+            </Container>
         </Box>
     );
 
