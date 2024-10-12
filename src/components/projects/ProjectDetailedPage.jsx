@@ -141,7 +141,6 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
             <Container maxWidth="lg">
                 {Component && <Component/>}
             </Container>
-            {/* Related projects or work can be added here */}
         </Box>
     );
 

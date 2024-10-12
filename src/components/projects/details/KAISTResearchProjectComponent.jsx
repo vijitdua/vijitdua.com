@@ -14,7 +14,7 @@ const multimediaData = [
 
 function KAISTResearchProjectComponent(){
     return (
-        <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
+        <Box sx={{textAlign: 'justify' }}>
 
             <Typography variant="h4" gutterBottom>
                 About AutoMap

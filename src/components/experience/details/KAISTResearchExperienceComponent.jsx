@@ -14,7 +14,7 @@ const multimediaData = [
 
 function KAISTResearchExperienceComponent(){
     return (
-        <Box sx={{ maxWidth: '800px', textAlign: 'justify' }}>
+        <Box sx={{textAlign: 'justify' }}>
 
             <Button
                 variant="outlined"
