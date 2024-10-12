@@ -1,6 +1,8 @@
 import {Box, Typography} from "@mui/material";
+import DOMPurify from "dompurify";
 
 function Quote({quote}) {
+    const cleanQuote = DOMPurify.sanitize(quote);
     return (
         <Box
             sx={{
@@ -12,9 +14,8 @@ function Quote({quote}) {
             <Typography
                 variant="body1"
                 color="textSecondary"
-            >
-                {quote}
-            </Typography>
+                dangerouslySetInnerHTML={{ __html: cleanQuote }} // Renders the sanitized HTML
+            />
         </Box>
     );
 }
