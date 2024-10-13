@@ -1,5 +1,3 @@
-// components/home/ProfileSection.jsx
-
 import React from 'react';
 import { Box, Avatar } from '@mui/material';
 import { motion } from 'framer-motion';
@@ -26,6 +24,16 @@ function ProfileSection() {
                     height: '250px',
                     zIndex: 2,
                     position: 'relative',
+                    boxShadow: '0 0 20px rgba(83, 86, 255, 0.8)', // Initial glow effect
+                    animation: 'float 6s ease-in-out infinite',
+                    '@keyframes float': {
+                        '0%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-20px)' },
+                        '100%': { transform: 'translateY(0px)' },
+                    },
+                    '&:hover': {
+                        boxShadow: '0 0 20px rgba(255, 99, 132, 0.3)',
+                    },
                 }}
             />
 
@@ -42,6 +50,16 @@ function Bubble() {
     const duration = Math.random() * 5 + 15; // Random duration between 5 and x seconds
     const position = 80 + Math.random() * 20; // Random position between 80% and 100%
 
+    const colors = [
+        'rgba(83, 86, 255, 0.3)', // Blue
+        '#7d7b7a',
+        'rgba(54, 162, 235, 0.3)',
+    ];
+
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+
+    const delay = 2 + Math.random()*5;
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 0 }}
@@ -49,7 +67,7 @@ function Bubble() {
             transition={{
                 duration: duration,
                 repeat: Infinity,
-                delay: Math.random() * 5,
+                delay: delay,
             }}
             style={{
                 position: 'absolute',
@@ -57,7 +75,7 @@ function Bubble() {
                 left: `${position}%`,
                 width: `${size}px`,
                 height: `${size}px`,
-                backgroundColor: 'rgba(83, 86, 255, 0.3)', // Semi-transparent primary color
+                backgroundColor: randomColor, // Use the randomly selected color
                 borderRadius: '50%',
                 zIndex: 3,
             }}
