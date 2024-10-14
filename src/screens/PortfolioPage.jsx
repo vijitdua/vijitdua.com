@@ -8,6 +8,7 @@ import ProfileSection from "../components/home/ProfileSection";
 import ExperienceTimeline from "../components/experience/ExperienceTimeline";
 import ProjectsCollection from "../components/projects/ProjectsCollection";
 import {theme} from "../themes/primaryTheme";
+import EducationTimeline from "../components/education/EducationTimeline";
 
 function PageMeta() {
     return (
@@ -43,6 +44,13 @@ function PortfolioPage() {
                         <ProfileSection/>
                     </Grid>
                 </Box>
+
+                <Container maxWidth="lg">
+                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center' }}>
+                        Education
+                    </Typography>
+                    <EducationTimeline/>
+                </Container>
 
                 <Container maxWidth="lg">
                     <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center' }}>

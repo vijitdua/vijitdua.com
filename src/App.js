@@ -14,6 +14,7 @@ import {Helmet} from "react-helmet";
 import {env} from './configs/envConfig';
 import ExperiencePage from "./screens/ExperiencePage";
 import ExperienceDetailedPage from "./components/experience/ExperienceDetailedPage";
+import EducationDetailedPage from "./components/education/EducationDetailedPage";
 
 function AppMeta() {
     return (
@@ -48,6 +49,8 @@ function App() {
                     <Route path={`${routes.projects}/:projectName`} element={<ProjectDetailedPage />} />
                     {/* Experience Detail Route */}
                     <Route path={`${routes.experience}/:experienceRoute`} element={<ExperienceDetailedPage />} />
+                    {/* Education Detail Route */}
+                    <Route path={`${routes.education}/:educationRoute`} element={<EducationDetailedPage />} />
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
