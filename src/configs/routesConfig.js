@@ -6,6 +6,7 @@ export const routes = {
     experience: '/experience',
     projects: '/projects',
     socials: '/socials',
+    education: '/education',
 };
 
 // URLs to all social links
