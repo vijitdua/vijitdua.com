@@ -55,7 +55,7 @@ function EducationTimeline() {
     const lineVariants = {
         hidden: { height: 0 },
         visible: {
-            height: '100%',
+            height: '80%',
             transition: { duration: 2 },
         },
     };

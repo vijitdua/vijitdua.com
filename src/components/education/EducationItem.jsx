@@ -74,9 +74,6 @@ function EducationItem({ education, index, onClick }) {
                             </Typography>
                         </Box>
                     </Box>
-                    <Typography variant="body2" sx={{ color: 'white' }}>
-                        {description}
-                    </Typography>
                 </Box>
 
                 {/* Dot */}
