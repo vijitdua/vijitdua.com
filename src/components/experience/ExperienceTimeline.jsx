@@ -87,8 +87,8 @@ function ExperienceTimeline() {
     const lineVariants = {
         hidden: { height: 0 },
         visible: {
-            height: '100%',
-            transition: { duration: 2 },
+            height: '80%',
+            transition: { duration: 5 },
         },
     };
 
