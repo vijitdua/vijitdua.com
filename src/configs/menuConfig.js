@@ -30,7 +30,7 @@ const CustomIconOrSVG = ({ src, alt = 'icon', size = 24 }) => (
  */
 export const pagesMenu = [
     {text: 'Home', route: routes.home, },
-    {text:  'About Me', route: routes.aboutMe, },
+    {text:  'About', route: routes.aboutMe, },
     {text:  'Portfolio', route: routes.portfolio, },
     {text:  'Experience', route: routes.experience, },
     {text: 'Projects', route: routes.projects, },
