@@ -13,11 +13,11 @@ function MainSections() {
     const navigate = useNavigate();
 
     const buttons = [
-        { label: 'Portfolio', route: routes.portfolio },
         { label: 'About', route: routes.aboutMe },
-        { label: 'Socials', route: routes.socials },
+        { label: 'Portfolio', route: routes.portfolio, highlight: true },
         { label: 'Experience', route: routes.experience },
         { label: 'Projects', route: routes.projects },
+        { label: 'Socials', route: routes.socials },
     ];
 
     return (
@@ -27,7 +27,7 @@ function MainSections() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
-                marginTop: '2rem',
+                marginTop: '3rem',
             }}
         >
             <Box
@@ -36,8 +36,7 @@ function MainSections() {
                     justifyContent: 'center',
                     alignItems: 'center',
                     flexWrap: 'wrap',
-                    gap: '1rem',
-                    maxWidth: '900px', // Adjust based on your layout needs
+                    gap: '1.5rem',
                 }}
             >
                 {buttons.map((button, index) => (
@@ -55,7 +54,7 @@ function MainSections() {
                     >
                         <Button
                             variant="contained"
-                            color="primary"
+                            color={button.highlight ? `highlight` : `primary` }
                             onClick={() => navigate(button.route)}
                             sx={{
                                 borderRadius: '20px',

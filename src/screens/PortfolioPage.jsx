@@ -9,6 +9,7 @@ import ExperienceTimeline from "../components/experience/ExperienceTimeline";
 import ProjectsCollection from "../components/projects/ProjectsCollection";
 import {theme} from "../themes/primaryTheme";
 import EducationTimeline from "../components/education/EducationTimeline";
+import PDFViewer from "../components/PDFViewer";
 
 function PageMeta() {
     return (
@@ -64,6 +65,13 @@ function PortfolioPage() {
                         Projects
                     </Typography>
                     <ProjectsCollection/>
+                </Container>
+
+                <Container maxWidth="md">
+                    <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
+                        Resume
+                    </Typography>
+                    <PDFViewer fileOrUrl={`${process.env.PUBLIC_URL}/assets/public-no-contact-resume.pdf`}/>
                 </Container>
 
             </Container>
