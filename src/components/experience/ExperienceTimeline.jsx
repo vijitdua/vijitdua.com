@@ -113,7 +113,8 @@ function ExperienceTimeline() {
                     component={motion.div}
                     variants={lineVariants}
                     initial="hidden"
-                    animate="visible"
+                    whileInView="visible"
+                    viewport={{once: true}} // Ensure the animation only runs once
                     sx={{
                         position: 'absolute',
                         top: '80px', // Adjust to prevent overlap with tabs

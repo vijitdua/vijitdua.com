@@ -40,6 +40,12 @@ let theme = createTheme({
             dark: '#004ba0',
             contrastText: '#ffffff',
         },
+        highlight:{
+            main: "#deb93e",
+            light: '#d1b760',
+            dark: '#876e1a',
+            contrastText: '#ffffff',
+        },
         background: {
             default: '#121212',
             paper: '#1d1d1d',

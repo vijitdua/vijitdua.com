@@ -15,6 +15,7 @@ import {env} from './configs/envConfig';
 import ExperiencePage from "./screens/ExperiencePage";
 import ExperienceDetailedPage from "./components/experience/ExperienceDetailedPage";
 import EducationDetailedPage from "./components/education/EducationDetailedPage";
+import ResumePage from "./screens/ResumePage";
 
 function AppMeta() {
     return (
@@ -45,6 +46,7 @@ function App() {
                     <Route path={routes.experience} element={<ExperiencePage />} />
                     <Route path={routes.projects} element={<ProjectsPage />} />
                     <Route path={routes.socials} element={<SocialsPage />} />
+                    <Route path={routes.resume} element={<ResumePage />} />
                     {/* Project detail route */}
                     <Route path={`${routes.projects}/:projectName`} element={<ProjectDetailedPage />} />
                     {/* Experience Detail Route */}
