@@ -1,32 +1,115 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import * as pdfjsLib from 'pdfjs-dist/webpack';
+import {Box, Button, Typography} from "@mui/material";
 
-function PdfViewer({ fileOrUrl, minHeight = '75rem' }) {
-    const [fileUrl, setFileUrl] = useState('');
+function PdfViewer({fileOrUrl, minHeight = '75rem'}) {
+    const [pdfDocument, setPdfDocument] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const canvasRef = useRef(null);
+    const [renderTask, setRenderTask] = useState(null); // Track the current render task
 
     useEffect(() => {
-        if (fileOrUrl instanceof File) {
-            // Create a URL for the file if it's a local file
-            const url = URL.createObjectURL(fileOrUrl);
-            setFileUrl(url);
-            return () => URL.revokeObjectURL(url); // Clean up the URL when the component is unmounted or file changes
-        } else {
-            // Directly use the URL if it's already a URL string
-            setFileUrl(fileOrUrl);
-        }
+        const loadPdf = async () => {
+            let url = '';
+
+            if (fileOrUrl instanceof File) {
+                url = URL.createObjectURL(fileOrUrl);
+            } else {
+                url = fileOrUrl;
+            }
+
+            try {
+                const loadingTask = pdfjsLib.getDocument(url);
+                const loadedPdf = await loadingTask.promise;
+                setPdfDocument(loadedPdf);
+                renderPage(1, loadedPdf); // Render the first page initially
+            } catch (error) {
+                console.error('Error loading PDF:', error);
+            }
+
+            return () => {
+                if (fileOrUrl instanceof File) {
+                    URL.revokeObjectURL(url); // Clean up URL if it's a local file
+                }
+            };
+        };
+
+        loadPdf();
     }, [fileOrUrl]);
 
+    const renderPage = async (pageNum, pdfDoc) => {
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
+
+        // Cancel the previous rendering task if it's still ongoing
+        if (renderTask) {
+            renderTask.cancel();
+        }
+
+        const page = await pdfDoc.getPage(pageNum);
+        const viewport = page.getViewport({scale: 1.5});
+
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+        };
+
+        // Start rendering the page
+        const task = page.render(renderContext);
+        setRenderTask(task); // Store the current render task
+
+        try {
+            await task.promise;
+        } catch (err) {
+            if (err.name !== 'RenderingCancelledException') {
+                console.error('Error rendering page:', err);
+            }
+        }
+    };
+
+    const nextPage = () => {
+        if (pageNumber < pdfDocument.numPages) {
+            const newPageNumber = pageNumber + 1;
+            setPageNumber(newPageNumber);
+            renderPage(newPageNumber, pdfDocument);
+        }
+    };
+
+    const prevPage = () => {
+        if (pageNumber > 1) {
+            const newPageNumber = pageNumber - 1;
+            setPageNumber(newPageNumber);
+            renderPage(newPageNumber, pdfDocument);
+        }
+    };
+
     return (
-        <div>
-            <iframe
-                src={fileUrl}
-                width="100%"
-                height="100%"
-                style={{ minHeight: minHeight, marginTop: '1rem', }} // You can adjust the height as needed
-                frameBorder="0"
-            >
-                This browser does not support PDFs. Please download the PDF to view it: <a href={fileUrl}>Download PDF</a>
-            </iframe>
-        </div>
+        <>
+            <Box sx={{
+                textAlign: 'center',
+                margin: '1rem 0',
+                padding: '1rem',
+                backgroundColor: '#313131',
+                boxShadow: '10px 10px 10px #151515',
+                borderRadius: '20px',
+            }}>
+                <canvas ref={canvasRef} style={{marginTop: '0.25rem', width: '100%', minHeight: minHeight}}/>
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                }}>
+                    <Button onClick={prevPage} disabled={pageNumber <= 1}>Previous</Button>
+                    <Typography
+                        style={{margin: '0 1rem'}}>Page {pageNumber} of {pdfDocument?.numPages || 0}</Typography>
+                    <Button onClick={nextPage}
+                            disabled={pdfDocument && pageNumber >= pdfDocument.numPages}>Next</Button>
+                </Box>
+            </Box>
+        </>
     );
 }
 

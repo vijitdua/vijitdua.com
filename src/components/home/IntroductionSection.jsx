@@ -9,11 +9,11 @@ function IntroductionSection() {
     const theme = useTheme();
 
     const dynamicTexts = [
-        'Full Stack Developer',
+        'Scalable App Builder',
+        'Driven to Deliver',
+        'Fast Learner, Faster Builder',
+        'Rapid Prototyper',
         'Aspiring Entrepreneur',
-        'Tech Enthusiast',
-        'Problem Solver',
-        'Creative Thinker',
     ];
 
     return (

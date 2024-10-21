@@ -47,6 +47,13 @@ function PortfolioPage() {
                 </Box>
 
                 <Container maxWidth="lg">
+                    <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
+                        Projects
+                    </Typography>
+                    <ProjectsCollection/>
+                </Container>
+
+                <Container maxWidth="lg">
                     <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center' }}>
                         Education
                     </Typography>
@@ -58,13 +65,6 @@ function PortfolioPage() {
                         Experience
                     </Typography>
                     <ExperienceTimeline/>
-                </Container>
-
-                <Container maxWidth="lg">
-                    <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
-                        Projects
-                    </Typography>
-                    <ProjectsCollection/>
                 </Container>
 
                 <Container maxWidth="md">
