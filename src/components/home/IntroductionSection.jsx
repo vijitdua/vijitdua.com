@@ -9,11 +9,11 @@ function IntroductionSection() {
     const theme = useTheme();
 
     const dynamicTexts = [
-        'Scalable App Builder',
+        'a Scalable App Builder',
         'Driven to Deliver',
-        'Fast Learner, Faster Builder',
-        'Rapid Prototyper',
-        'Aspiring Entrepreneur',
+        'a Fast Learner, Faster Builder',
+        'a Rapid Prototyper',
+        'an Aspiring Entrepreneur',
     ];
 
     return (
@@ -23,7 +23,7 @@ function IntroductionSection() {
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', marginTop: '1rem' }}>
                 <Typography variant="h4" sx={{ color: 'white', marginRight: '1rem' }}>
-                    I'm a
+                    I'm
                 </Typography>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
