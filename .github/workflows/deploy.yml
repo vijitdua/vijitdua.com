@@ -1,4 +1,4 @@
-name: Deploy to SSH Machine
+name: Build Docker Image & Deploy to SSH Machine
 
 on:
   push:
