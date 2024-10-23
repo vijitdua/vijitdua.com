@@ -8,6 +8,7 @@
  * - `title` : ProjectCard Title
  * - `image`: ProjectCard Icon / Display Image
  * - `tagline`: Short description of a project, in a sentence
+ * - `time`: Short string representing when the project was done
  * - `route` : Unique identifier for the project, used in the URL
  * - `sourceCode`: URL to GitHub repository
  * - `projectUrl`: URL to the hosted project
@@ -26,16 +27,18 @@ export const projects = [
         title: 'InnoGreet',
         route: 'innogreet',
         image: `${process.env.PUBLIC_URL}/assets/projects/innogreet/banner-logo.png`,
-        tagline: '(Startup) Find your perfect collaborator.',
+        tagline: 'Find your perfect collaborator. \n [Active Startup Project]',
         category: 'Active',
         projectUrl: `https://innogreet.com`,
+        time: `Sept 2024 – Present`,
         Component: InnoGreetComponent,
     },
     {
         title: 'TeamSync',
         route: 'team-sync',
-        tagline: 'Streamlined Team Management. (In Progress)',
+        tagline: 'Streamlined Team Management. \n [In Progress]',
         sourceCode: 'https://github.com/vijitdua/team-sync',
+        time: `Sept 2024 – In Progress `,
         Component: TeamSyncComponent,
     },
     {
@@ -45,6 +48,7 @@ export const projects = [
         tagline: 'AI Road Map Generation from Satellite images',
         category: 'Deep Learning',
         sourceCode: 'https://github.com/vijitdua/KAIST-Deep-Learning-Research-UNet-Statalite-Road-Identification',
+        time: `Jun 2024`,
         Component: KAISTResearchProjectComponent,
     },
     {
@@ -55,6 +59,7 @@ export const projects = [
         category: 'Hackathon',
         projectUrl: `https://devpost.com/software/taskup-fi8jkh`,
         sourceCode: 'https://github.com/vijitdua/HackDavis2024-TaskUp',
+        time: `Apr 2024`,
         Component: TaskUpComponent,
     },
     {
@@ -63,6 +68,7 @@ export const projects = [
         image: `${process.env.PUBLIC_URL}/assets/projects/tic-tac-toe/banner-logo.png`,
         tagline: 'Full-Stack Multiplayer Webgame',
         sourceCode: 'https://github.com/vijitdua/Multiplayer-TicTacToe',
+        time: `Mar 2024`,
         Component: TicTacToeComponent,
     },
     {
@@ -71,6 +77,7 @@ export const projects = [
         image: `${process.env.PUBLIC_URL}/assets/projects/course/HKU-COMP3322/HKG-airport-data/logo.png`,
         tagline: 'HKG Airport flight information using open data, built with vanilla HTML, CSS, & JS',
         category: 'Course',
+        time: `Oct 2024`,
         Component: COMP3322HKGAirportData,
     }
 ];
