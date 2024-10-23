@@ -4,7 +4,9 @@ import {Visibility, Code, Language} from '@mui/icons-material';
 import {motion} from 'framer-motion'; // Import Framer Motion
 
 function ProjectCard({project, onProjectClick, index}) { // Add index as prop
-    const {title, tagline, route, sourceCode, projectUrl, image} = project;
+    const {title, tagline, route, sourceCode, projectUrl, image, category} = project;
+
+    let categories = category || null;
 
     // Framer Motion animation settings for slide-in and staggered animation
     const cardVariants = {
@@ -39,9 +41,16 @@ function ProjectCard({project, onProjectClick, index}) { // Add index as prop
                     }}
                 />
                 <CardContent>
-                    <Typography variant="h5">{title}</Typography>
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="h5">
+                        {title}
+                    </Typography>
+
+                    <Typography variant="body2" color="#fff" fontSize="0.9rem">
                         {tagline}
+                    </Typography>
+
+                    <Typography variant="caption">
+                        {categories}
                     </Typography>
                 </CardContent>
                 <Box

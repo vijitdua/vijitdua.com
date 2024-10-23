@@ -19,13 +19,14 @@ import InnoGreetComponent from "../components/projects/details/InnoGreetComponen
 import KAISTResearchProjectComponent from "../components/projects/details/KAISTResearchProjectComponent";
 import TicTacToeComponent from "../components/projects/details/TicTacToeComponent";
 import TaskUpComponent from "../components/projects/details/TaskUpComponent";
+import COMP3322HKGAirportData from "../components/projects/details/COMP3322HKGAirportData";
 
 export const projects = [
     {
         title: 'InnoGreet',
         route: 'innogreet',
         image: `${process.env.PUBLIC_URL}/assets/projects/innogreet/banner-logo.png`,
-        tagline: '(Active Startup Project) Find your perfect collaborator.',
+        tagline: '(Startup) Find your perfect collaborator.',
         category: 'Active',
         projectUrl: `https://innogreet.com`,
         Component: InnoGreetComponent,
@@ -33,7 +34,7 @@ export const projects = [
     {
         title: 'TeamSync',
         route: 'team-sync',
-        tagline: '(In Progress) Streamlined Team Management.',
+        tagline: 'Streamlined Team Management. (In Progress)',
         sourceCode: 'https://github.com/vijitdua/team-sync',
         Component: TeamSyncComponent,
     },
@@ -63,5 +64,13 @@ export const projects = [
         tagline: 'Full-Stack Multiplayer Webgame',
         sourceCode: 'https://github.com/vijitdua/Multiplayer-TicTacToe',
         Component: TicTacToeComponent,
+    },
+    {
+        title: 'HKG Airport Flight Data',
+        route: 'HKU-COMP3322-hkg-airport',
+        image: `${process.env.PUBLIC_URL}/assets/projects/course/HKU-COMP3322/HKG-airport-data/logo.png`,
+        tagline: 'HKG Airport flight information using open data, built with vanilla HTML, CSS, & JS',
+        category: 'Course',
+        Component: COMP3322HKGAirportData,
     }
 ];

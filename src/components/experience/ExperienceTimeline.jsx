@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Tabs, Tab } from '@mui/material';
+import { Box, Tabs, Tab, Drawer, Chip, Menu, MenuItem } from '@mui/material';
 import { experiences } from '../../configs/experiencesConfig';
 import ExperienceItem from './ExperienceItem';
 import { useMediaQuery } from '@mui/material';
 import { theme } from '../../themes/primaryTheme';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Drawer from '@mui/material/Drawer';
 import ExperienceDetailedPage from './ExperienceDetailedPage';
 import { motion } from 'framer-motion';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function ExperienceTimeline() {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [categories, setCategories] = useState(['All']);
     const [selectedExperience, setSelectedExperience] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(null); // For mobile menu
     const mobileView = useMediaQuery(theme.breakpoints.down('md'));
     const navigate = useNavigate();
     const location = useLocation();
@@ -51,7 +52,8 @@ function ExperienceTimeline() {
     }));
 
     const handleCategoryChange = (event, newValue) => {
-        setSelectedCategory(newValue);
+        setSelectedCategory(newValue || event.target.value);
+        setAnchorEl(null); // Close the menu
     };
 
     const handleExperienceClick = (experience) => {
@@ -92,20 +94,52 @@ function ExperienceTimeline() {
         },
     };
 
+    // Handle opening and closing of menu for mobile chip
+    const handleChipClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
         <Box sx={{ padding: '2rem', position: 'relative', marginBottom: '7rem' }}>
-            <Tabs
-                value={selectedCategory}
-                onChange={handleCategoryChange}
-                variant="scrollable"
-                scrollButtons="auto"
-                aria-label="experience categories"
-                sx={{ marginBottom: '2rem' }}
-            >
-                {categories.map((category) => (
-                    <Tab key={category} label={category} value={category} />
-                ))}
-            </Tabs>
+            {mobileView ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+                    <Chip
+                        label={selectedCategory}
+                        onClick={handleChipClick}
+                        deleteIcon={<ExpandMoreIcon />} // Add down arrow icon
+                        onDelete={handleChipClick} // Open menu on click
+                        sx={{ cursor: 'pointer' }}
+                    />
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                    >
+                        {categories.map((category) => (
+                            <MenuItem key={category} onClick={() => handleCategoryChange(null, category)}>
+                                {category}
+                            </MenuItem>
+                        ))}
+                    </Menu>
+                </Box>
+            ) : (
+                <Tabs
+                    value={selectedCategory}
+                    onChange={handleCategoryChange}
+                    variant="scrollable"
+                    scrollButtons="auto"
+                    aria-label="experience categories"
+                    sx={{ marginBottom: '2rem' }}
+                >
+                    {categories.map((category) => (
+                        <Tab key={category} label={category} value={category} />
+                    ))}
+                </Tabs>
+            )}
 
             {/* Vertical line down the middle with animation */}
             {!mobileView && (
@@ -114,7 +148,7 @@ function ExperienceTimeline() {
                     variants={lineVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{once: true}} // Ensure the animation only runs once
+                    viewport={{ once: true }} // Ensure the animation only runs once
                     sx={{
                         position: 'absolute',
                         top: '80px', // Adjust to prevent overlap with tabs
