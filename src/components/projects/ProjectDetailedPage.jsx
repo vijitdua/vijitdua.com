@@ -17,7 +17,6 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
     const navigate = useNavigate();
 
     function handleGoBack() {
-        console.log("HI")
         if (window.history.length > 1) {
             navigate(-1); // Go back to the previous URL in history
         } else {
@@ -35,7 +34,7 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
         );
     }
 
-    const {title, tagline, sourceCode, projectUrl, image, Component} = project;
+    const {title, tagline, sourceCode, projectUrl, image, Component, time, category} = project;
 
     function PageMeta() {
         return (
@@ -103,6 +102,10 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
             <Typography variant="h5" color="textSecondary" gutterBottom>
                 {tagline}
             </Typography>
+            <Typography variant="body2" color="textSecondary" gutterBottom>
+                {time}
+            </Typography>
+
             <Box sx={{display: 'flex', gap: '1rem', marginBottom: '2rem'}}>
                 {sourceCode && (
                     <Button
