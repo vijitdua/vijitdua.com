@@ -106,14 +106,19 @@ let theme = createTheme({
         }, // ccf1ff
         body1: {
             fontFamily: 'Arial, sans-serif',
-            fontSize: '1.12rem',
+            fontSize: '1rem',
             color: '#F8F8F8',
         },
         body2: {
             fontFamily: 'Arial, sans-serif',
-            fontSize: '1.12rem',
+            fontSize: '1rem',
             color: '#F8F8F8',
         },
+        caption: {
+            fontFamily: 'Arial, sans-serif',
+            fontSize: '0.75rem',
+            color: '#b6b6b6',
+        }
     },
 });
 

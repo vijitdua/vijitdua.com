@@ -25,7 +25,7 @@ export const projects = [
         title: 'InnoGreet',
         route: 'innogreet',
         image: `${process.env.PUBLIC_URL}/assets/projects/innogreet/banner-logo.png`,
-        tagline: '(Active Startup Project) Find your perfect collaborator.',
+        tagline: '(Startup) Find your perfect collaborator.',
         category: 'Active',
         projectUrl: `https://innogreet.com`,
         Component: InnoGreetComponent,
@@ -33,7 +33,7 @@ export const projects = [
     {
         title: 'TeamSync',
         route: 'team-sync',
-        tagline: '(In Progress) Streamlined Team Management.',
+        tagline: 'Streamlined Team Management. (In Progress)',
         sourceCode: 'https://github.com/vijitdua/team-sync',
         Component: TeamSyncComponent,
     },
@@ -63,5 +63,11 @@ export const projects = [
         tagline: 'Full-Stack Multiplayer Webgame',
         sourceCode: 'https://github.com/vijitdua/Multiplayer-TicTacToe',
         Component: TicTacToeComponent,
+    },
+    {
+        title: 'HKG Airport Flight Data',
+        route: 'HKU-COMP3322-hkg-airport',
+        tagline: 'Full-Stack Multiplayer Webgame',
+        category: 'course',
     }
 ];
