@@ -8,7 +8,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ProjectDetailedPage from './ProjectDetailedPage';
 
-function ProjectsCollection({ mobileViewProjectLimit = 6, desktopViewProjectLimit = 8 }) {
+function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimit = 4 }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [categories, setCategories] = useState(['All']);
     const [selectedProject, setSelectedProject] = useState(null);

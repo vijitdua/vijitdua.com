@@ -28,7 +28,7 @@ function ProjectsPage() {
                     Projects
                 </Typography>
 
-                <ProjectsCollection/>
+                <ProjectsCollection desktopViewProjectLimit={12} mobileViewProjectLimit={8}/>
 
             </Container>
         </MainLayout>
