@@ -19,6 +19,7 @@ import InnoGreetComponent from "../components/projects/details/InnoGreetComponen
 import KAISTResearchProjectComponent from "../components/projects/details/KAISTResearchProjectComponent";
 import TicTacToeComponent from "../components/projects/details/TicTacToeComponent";
 import TaskUpComponent from "../components/projects/details/TaskUpComponent";
+import COMP3322HKGAirportData from "../components/projects/details/COMP3322HKGAirportData";
 
 export const projects = [
     {
@@ -67,7 +68,9 @@ export const projects = [
     {
         title: 'HKG Airport Flight Data',
         route: 'HKU-COMP3322-hkg-airport',
-        tagline: 'Full-Stack Multiplayer Webgame',
-        category: 'course',
+        image: `${process.env.PUBLIC_URL}/assets/projects/course/HKU-COMP3322/HKG-airport-data/logo.png`,
+        tagline: 'HKG Airport flight information using open data, built with vanilla HTML, CSS, & JS',
+        category: 'Course',
+        Component: COMP3322HKGAirportData,
     }
 ];
