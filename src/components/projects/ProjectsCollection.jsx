@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { projects } from '../../configs/projectsConfig';
 import ProjectCard from './ProjectCard';
-import { Box, Tabs, Tab, Grid, Drawer, Button, Typography } from '@mui/material';
+import { Box, Tabs, Tab, Grid, Drawer, Button, Typography, Chip, Menu, MenuItem } from '@mui/material';
 import { useMediaQuery } from '@mui/material';
 import { theme } from '../../themes/primaryTheme';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ProjectDetailedPage from './ProjectDetailedPage';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimit = 4 }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
@@ -14,6 +15,7 @@ function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimi
     const [selectedProject, setSelectedProject] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [page, setPage] = useState(1); // Page starts at 1
+    const [anchorEl, setAnchorEl] = useState(null); // For mobile menu
     const mobileView = useMediaQuery(theme.breakpoints.down('md'));
     const navigate = useNavigate();
     const location = useLocation();
@@ -23,7 +25,7 @@ function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimi
 
     // Helper function to parse category strings into arrays
     function getCategories(item) {
-        let categories = item.category || 'Uncategorized';
+        let categories = item.category || null;
         if (typeof categories === 'string') {
             categories = categories.split(',').map((cat) => cat.trim());
         }
@@ -35,14 +37,16 @@ function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimi
         const categoriesSet = new Set();
         projects.forEach((project) => {
             const categories = getCategories(project);
-            categories.forEach((cat) => categoriesSet.add(cat));
+            categories && categories.forEach((cat) => categoriesSet.add(cat));
         });
-        setCategories(['All', ...Array.from(categoriesSet).sort()]);
+        const sortedCategories = Array.from(categoriesSet).sort();
+        setCategories(['All', ...sortedCategories]);
     }, []);
 
     const handleCategoryChange = (event, newValue) => {
-        setSelectedCategory(newValue);
+        setSelectedCategory(newValue || event.target.value);
         setPage(1); // Reset page to 1 when category changes
+        setAnchorEl(null); // Close the menu
     };
 
     const filteredProjects =
@@ -50,7 +54,7 @@ function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimi
             ? projects
             : projects.filter((project) => {
                 const categories = getCategories(project);
-                return categories.includes(selectedCategory);
+                return categories && categories.includes(selectedCategory);
             });
 
     // Calculate total pages based on project limit
@@ -99,20 +103,53 @@ function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimi
         }
     }, [location.pathname]);
 
+    // Handle opening and closing of menu for mobile chip
+    const handleChipClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
         <Box sx={{ padding: '2rem' }}>
-            <Tabs
-                value={selectedCategory}
-                onChange={handleCategoryChange}
-                variant="scrollable"
-                scrollButtons="auto"
-                aria-label="project categories"
-                sx={{ marginBottom: '2rem' }}
-            >
-                {categories.map((category) => (
-                    <Tab key={category} label={category} value={category} />
-                ))}
-            </Tabs>
+            {/* Category selection */}
+            {mobileView ? (
+                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+                    <Chip
+                        label={selectedCategory}
+                        onClick={handleChipClick}
+                        sx={{ cursor: 'pointer', minWidth: '7rem' }}
+                        deleteIcon={<ExpandMoreIcon />}
+                        onDelete={handleChipClick}
+                    />
+                    <Menu
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                    >
+                        {categories.map((category) => (
+                            <MenuItem key={category} onClick={() => handleCategoryChange(null, category)}>
+                                {category}
+                            </MenuItem>
+                        ))}
+                    </Menu>
+                </Box>
+            ) : (
+                <Tabs
+                    value={selectedCategory}
+                    onChange={handleCategoryChange}
+                    variant="scrollable"
+                    scrollButtons="auto"
+                    aria-label="project categories"
+                    sx={{ marginBottom: '2rem' }}
+                >
+                    {categories.map((category) => (
+                        <Tab key={category} label={category} value={category} />
+                    ))}
+                </Tabs>
+            )}
 
             {/* Display paginated projects */}
             <Grid container spacing={4}>
