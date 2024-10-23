@@ -7,9 +7,6 @@ function ProjectCard({project, onProjectClick, index}) { // Add index as prop
     const {title, tagline, route, sourceCode, projectUrl, image, category} = project;
 
     let categories = category || null;
-    if (typeof categories === 'string') {
-        categories = categories.split(',').map((cat) => cat.trim());
-    }
 
     // Framer Motion animation settings for slide-in and staggered animation
     const cardVariants = {
@@ -44,13 +41,16 @@ function ProjectCard({project, onProjectClick, index}) { // Add index as prop
                     }}
                 />
                 <CardContent>
-                    <Typography variant="h5">{title} <Typography variant="caption">
-                        {categories}
-                    </Typography>
+                    <Typography variant="h5">
+                        {title}
                     </Typography>
 
                     <Typography variant="body2" color="textSecondary">
                         {tagline}
+                    </Typography>
+
+                    <Typography variant="caption">
+                        {categories}
                     </Typography>
                 </CardContent>
                 <Box
