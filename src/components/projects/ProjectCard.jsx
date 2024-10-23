@@ -4,7 +4,7 @@ import {Visibility, Code, Language} from '@mui/icons-material';
 import {motion} from 'framer-motion'; // Import Framer Motion
 
 function ProjectCard({project, onProjectClick, index}) { // Add index as prop
-    const {title, tagline, route, sourceCode, projectUrl, image, category} = project;
+    const {title, tagline, route, sourceCode, projectUrl, image, category, time} = project;
 
     let categories = category || null;
 
@@ -41,11 +41,21 @@ function ProjectCard({project, onProjectClick, index}) { // Add index as prop
                     }}
                 />
                 <CardContent>
-                    <Typography variant="h5">
-                        {title}
-                    </Typography>
 
-                    <Typography variant="body2" color="#fff" fontSize="0.9rem">
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                    }}>
+                        <Typography variant="h5">
+                            {title}
+                        </Typography>
+                        <Typography variant="caption">
+                            {time}
+                        </Typography>
+                    </Box>
+
+                    <Typography variant="body2" color="#fff" fontSize="0.9rem" sx={{ whiteSpace: 'pre-line' }} >
                         {tagline}
                     </Typography>
 
