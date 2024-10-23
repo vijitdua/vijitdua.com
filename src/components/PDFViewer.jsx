@@ -2,7 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import * as pdfjsLib from 'pdfjs-dist/webpack';
 import {Box, Button, Typography} from "@mui/material";
 
-function PdfViewer({fileOrUrl, minHeight = '75rem'}) {
+function PdfViewer({fileOrUrl}) {
     const [pdfDocument, setPdfDocument] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
     const canvasRef = useRef(null);
@@ -96,7 +96,7 @@ function PdfViewer({fileOrUrl, minHeight = '75rem'}) {
                 boxShadow: '10px 10px 10px #151515',
                 borderRadius: '20px',
             }}>
-                <canvas ref={canvasRef} style={{marginTop: '0.25rem', width: '100%', minHeight: minHeight}}/>
+                <canvas ref={canvasRef} style={{marginTop: '0.25rem', width: '100%'}}/>
                 <Box sx={{
                     display: 'flex',
                     flexDirection: 'row',
