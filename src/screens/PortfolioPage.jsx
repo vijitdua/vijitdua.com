@@ -30,45 +30,44 @@ function PortfolioPage() {
         <MainLayout>
             <PageMeta/>
             <Container maxWidth="xl" sx={{marginTop: '4rem'}}>
-                <Box sx={{
-                    display: 'flex',
-                    flexDirection: mobileView ? 'column-reverse' : 'row',
-                    justifyContent: mobileView ? 'center' : 'space-around',
-                    alignItems: mobileView ? 'center' : 'center',
-                    width: '100%',
-                    gap: '3rem',
-                }}>
-                    <Grid item xs={12} md={6}>
-                        <IntroductionSection/>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <ProfileSection/>
-                    </Grid>
-                </Box>
 
                 <Container maxWidth="lg">
-                    <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        width: '100%',
+                        gap: '3rem',
+                    }}>
+                        <IntroductionSection/>
+                        {/*<ProfileSection/>*/}
+                    </Box>
+                </Container>
+
+                <Container maxWidth="lg">
+                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center'}}>
                         Projects
                     </Typography>
                     <ProjectsCollection/>
                 </Container>
 
                 <Container maxWidth="lg">
-                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center' }}>
+                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center'}}>
                         Education
                     </Typography>
                     <EducationTimeline/>
                 </Container>
 
                 <Container maxWidth="lg">
-                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center' }}>
+                    <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center'}}>
                         Experience
                     </Typography>
                     <ExperienceTimeline/>
                 </Container>
 
                 <Container maxWidth="md">
-                    <Typography variant="h1" gutterBottom sx={{ textAlign: 'center' }}>
+                    <Typography variant="h1" gutterBottom sx={{textAlign: 'center'}}>
                         Resume
                     </Typography>
                     <PDFViewer fileOrUrl={`${process.env.PUBLIC_URL}/assets/public-no-contact-resume.pdf`}/>
