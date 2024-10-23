@@ -28,7 +28,7 @@ function COMP3322HKGAirportData() {
                 <strong>Details / Technology </strong>
             </Typography>
             <ul>
-                <li>Built using Vanila JavaScript, HTML, & CSS without any external libraries.</li>
+                <li>Built using Vanilla JavaScript, HTML, & CSS without any external libraries.</li>
             </ul>
 
             <Box sx={{width: '100%'}}>
