@@ -45,7 +45,7 @@ function ProjectCard({project, onProjectClick, index}) { // Add index as prop
                         {title}
                     </Typography>
 
-                    <Typography variant="body2" color="textSecondary">
+                    <Typography variant="body2" color="#fff" fontSize="0.9rem">
                         {tagline}
                     </Typography>
 
