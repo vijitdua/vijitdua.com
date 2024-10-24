@@ -44,12 +44,13 @@ comprehensive **LinkTree/Link-in-bio page** for easy access to my social platfor
       installing chromium modify your chromium path:
       ```json
       {
-      "reactSnap": {
-      "puppeteerExecutablePath": "/opt/homebrew/bin/chromium"
-      },
-      // OR using regular chrome instead of chromium
-      "reactSnap": {
-       "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        "reactSnap": {
+        "puppeteerExecutablePath": "/opt/homebrew/bin/chromium"
+        },
+        // OR using regular chrome instead of chromium
+        "reactSnap": {
+         "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+        }
       }
       ```
 - **Digital Ocean Droplet, GitHub Actions, & Docker**: Deployment and hosting.
@@ -82,7 +83,44 @@ These instructions will help you set up the project on your local machine for de
    yarn install
    ```
 
-3. **Environment Variables**
+3. **Install Chromium** (for ReactSnap)
+
+   - linux
+
+      ```bash
+      sudo apt-get install -y chromium-browser
+      ```
+
+   - macOS (assuming you have homebrew installed)
+
+     ```bash
+     brew install --cask chromium
+     ```
+     
+4. **Change package.json path for chromium**
+
+   - macOS (example)
+      ```json
+       {
+       "reactSnap": {
+       "puppeteerExecutablePath": "/opt/homebrew/bin/chromium"
+       },
+       // OR using regular chrome instead of chromium
+       "reactSnap": {
+        "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+       }
+     }
+       ```
+   - linux (example)
+      ```json
+       {
+       "reactSnap": {
+       "puppeteerExecutablePath": "/usr/bin/chromium"
+       }
+     }
+       ```
+
+5. **Environment Variables**
 
    Create a `.env` file in the root directory and add the following (adjust as needed):
 
@@ -90,7 +128,7 @@ These instructions will help you set up the project on your local machine for de
    REACT_APP_SITE_LOCATION=https://vijitdua.com
    ```
 
-4. **Run the application**
+6. **Run the application**
 
    ```bash
    npm start
