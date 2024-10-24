@@ -25,6 +25,7 @@
   "scripts": {
     "start": "react-scripts --max_old_space_size=1024  start",
     "build": "GENERATE_SOURCEMAP=false react-scripts --max_old_space_size=1024  build",
+    "postbuild": "react-snap",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -44,6 +45,18 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "puppeteer": "^23.6.0",
+    "react-snap": "^1.23.0"
+  },
+  "reactSnap": {
+    "crawl": true,
+    "maxDepth": 10,
+    "inlineCss": true,
+    "puppeteerArgs": [
+      "--no-sandbox"
     ]
   }
 }

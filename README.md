@@ -1,6 +1,8 @@
 # Vijit Dua's Personal Portfolio Website*
 
-Welcome to the repository for my personal portfolio website hosted at [vijitdua.com](https://vijitdua.com). This website showcases my **Portfolio**, **Projects**, **Experiences**, provides insights into **who I am**, and includes a comprehensive **LinkTree/Link-in-bio page** for easy access to my social platforms.
+Welcome to the repository for my personal portfolio website hosted at [vijitdua.com](https://vijitdua.com). This website
+showcases my **Portfolio**, **Projects**, **Experiences**, provides insights into **who I am**, and includes a
+comprehensive **LinkTree/Link-in-bio page** for easy access to my social platforms.
 
 ## Table of Contents
 
@@ -36,6 +38,20 @@ Welcome to the repository for my personal portfolio website hosted at [vijitdua.
 - **Framer Motion**: Library for animations and gestures.
 - **React Router DOM**: Declarative routing for React applications.
 - **React Helmet**: Manage document head for React apps.
+- **ReactSnap**: To generate PostBuild site crawled HTML for SEO & indexing
+    - _puppeteer_ To launch a head-less chrome instance for ReactSnap's site crawling
+    - > puppeteer might not work for ARM machines, manual installation of chromium is required for such devices. After
+      installing chromium modify your chromium path:
+      ```json
+      {
+      "reactSnap": {
+      "puppeteerExecutablePath": "/opt/homebrew/bin/chromium"
+      },
+      // OR using regular chrome instead of chromium
+      "reactSnap": {
+       "puppeteerExecutablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+      }
+      ```
 - **Digital Ocean Droplet, GitHub Actions, & Docker**: Deployment and hosting.
 - **NGINX & Cloudflare**: Web server (in Droplet) and CDN for performance and security.
 
