@@ -25,8 +25,11 @@ function AppMeta() {
             <link rel="canonical" href={env.siteLocation}/>
             <meta
                 name='description'
-                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship.
-            I'm all about blending coding with dream to kick off something cool in the future."
+                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship. I'm all about blending coding with dream to kick off something cool in the future."
+            />
+            <meta
+                name="keywords"
+                content="Vijit Dua, computer, science student, entrepreneur, coding, startup, personal webpage, portfolio webpage, project webpage, YouTube, video editing, music production, running, gym, tech enthusiast, full stack developer, "
             />
         </Helmet>
     );
@@ -36,12 +39,12 @@ function App() {
     return (
         <ThemeProvider theme={theme}>
             <AppMeta/>
-            <CssBaseline />
+            <CssBaseline/>
             {/* Begin browser routes */}
             <Routes>
                 {/* Primary routes */}
                 <Route path="/">
-                    <Route index element={<HomePage />} />
+                <Route index element={<HomePage />} />
                     <Route path={routes.aboutMe} element={<AboutPage />} />
                     <Route path={routes.portfolio} element={<PortfolioPage />} />
                     <Route path={routes.experience} element={<ExperiencePage />} />
