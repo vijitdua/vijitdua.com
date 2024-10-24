@@ -15,8 +15,7 @@ function PageMeta() {
             <link rel="canonical" href={env.siteLocation + routes.aboutMe}/>
             <meta
                 name='description'
-                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship.
-            I'm all about blending coding with dream to kick off something cool in the future."
+                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship. I'm all about blending coding with dream to kick off something cool in the future."
             />
         </Helmet>
     );

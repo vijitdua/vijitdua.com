@@ -14,8 +14,7 @@ function PageMeta() {
             <link rel="canonical" href={env.siteLocation}/>
             <meta
                 name='description'
-                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship.
-            I'm all about blending coding with dream to kick off something cool in the future."
+                content="Hi, I'm Vijit, a CS student with a passion for coding and entrepreneurship. I'm all about blending coding with dream to kick off something cool in the future."
             />
         </Helmet>
     );
@@ -25,8 +24,8 @@ function HomePage() {
     const mobileView = useMediaQuery(theme.breakpoints.down('md'));
     return (
         <MainLayout>
-            <PageMeta />
-            <Container maxWidth="lg" sx={{ marginTop: '4rem' }}>
+            <PageMeta/>
+            <Container maxWidth="lg" sx={{marginTop: '4rem'}}>
                 <Box sx={{
                     display: 'flex',
                     flexDirection: mobileView ? 'column-reverse' : 'row',
