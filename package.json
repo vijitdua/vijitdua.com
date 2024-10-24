@@ -57,6 +57,7 @@
     "inlineCss": true,
     "puppeteerArgs": [
       "--no-sandbox"
-    ]
+    ],
+    "puppeteerExecutablePath": "/usr/bin/chromium"
   }
 }
