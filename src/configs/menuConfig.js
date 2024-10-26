@@ -32,7 +32,6 @@ export const pagesMenu = [
     {text: 'Home', route: routes.home, },
     {text:  'About', route: routes.aboutMe, },
     {text:  'Portfolio', route: routes.portfolio, },
-    {text:  'Experience', route: routes.experience, },
     {text: 'Projects', route: routes.projects, },
     {text: 'Socials', route: routes.socials, },
 ];
