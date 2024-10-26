@@ -36,9 +36,9 @@ jobs:
       # Load Docker image on server and prepare for deployment
       - name: Load Docker image on SSH machine
         run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
-            sudo docker load -i /home/www.vijitdua.com/www-vijitdua-com.tar
-          "
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no \
+          ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} \
+          "sudo docker load -i /home/www.vijitdua.com/www-vijitdua-com.tar"
 
       # Stop and remove existing container (if running)
       - name: Stop and remove existing container if running
