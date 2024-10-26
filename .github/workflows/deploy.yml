@@ -22,16 +22,16 @@ jobs:
       - name: Save Docker image as a tar file
         run: docker save -o www-vijitdua-com.tar www-vijitdua-com
 
-      # Upload Docker image to VPS
-      - name: Copy Docker image to SSH machine
-        run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -o StrictHostKeyChecking=no www-vijitdua-com.tar ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/www.vijitdua.com/
-      
-
       # Remove existing files from the Web Frontend directory on server
       - name: Remove existing files from Web Frontend directory on server
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "sudo rm -rf /home/www.vijitdua.com/*"
+
+
+      # Upload Docker image to VPS
+      - name: Copy Docker image to SSH machine
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -o StrictHostKeyChecking=no www-vijitdua-com.tar ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/www.vijitdua.com/
 
       # Load Docker image on server and prepare for deployment
       - name: Load Docker image on SSH machine
