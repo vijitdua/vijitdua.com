@@ -30,7 +30,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           source: www-vijitdua-com.tar
-          target: /home/www.vijitdua.com/
+          target: /home/www.vijitdua.com/www-vijitdua-com.tar
 
       # Remove existing files from the Web Frontend directory on server
       - name: Remove existing files from Web Frontend directory on server
