@@ -14,25 +14,38 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Remove existing files from the Web Frontend directory
-      - name: Remove existing files from the Web Frontend directory on server
-        run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "sudo -S rm -rf /home/www.vijitdua.com/*"
+      # Build Docker image on GitHub runner
+      - name: Build Docker image
+        run: docker build -t www-vijitdua-com .
 
-      # Copy new code to the server
-      - name: Copy new files to SSH machine
-        run: |
-          sshpass -p "${{ secrets.SSH_PASSWORD }}" rsync -avz --no-perms --omit-dir-times -e "ssh -o StrictHostKeyChecking=no" . ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/www.vijitdua.com
+      # Save the Docker image as a tar file
+      - name: Save Docker image as a tar file
+        run: docker save -o www-vijitdua-com.tar www-vijitdua-com
 
-      # Build the Docker image directly on the server
-      - name: Build Docker image on SSH machine
+      # Upload Docker image to VPS
+      - name: Copy Docker image to SSH machine
+        uses: appleboy/scp-action@v0.1.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          source: www-vijitdua-com.tar
+          target: /home/www.vijitdua.com/
+
+      # Remove existing files from the Web Frontend directory on server
+      - name: Remove existing files from Web Frontend directory on server
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "sudo rm -rf /home/www.vijitdua.com/*"
+
+      # Load Docker image on server and prepare for deployment
+      - name: Load Docker image on SSH machine
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
-            cd /home/www.vijitdua.com && sudo docker build . -t www-vijitdua-com
+            sudo docker load -i /home/www.vijitdua.com/www-vijitdua-com.tar
           "
 
       # Stop and remove existing container (if running)
-      - name: Stop and remove existing container (if running)
+      - name: Stop and remove existing container if running
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
             CONTAINER_ID=\$(sudo docker ps -q --filter name=www-vijitdua-com-container)
@@ -46,11 +59,9 @@ jobs:
             fi
           "
 
-      # Run the new Docker container on port 3010
+      # Run the new Docker container on specified port
       - name: Run new Docker container
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
-            sudo docker stop www-vijitdua-com-container
-            sudo docker rm www-vijitdua-com-container
             sudo docker run -d -p 3010:3000 --restart=always --name www-vijitdua-com-container www-vijitdua-com
-            "
+          "
