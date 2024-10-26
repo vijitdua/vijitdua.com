@@ -24,14 +24,9 @@ jobs:
 
       # Upload Docker image to VPS
       - name: Copy Docker image to SSH machine
-        uses: appleboy/scp-action@v0.1.3
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USERNAME }}
-          password: ${{ secrets.SSH_PASSWORD }}
-          source: www-vijitdua-com.tar
-          target: /home/www.vijitdua.com/
-          tar: false
+        run: |
+          sshpass -p "${{ secrets.SSH_PASSWORD }}" scp -o StrictHostKeyChecking=no www-vijitdua-com.tar ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/www.vijitdua.com/
+      
 
       # Remove existing files from the Web Frontend directory on server
       - name: Remove existing files from Web Frontend directory on server
