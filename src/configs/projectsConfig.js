@@ -13,7 +13,7 @@
  * - `sourceCode`: URL to GitHub repository
  * - `projectUrl`: URL to the hosted project
  * - `Component` : Custom component for detailed view
- * - `category`: Category of the project, e.g., 'Active', 'Hackathon', 'Coursework'
+ * - `category`: Category of the project, e.g., 'Live', 'Hackathon', 'Coursework'
  */
 import TeamSyncComponent from "../components/projects/details/TeamSyncComponent";
 import InnoGreetComponent from "../components/projects/details/InnoGreetComponent";
@@ -21,17 +21,26 @@ import KAISTResearchProjectComponent from "../components/projects/details/KAISTR
 import TicTacToeComponent from "../components/projects/details/TicTacToeComponent";
 import TaskUpComponent from "../components/projects/details/TaskUpComponent";
 import COMP3322HKGAirportData from "../components/projects/details/COMP3322HKGAirportData";
+import OutWatchComponent from "../components/projects/details/OutWatchComponent";
 
 export const projects = [
     {
         title: 'InnoGreet',
         route: 'innogreet',
         image: `${process.env.PUBLIC_URL}/assets/projects/innogreet/banner-logo.png`,
-        tagline: 'Find your perfect collaborator. \n [Active Startup Project]',
-        category: 'Active',
+        tagline: 'Find your perfect collaborator. \n [Startup Project]',
+        category: 'Live',
         projectUrl: `https://innogreet.com`,
         time: `Sept 2024 – Present`,
         Component: InnoGreetComponent,
+    },
+    {
+        title: 'OutWatch',
+        route: 'out-watch',
+        tagline: `Automatic Service Outage Tracker, Notifier, and Bug Reporter`,
+        sourceCode: `https://github.com/vijitdua/OutWatch`,
+        time: 'Oct 2024',
+        Component: OutWatchComponent,
     },
     {
         title: 'TeamSync',
