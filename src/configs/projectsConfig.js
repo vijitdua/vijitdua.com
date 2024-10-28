@@ -37,6 +37,7 @@ export const projects = [
     {
         title: 'OutWatch',
         route: 'out-watch',
+        image: `${process.env.PUBLIC_URL}/assets/projects/out-watch/banner-logo.png`,
         tagline: `Automatic Service Outage Tracker, Notifier, and Bug Reporter`,
         sourceCode: `https://github.com/vijitdua/OutWatch`,
         time: 'Oct 2024',

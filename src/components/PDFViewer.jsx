@@ -5,6 +5,7 @@ import {Box, Button, Typography} from "@mui/material";
 function PdfViewer({fileOrUrl}) {
     const [pdfDocument, setPdfDocument] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
+    const [isUrl, setIsUrl] = useState(null);
     const canvasRef = useRef(null);
     const [renderTask, setRenderTask] = useState(null); // Track the current render task
 
@@ -14,8 +15,10 @@ function PdfViewer({fileOrUrl}) {
 
             if (fileOrUrl instanceof File) {
                 url = URL.createObjectURL(fileOrUrl);
+                setIsUrl(false);
             } else {
                 url = fileOrUrl;
+                setIsUrl(true);
             }
 
             try {
@@ -109,6 +112,17 @@ function PdfViewer({fileOrUrl}) {
                             disabled={pdfDocument && pageNumber >= pdfDocument.numPages}>Next</Button>
                 </Box>
             </Box>
+            {isUrl && (
+                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '1rem', padding: '1rem' }}>
+                    <Button
+                        href={fileOrUrl}
+                        download
+                        variant="contained"
+                    >
+                        Download PDF
+                    </Button>
+                </Box>
+            )}
         </>
     );
 }
