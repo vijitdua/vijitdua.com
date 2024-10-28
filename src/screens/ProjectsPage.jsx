@@ -1,11 +1,12 @@
 import MainLayout from '../layouts/MainLayout';
 import ProjectsCollection from '../components/projects/ProjectsCollection';
-import { Helmet } from "react-helmet";
-import { env } from "../configs/envConfig";
-import { routes } from "../configs/routesConfig";
-import { Container, Divider, Typography } from "@mui/material";
+import {Helmet} from "react-helmet";
+import {env} from "../configs/envConfig";
+import {routes} from "../configs/routesConfig";
+import {Container, Divider, Typography} from "@mui/material";
 import ServiceStatus from "../components/service-and-bugs/ServiceStatus";
 import BugReport from "../components/service-and-bugs/BugReport";
+import LiveProjectsList from "../components/projects/LiveProjectsList";
 
 function PageMeta() {
     return (
@@ -32,6 +33,12 @@ function ProjectsPage() {
 
                 <ProjectsCollection desktopViewProjectLimit={4} mobileViewProjectLimit={8}/>
 
+            </Container>
+
+            <Divider/>
+
+            <Container id='live' maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '2rem'}}>
+                <LiveProjectsList/>
             </Container>
 
             <Divider/>
