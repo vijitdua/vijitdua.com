@@ -16,7 +16,6 @@ import ExperiencePage from "./screens/ExperiencePage";
 import ExperienceDetailedPage from "./components/experience/ExperienceDetailedPage";
 import EducationDetailedPage from "./components/education/EducationDetailedPage";
 import ResumePage from "./screens/ResumePage";
-import HiddenCrawlLinks from "./components/misc/HiddenCrawlLinks";
 
 function AppMeta() {
     return (
@@ -56,7 +55,6 @@ function App() {
                     <Route path="*" element={<NoPage />} />
                 </Route>
             </Routes>
-            <HiddenCrawlLinks/>
         </ThemeProvider>
     );
 }
