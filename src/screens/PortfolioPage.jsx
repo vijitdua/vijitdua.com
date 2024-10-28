@@ -49,7 +49,7 @@ function PortfolioPage() {
                     <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center'}}>
                         Projects
                     </Typography>
-                    <ProjectsCollection/>
+                    <ProjectsCollection desktopViewProjectLimit={4} mobileViewProjectLimit={3}/>
                 </Container>
 
                 <Container maxWidth="lg">
