@@ -96,15 +96,17 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
                 }}
             />
 
-            <Typography variant="h2" gutterBottom>
-                {title}
-            </Typography>
-            <Typography variant="h5" color="textSecondary" gutterBottom>
-                {tagline}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" gutterBottom>
-                {time}
-            </Typography>
+            <Box sx={{maxWidth: '95%'}}>
+                <Typography variant="h2" gutterBottom align='center'>
+                    {title}
+                </Typography>
+                <Typography variant="h5" color="textSecondary" gutterBottom align='center'>
+                    {tagline}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" gutterBottom align='center'>
+                    {time}
+                </Typography>
+            </Box>
 
             <Box sx={{display: 'flex', gap: '1rem', marginBottom: '2rem'}}>
                 {sourceCode && (
@@ -134,6 +136,7 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
                     </Button>
                 )}
             </Box>
+
 
             <Box sx={{width: '100%'}}>
                 <Divider variant="middle" sx={{mb: '3rem'}}/>
