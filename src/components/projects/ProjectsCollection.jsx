@@ -2,26 +2,45 @@ import React, { useState, useEffect } from 'react';
 import { projects } from '../../configs/projectsConfig';
 import ProjectCard from './ProjectCard';
 import { Box, Tabs, Tab, Grid, Drawer, Button, Typography, Chip, Menu, MenuItem } from '@mui/material';
-import { useMediaQuery } from '@mui/material';
-import { theme } from '../../themes/primaryTheme';
+import { useMediaQuery, useTheme } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import ProjectDetailedPage from './ProjectDetailedPage';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-function ProjectsCollection({ mobileViewProjectLimit = 4, desktopViewProjectLimit = 4 }) {
+function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 }) {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [categories, setCategories] = useState(['All']);
     const [selectedProject, setSelectedProject] = useState(null);
     const [drawerOpen, setDrawerOpen] = useState(false);
     const [page, setPage] = useState(1); // Page starts at 1
     const [anchorEl, setAnchorEl] = useState(null); // For mobile menu
-    const mobileView = useMediaQuery(theme.breakpoints.down('md'));
     const navigate = useNavigate();
     const location = useLocation();
 
-    // Calculate project limit based on view
-    const projectLimit = mobileView ? mobileViewProjectLimit : desktopViewProjectLimit;
+    const theme = useTheme();
+    const mobileView = useMediaQuery(theme.breakpoints.down('md'));
+
+    const upLg = useMediaQuery(theme.breakpoints.up('lg'));
+    const upMd = useMediaQuery(theme.breakpoints.up('md'));
+    const upSm = useMediaQuery(theme.breakpoints.up('sm'));
+
+    let itemsPerRow;
+    if (upLg) {
+        itemsPerRow = 4;
+    } else if (upMd) {
+        itemsPerRow = 3;
+    } else if (upSm) {
+        itemsPerRow = 2;
+    } else {
+        itemsPerRow = 1;
+    }
+
+    // Calculate line limit based on view
+    const lineLimit = mobileView ? mobileViewLineLimit : desktopViewLineLimit;
+
+    // Calculate project limit based on lineLimit and itemsPerRow
+    const projectLimit = lineLimit * itemsPerRow;
 
     // Helper function to parse category strings into arrays
     function getCategories(item) {
