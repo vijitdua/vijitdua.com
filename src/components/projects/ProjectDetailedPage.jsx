@@ -60,16 +60,16 @@ function ProjectDetailedPage({project: propProject, onClose, notDrawer = true}) 
             }}
         >
             <PageMeta/>
-            {!notDrawer && onClose && (
-                <Button
-                    variant="contained"
-                    color="error"
-                    onClick={onClose}
-                    sx={{position: 'fixed', top: '5px', right: '10px', opacity: 0.8, zIndex: 10,}}
-                >
-                    <Close/>
-                </Button>
-            )}
+            {/*{!notDrawer && onClose && (*/}
+            {/*    <Button*/}
+            {/*        variant="contained"*/}
+            {/*        color="error"*/}
+            {/*        onClick={onClose}*/}
+            {/*        sx={{position: 'fixed', top: '5px', right: '10px', opacity: 0.8, zIndex: 10,}}*/}
+            {/*    >*/}
+            {/*        <Close/>*/}
+            {/*    </Button>*/}
+            {/*)}*/}
 
             {notDrawer && (
                 <Button

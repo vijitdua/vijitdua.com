@@ -47,7 +47,7 @@ export const projects = [
         title: 'TeamSync',
         route: 'team-sync',
         tagline: 'Streamlined Team Management. \n [In Progress]',
-        sourceCode: 'https://github.com/vijitdua/team-sync',
+        sourceCode: 'https://github.com/vijitdua/TeamSync',
         time: `Sept 2024 – In Progress `,
         Component: TeamSyncComponent,
     },
