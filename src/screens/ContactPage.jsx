@@ -7,6 +7,8 @@ import ContactForm from "../components/contact/ContactForm";
 import MailIcon from "@mui/icons-material/Mail";
 import MenuItemsWithIcons from "../components/menu-items/MenuItemsWithIcons";
 import SocialIcon from '@mui/icons-material/Public';
+import {useLocation} from "react-router-dom";
+import {useEffect} from "react";
 
 function PageMeta() {
     return (
@@ -22,6 +24,25 @@ function PageMeta() {
 }
 
 function ContactPage() {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                // Get the top position of the element and adjust by 50 pixels
+                const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 50;
+
+                // Smoothly scroll to the adjusted position
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [location]);
+
     return (
         <MainLayout>
             <PageMeta/>
@@ -66,7 +87,7 @@ function ContactPage() {
                 <Divider/>
 
                 <Box mt={6} mb={8}>
-                    <Typography variant="h2" gutterBottom textAlign="center">
+                    <Typography variant="h2" gutterBottom textAlign="center" id='message'>
                         Contact Form
                     </Typography>
                     <ContactForm/>
