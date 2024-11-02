@@ -16,6 +16,7 @@ import ExperiencePage from "./screens/ExperiencePage";
 import ExperienceDetailedPage from "./components/experience/ExperienceDetailedPage";
 import EducationDetailedPage from "./components/education/EducationDetailedPage";
 import ResumePage from "./screens/ResumePage";
+import ContactPage from "./screens/ContactPage";
 
 function AppMeta() {
     return (
@@ -42,10 +43,9 @@ function App() {
                 <Route index element={<HomePage />} />
                     <Route path={routes.aboutMe} element={<AboutPage />} />
                     <Route path={routes.portfolio} element={<PortfolioPage />} />
-                    <Route path={routes.experience} element={<ExperiencePage />} />
                     <Route path={routes.projects} element={<ProjectsPage />} />
+                    <Route path={routes.contact} element={<ContactPage />} />
                     <Route path={routes.socials} element={<SocialsPage />} />
-                    <Route path={routes.resume} element={<ResumePage />} />
                     {/* Project detail route */}
                     <Route path={`${routes.projects}/:projectName`} element={<ProjectDetailedPage />} />
                     {/* Experience Detail Route */}
@@ -53,6 +53,9 @@ function App() {
                     {/* Education Detail Route */}
                     <Route path={`${routes.education}/:educationRoute`} element={<EducationDetailedPage />} />
                     <Route path="*" element={<NoPage />} />
+                    {/* (Kind of) hidden routes (not in any menu afaik) */}
+                    <Route path={routes.resume} element={<ResumePage />} />
+                    <Route path={routes.experience} element={<ExperiencePage />} />
                 </Route>
             </Routes>
         </ThemeProvider>

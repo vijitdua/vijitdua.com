@@ -33,6 +33,7 @@ export const pagesMenu = [
     {text:  'About', route: routes.aboutMe, },
     {text:  'Portfolio', route: routes.portfolio, },
     {text: 'Projects', route: routes.projects, },
+    {text: 'Contact', route: routes.contact, },
     {text: 'Socials', route: routes.socials, },
 ];
 

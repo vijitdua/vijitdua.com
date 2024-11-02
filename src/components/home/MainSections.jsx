@@ -16,6 +16,7 @@ function MainSections() {
         { label: 'About', route: routes.aboutMe },
         { label: 'Portfolio', route: routes.portfolio, highlight: true },
         { label: 'Projects', route: routes.projects },
+        { label: 'Contact', route: routes.contact },
         { label: 'Socials', route: routes.socials },
     ];
 
@@ -45,7 +46,7 @@ function MainSections() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, delay: index * 0.5 }}
                         style={{
-                            flexBasis: 'calc(20% - 1rem)', // Ensure a max of 4 per row
+                            flexBasis: 'calc(33.33% - 1rem)', // Ensure a max of 4 per row
                             display: 'flex',
                             justifyContent: 'center',
                             marginBottom: '2rem',
