@@ -7,6 +7,8 @@ import {Container, Divider, Typography} from "@mui/material";
 import ServiceStatus from "../components/service-and-bugs/ServiceStatus";
 import BugReport from "../components/service-and-bugs/BugReport";
 import LiveProjectsList from "../components/projects/LiveProjectsList";
+import {useEffect} from "react";
+import {useLocation} from "react-router-dom";
 
 function PageMeta() {
     return (
@@ -22,6 +24,25 @@ function PageMeta() {
 }
 
 function ProjectsPage() {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash) {
+            const element = document.getElementById(location.hash.substring(1));
+            if (element) {
+                // Get the top position of the element and adjust by 50 pixels
+                const offsetTop = element.getBoundingClientRect().top + window.pageYOffset - 50;
+
+                // Smoothly scroll to the adjusted position
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    }, [location]);
+
     return (
         <MainLayout>
             <PageMeta/>
