@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {projects} from '../../configs/projectsConfig';
-import {Box, Typography, Link, List, ListItem, ListItemText, IconButton} from '@mui/material';
+import {Box, Typography, Link, List, ListItem, ListItemText, IconButton, ListItemButton} from '@mui/material';
 import InsertLinkIcon from "@mui/icons-material/InsertLink";
 
 function LiveProjectsList() {
@@ -23,21 +23,20 @@ function LiveProjectsList() {
             </Typography>
             <List sx={{ width: '100%', maxWidth: 600, mx: 'auto' }}>
                 {liveProjects.map((project) => (
-                    <ListItem key={project.route}>
+                    <ListItemButton
+                        component="a"
+                        href={project.projectUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        key={project.route}
+                    >
                         <ListItemText>
                             <Typography variant='h4' component='body1'>
                                 {project.title}
                             </Typography>
                         </ListItemText>
-                        <IconButton
-                            href={project.projectUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Visit Service"
-                        >
                             <InsertLinkIcon />
-                        </IconButton>
-                    </ListItem>
+                    </ListItemButton>
                 ))}
             </List>
         </Box>

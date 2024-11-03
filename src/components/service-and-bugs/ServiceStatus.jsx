@@ -4,6 +4,7 @@ import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CancelIcon from '@mui/icons-material/Cancel';
 import InsertLinkIcon from '@mui/icons-material/InsertLink';
 import { getServices } from "../../service/serviceStatusService";
+import {formatRelativeTime} from "../../utilities/dateFormatting";
 
 const ServiceStatus = () => {
     const [services, setServices] = useState([]);
@@ -63,9 +64,15 @@ const ServiceStatus = () => {
                                             <ListItemText
                                                 primary={service.serviceName}
                                                 secondary={
-                                                    service.status === 'down' && service.downSince
-                                                        ? `Down since ${new Date(service.downSince).toLocaleString()}`
-                                                        : null
+                                                    (service.status === 'down' && service.downSince)
+                                                        ?
+                                                        <Typography variant="caption" style={{ whiteSpace: 'pre-line' }}>
+                                                            {`Down since ${formatRelativeTime(new Date(service.downSince))}\nLast checked ${formatRelativeTime(new Date(service.lastChecked))}`}
+                                                        </Typography>
+                                                        :
+                                                        <Typography variant="caption" style={{ whiteSpace: 'pre-line' }}>
+                                                            {`Last checked ${formatRelativeTime(new Date(service.lastChecked))}`}
+                                                        </Typography>
                                                 }
                                             />
                                         </Grid>
