@@ -5,6 +5,7 @@ import MultimediaCarousel from "../../collections/MultimediaCarousel";
 
 const multimediaData = [
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/out-watch/1.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/out-watch/1.5.png`},
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/out-watch/2.png`},
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/out-watch/3.png`},
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/out-watch/4.png`},
