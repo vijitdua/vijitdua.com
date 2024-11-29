@@ -22,6 +22,7 @@ import TicTacToeComponent from "../components/projects/details/TicTacToeComponen
 import TaskUpComponent from "../components/projects/details/TaskUpComponent";
 import COMP3322HKGAirportData from "../components/projects/details/COMP3322HKGAirportData";
 import OutWatchComponent from "../components/projects/details/OutWatchComponent";
+import COMP3322GradeBook from "../components/projects/details/COMP3322GradeBook";
 
 export const projects = [
     {
@@ -71,6 +72,15 @@ export const projects = [
         sourceCode: 'https://github.com/vijitdua/HackDavis2024-TaskUp',
         time: `Apr 2024`,
         Component: TaskUpComponent,
+    },
+    {
+        title: `GradeBook`,
+        route: `HKU-COMP3322-EML-gradebook`,
+        image: `${process.env.PUBLIC_URL}/assets/projects/course/HKU-COMP3322/EML-gradebook/banner.png`,
+        tagline: `Password-less grade management app with email magic link (EML) authentication.`,
+        category: 'Course',
+        time: `Nov 2024`,
+        Component: COMP3322GradeBook,
     },
     {
         title: 'Multiplayer TicTacToe',

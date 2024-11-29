@@ -26,9 +26,11 @@ function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 5000 }
 
     // Auto-scroll effect
     useEffect(() => {
-        const interval = setInterval(handleNext, autoScrollInterval);
-        return () => clearInterval(interval); // Clean up interval on component unmount
-    }, [currentIndex]);
+        if (data.length > 1) {
+            const interval = setInterval(handleNext, autoScrollInterval);
+            return () => clearInterval(interval); // Clean up interval on component unmount
+        }
+    }, [currentIndex, data.length, autoScrollInterval]);
 
     // Render current media (image, GIF, video)
     const renderMedia = (item) => {
@@ -81,24 +83,26 @@ function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 5000 }
             }}
         >
             {/* Left arrow button */}
-            <IconButton
-                onClick={handlePrev}
-                sx={{
-                    position: 'absolute',
-                    left: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    zIndex: 1,
-                    opacity: 0.7,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a subtle background for better visibility
-                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)', // Adds a slight shadow
-                    '&:hover': {
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darkens on hover
-                    },
-                }}
-            >
-                <ArrowBack fontSize="large" />
-            </IconButton>
+            {data.length > 1 && (
+                <IconButton
+                    onClick={handlePrev}
+                    sx={{
+                        position: 'absolute',
+                        left: '10px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        zIndex: 1,
+                        opacity: 0.7,
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a subtle background for better visibility
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)', // Adds a slight shadow
+                        '&:hover': {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darkens on hover
+                        },
+                    }}
+                >
+                    <ArrowBack fontSize="large" />
+                </IconButton>
+            )}
 
             {/* Media container */}
             <Box sx={{ width: '100%', height: '100%' }}>
@@ -106,49 +110,53 @@ function MultimediaCarousel({ data = multimediaData, autoScrollInterval = 5000 }
             </Box>
 
             {/* Right arrow button */}
-            <IconButton
-                onClick={handleNext}
-                sx={{
-                    position: 'absolute',
-                    right: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    zIndex: 1,
-                    opacity: 0.7,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a subtle background for better visibility
-                    boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)', // Adds a slight shadow
-                    '&:hover': {
-                        backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darkens on hover
-                    },
-                }}
-            >
-                <ArrowForward fontSize="large" />
-            </IconButton>
+            {data.length > 1 && (
+                <IconButton
+                    onClick={handleNext}
+                    sx={{
+                        position: 'absolute',
+                        right: '10px',
+                        top: '50%',
+                        transform: 'translateY(-50%)',
+                        zIndex: 1,
+                        opacity: 0.7,
+                        backgroundColor: 'rgba(0, 0, 0, 0.5)', // Optional: Adds a subtle background for better visibility
+                        boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.6)', // Adds a slight shadow
+                        '&:hover': {
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)', // Darkens on hover
+                        },
+                    }}
+                >
+                    <ArrowForward fontSize="large" />
+                </IconButton>
+            )}
 
             {/* Progress dots at the bottom */}
-            <Box
-                sx={{
-                    position: 'absolute',
-                    bottom: '10px',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    display: 'flex',
-                    gap: '8px',
-                }}
-            >
-                {data.map((_, index) => (
-                    <Box
-                        key={index}
-                        sx={{
-                            width: '10px',
-                            height: '10px',
-                            borderRadius: '50%',
-                            backgroundColor: currentIndex === index ? '#fff' : '#888',
-                            transition: 'background-color 0.3s',
-                        }}
-                    />
-                ))}
-            </Box>
+            {data.length > 1 && (
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        bottom: '10px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        display: 'flex',
+                        gap: '8px',
+                    }}
+                >
+                    {data.map((_, index) => (
+                        <Box
+                            key={index}
+                            sx={{
+                                width: '10px',
+                                height: '10px',
+                                borderRadius: '50%',
+                                backgroundColor: currentIndex === index ? '#fff' : '#888',
+                                transition: 'background-color 0.3s',
+                            }}
+                        />
+                    ))}
+                </Box>
+            )}
         </Box>
     );
 }
