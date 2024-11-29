@@ -26,9 +26,16 @@ function ExperiencePage() {
         <MainLayout>
             <PageMeta/>
             <Container maxWidth="lg">
+
                 <Typography variant="h1" gutterBottom sx={{textAlign: 'center'}}>
                     Experience
                 </Typography>
+
+
+                <Typography variant="body1" gutterBottom sx={{textAlign: 'center'}}>
+                    Click to expand and view more details
+                </Typography>
+
                 <ExperienceTimeline/>
 
                 <Box sx={{

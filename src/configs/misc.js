@@ -1,1 +1,1 @@
-export const bio = 'Aspiring Tech Mogul & Change Catalyst, Occasional YouTube star (not really)';
+export const bio = 'Builder, Developer, Change Catalyst';
