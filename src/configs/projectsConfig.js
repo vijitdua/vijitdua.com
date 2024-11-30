@@ -23,6 +23,8 @@ import TaskUpComponent from "../components/projects/details/TaskUpComponent";
 import COMP3322HKGAirportData from "../components/projects/details/COMP3322HKGAirportData";
 import OutWatchComponent from "../components/projects/details/OutWatchComponent";
 import COMP3322GradeBook from "../components/projects/details/COMP3322GradeBook";
+import ECS36AMidTermConnectFour from "../components/projects/details/ECS36AMidTermConnectFour";
+import ECS36AFinalTerminalPainter from "../components/projects/details/ECS36AFinalTerminalPainter";
 
 export const projects = [
     {
@@ -36,23 +38,6 @@ export const projects = [
         Component: InnoGreetComponent,
     },
     {
-        title: 'OutWatch',
-        route: 'out-watch',
-        image: `${process.env.PUBLIC_URL}/assets/projects/out-watch/banner-logo.png`,
-        tagline: `Automatic Service Outage Tracker, Notifier, and Bug Reporter`,
-        sourceCode: `https://github.com/vijitdua/OutWatch`,
-        time: 'Oct 2024',
-        Component: OutWatchComponent,
-    },
-    {
-        title: 'TeamSync',
-        route: 'team-sync',
-        tagline: 'Streamlined Team Management. \n [In Progress]',
-        sourceCode: 'https://github.com/vijitdua/TeamSync',
-        time: `Sept 2024 – In Progress `,
-        Component: TeamSyncComponent,
-    },
-    {
         title: 'AutoMap',
         route: 'KAIST-research-project',
         image: `${process.env.PUBLIC_URL}/assets/projects/KAIST-research-project/banner-logo.png`,
@@ -61,6 +46,25 @@ export const projects = [
         sourceCode: 'https://github.com/vijitdua/KAIST-Deep-Learning-Research-UNet-Statalite-Road-Identification',
         time: `Jun 2024`,
         Component: KAISTResearchProjectComponent,
+    },
+    {
+        title: 'OutWatch',
+        route: 'out-watch',
+        image: `${process.env.PUBLIC_URL}/assets/projects/out-watch/banner-logo.png`,
+        tagline: `Automatic Service Outage Tracker, Notifier, and Bug Reporter`,
+        category: 'Utility',
+        sourceCode: `https://github.com/vijitdua/OutWatch`,
+        time: 'Oct 2024',
+        Component: OutWatchComponent,
+    },
+    {
+        title: 'TeamSync',
+        route: 'team-sync',
+        tagline: 'Streamlined Team Management. \n [In Progress]',
+        category: 'Utility',
+        sourceCode: 'https://github.com/vijitdua/TeamSync',
+        time: `Sept 2024 – In Progress `,
+        Component: TeamSyncComponent,
     },
     {
         title: 'TaskUp',
@@ -74,30 +78,49 @@ export const projects = [
         Component: TaskUpComponent,
     },
     {
+        title: 'Multiplayer TicTacToe',
+        route: 'tic-tac-toe',
+        image: `${process.env.PUBLIC_URL}/assets/projects/tic-tac-toe/banner-logo.png`,
+        tagline: 'Full-Stack Multiplayer Webgame with Auth',
+        category: 'Misc.',
+        sourceCode: 'https://github.com/vijitdua/Multiplayer-TicTacToe',
+        time: `Mar 2024`,
+        Component: TicTacToeComponent,
+    },
+    {
         title: `GradeBook`,
         route: `HKU-COMP3322-EML-gradebook`,
         image: `${process.env.PUBLIC_URL}/assets/projects/course/HKU-COMP3322/EML-gradebook/banner.png`,
         tagline: `Password-less grade management app with email magic link (EML) authentication.`,
-        category: 'Course',
+        category: 'Course Project',
         time: `Nov 2024`,
         Component: COMP3322GradeBook,
-    },
-    {
-        title: 'Multiplayer TicTacToe',
-        route: 'tic-tac-toe',
-        image: `${process.env.PUBLIC_URL}/assets/projects/tic-tac-toe/banner-logo.png`,
-        tagline: 'Full-Stack Multiplayer Webgame',
-        sourceCode: 'https://github.com/vijitdua/Multiplayer-TicTacToe',
-        time: `Mar 2024`,
-        Component: TicTacToeComponent,
     },
     {
         title: 'HKG Airport Flight Data',
         route: 'HKU-COMP3322-hkg-airport',
         image: `${process.env.PUBLIC_URL}/assets/projects/course/HKU-COMP3322/HKG-airport-data/logo.png`,
         tagline: 'HKG Airport flight information using open data, built with vanilla HTML, CSS, & JS',
-        category: 'Course',
+        category: 'Course Project',
         time: `Oct 2024`,
         Component: COMP3322HKGAirportData,
-    }
+    },
+    {
+        title: 'Terminal Painter',
+        route: `UCD-ECS-36A-final-project`,
+        image: `${process.env.PUBLIC_URL}/assets/projects/course/UCD-ECS-36A/final-project/banner.png`,
+        category: `Course Project`,
+        tagline: 'CLI based painting program, built using C',
+        time: `Dec 2023`,
+        Component: ECS36AFinalTerminalPainter,
+    },
+    {
+        title: 'Connect 4',
+        route: `UCD-ECS-36A-midterm-project`,
+        image: `${process.env.PUBLIC_URL}/assets/projects/course/UCD-ECS-36A/midterm-project/banner.png`,
+        category: `Course Project`,
+        tagline: 'CLI based Connect-4 game, built using C',
+        time: `Nov 2023`,
+        Component: ECS36AMidTermConnectFour,
+    },
 ];
