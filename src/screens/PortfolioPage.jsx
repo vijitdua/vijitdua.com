@@ -64,7 +64,7 @@ function PortfolioPage() {
                         Experience
                     </Typography>
                     <Typography variant="body1" gutterBottom sx={{textAlign: 'center'}}>
-                        Click to expand and view more details
+                        Click to expand
                     </Typography>
                     <ExperienceTimeline/>
                 </Container>

@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import { projects } from '../../configs/projectsConfig';
+import React, {useState, useEffect} from 'react';
+import {projects} from '../../configs/projectsConfig';
 import ProjectCard from './ProjectCard';
-import { Box, Tabs, Tab, Grid, Drawer, Button, Typography, Chip, Menu, MenuItem } from '@mui/material';
-import { useMediaQuery, useTheme } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import {Box, Tabs, Tab, Grid, Drawer, Button, Typography, Chip, Menu, MenuItem} from '@mui/material';
+import {useMediaQuery, useTheme} from '@mui/material';
+import {useLocation, useNavigate} from 'react-router-dom';
+import {AnimatePresence} from 'framer-motion';
 import ProjectDetailedPage from './ProjectDetailedPage';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 }) {
+function ProjectsCollection({mobileViewLineLimit = 2, desktopViewLineLimit = 1}) {
     const [selectedCategory, setSelectedCategory] = useState('All');
     const [categories, setCategories] = useState(['All']);
     const [selectedProject, setSelectedProject] = useState(null);
@@ -100,7 +100,7 @@ function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 
         } else {
             setSelectedProject(project);
             setDrawerOpen(true);
-            window.history.pushState({ prevUrl: currentUrl }, '', `/projects/${project.route}`);
+            window.history.pushState({prevUrl: currentUrl}, '', `/projects/${project.route}`);
         }
     };
 
@@ -109,9 +109,9 @@ function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 
         setDrawerOpen(false);
         setSelectedProject(null);
         if (previousState) {
-            navigate(previousState, { replace: true });
+            navigate(previousState, {replace: true});
         } else {
-            navigate('/projects', { replace: true });
+            navigate('/projects', {replace: true});
         }
     };
 
@@ -132,43 +132,30 @@ function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 
     };
 
     return (
-        <Box sx={{ padding: '2rem' }}>
+        <Box sx={{padding: '2rem'}}>
+
             {/* Category selection */}
-            {mobileView ? (
-                <Box sx={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
-                    <Chip
-                        label={selectedCategory}
-                        onClick={handleChipClick}
-                        sx={{ cursor: 'pointer', minWidth: '7rem' }}
-                        deleteIcon={<ExpandMoreIcon />}
-                        onDelete={handleChipClick}
-                    />
-                    <Menu
-                        anchorEl={anchorEl}
-                        open={Boolean(anchorEl)}
-                        onClose={handleMenuClose}
-                    >
-                        {categories.map((category) => (
-                            <MenuItem key={category} onClick={() => handleCategoryChange(null, category)}>
-                                {category}
-                            </MenuItem>
-                        ))}
-                    </Menu>
-                </Box>
-            ) : (
-                <Tabs
-                    value={selectedCategory}
-                    onChange={handleCategoryChange}
-                    variant="scrollable"
-                    scrollButtons="auto"
-                    aria-label="project categories"
-                    sx={{ marginBottom: '2rem' }}
+
+            <Box sx={{display: 'flex', justifyContent: 'center', marginBottom: '2rem'}}>
+                <Chip
+                    label={selectedCategory}
+                    onClick={handleChipClick}
+                    sx={{cursor: 'pointer', minWidth: '7rem'}}
+                    deleteIcon={<ExpandMoreIcon/>}
+                    onDelete={handleChipClick}
+                />
+                <Menu
+                    anchorEl={anchorEl}
+                    open={Boolean(anchorEl)}
+                    onClose={handleMenuClose}
                 >
                     {categories.map((category) => (
-                        <Tab key={category} label={category} value={category} />
+                        <MenuItem key={category} onClick={() => handleCategoryChange(null, category)}>
+                            {category}
+                        </MenuItem>
                     ))}
-                </Tabs>
-            )}
+                </Menu>
+            </Box>
 
             {/* Display paginated projects */}
             <Grid container spacing={4}>
@@ -176,19 +163,19 @@ function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 
                     {paginatedProjects.map((project, index) => (
                         <Grid item xs={12} sm={6} md={4} lg={3} key={project.route}>
                             {/* Pass the index to ProjectCard to control delay */}
-                            <ProjectCard project={project} onProjectClick={handleProjectClick} index={index} />
+                            <ProjectCard project={project} onProjectClick={handleProjectClick} index={index}/>
                         </Grid>
                     ))}
                 </AnimatePresence>
             </Grid>
 
             {/* Pagination controls */}
-            <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 3 }}>
+            <Box sx={{display: 'flex', justifyContent: 'center', alignItems: 'center', mt: 3}}>
                 <Button
                     variant="contained"
                     onClick={handlePreviousPage}
                     disabled={page === 1}
-                    sx={{ marginRight: '1rem' }}
+                    sx={{marginRight: '1rem'}}
                 >
                     Previous
                 </Button>
@@ -199,7 +186,7 @@ function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 
                     variant="contained"
                     onClick={handleNextPage}
                     disabled={page === totalPages}
-                    sx={{ marginLeft: '1rem' }}
+                    sx={{marginLeft: '1rem'}}
                 >
                     Next
                 </Button>
@@ -210,7 +197,7 @@ function ProjectsCollection({ mobileViewLineLimit = 2, desktopViewLineLimit = 1 
                     anchor="right"
                     open={drawerOpen}
                     onClose={handleDrawerClose}
-                    PaperProps={{ sx: { width: mobileView ? '100%' : '50%' } }}
+                    PaperProps={{sx: {width: mobileView ? '100%' : '50%'}}}
                 >
                     {selectedProject && (
                         <ProjectDetailedPage

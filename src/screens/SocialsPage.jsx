@@ -7,8 +7,8 @@ import {bio} from "../configs/misc";
 import MenuItemsWithIcons from "../components/menu-items/MenuItemsWithIcons";
 import MailIcon from "@mui/icons-material/Mail";
 import MainLayout from "../layouts/MainLayout";
-import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
-import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
+import ExpandMore from '@mui/icons-material/ExpandMore';
+import ExpandLess from '@mui/icons-material/ExpandLess';
 import {useState} from "react";
 
 function Section({title, items}) {
@@ -60,12 +60,13 @@ function Section({title, items}) {
                                 display: 'flex',
                                 justifyContent: 'center',
                                 alignItems: 'center',
+                                background: 'rgba(227,227,227,0.05)'
                             }}
                         >
                             {showHidden ? (
-                                <UnfoldLessIcon fontSize="small"/>
+                                <ExpandLess sx={{fontSize: '1rem'}}/>
                             ) : (
-                                <UnfoldMoreIcon fontSize="small"/>
+                                <ExpandMore sx={{fontSize: '1rem'}}/>
                             )}
                         </IconButton>
                     </>
@@ -130,8 +131,20 @@ function SocialsPage() {
                     mb: '1rem',
                 }}>
                     <Typography variant="body2" component="body2">
-                        Click <Box sx={{display: 'inline-block', height: '1rem'}}><UnfoldMoreIcon
-                        fontSize="small"/></Box> in each section to view more
+                        Click
+                        <Box sx={{display: 'inline-block', height: '1rem'}}>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    padding: '0.25rem',
+                                    justifyContent: 'center',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <ExpandMore sx={{fontSize: '1rem'}}/>
+                            </Box>
+                        </Box>
+                        in each section to view more
                     </Typography>
                 </Box>
 
