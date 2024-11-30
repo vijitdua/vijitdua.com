@@ -66,13 +66,16 @@ export const endMenuItems = [
  * - `name` : Displays the name of the menu option
  * - `icon` : Display Icon for Menu Option
  * - `route` : Redirect url when menu option clicked
+ * - `hidden` : Boolean (Optional) - If true, this menu option will be hidden by default.
+ *   It will only appear after clicking the "expand/more" icon in the corresponding section.
+ *
  */
 export const socialsList = [
     {name: 'X / Twitter', icon: <XIcon/>, route: socialLinks.twitter,},
     {name: 'Instagram', icon: <InstagramIcon/>, route: socialLinks.instagram,},
     {name: 'Photography Page', icon: <InstagramIcon/>, route: socialLinks.instagramPhotography,},
-    {name: 'Threads', icon: <CustomIconOrSVG src={`/icons/threads-white.svg`}/>, route: socialLinks.threads,},
-    {name: 'Discord', icon: <CustomIconOrSVG src={`/icons/discord-white.svg`}/>, route: socialLinks.discord,},
+    {name: 'Threads', icon: <CustomIconOrSVG src={`/icons/threads-white.svg`}/>, route: socialLinks.threads, hidden: true},
+    {name: 'Discord', icon: <CustomIconOrSVG src={`/icons/discord-white.svg`}/>, route: socialLinks.discord, hidden: true},
 ];
 
 /**
@@ -83,11 +86,14 @@ export const socialsList = [
  * - `name` : Displays the name of the menu option
  * - `icon` : Display Icon for Menu Option
  * - `route` : Redirect url when menu option clicked
+ * - `hidden` : Boolean (Optional) - If true, this menu option will be hidden by default.
+ *   It will only appear after clicking the "expand/more" icon in the corresponding section.
+ *
  */
 export const contentList = [
-    {name: 'Vijit Dua (Main)', icon: <YouTubeIcon/>, route: socialLinks.youtubeMain,},
-    {name: 'Funnyizer (Gaming & 2nd)', icon: <YouTubeIcon/>, route: socialLinks.youtubeGaming,},
-    {name: 'Live Streams', icon: <CustomIconOrSVG src={`/icons/twitch-white.svg`}/>, route: socialLinks.twitch,},
+    {name: 'Vijit Dua', icon: <YouTubeIcon/>, route: socialLinks.youtubeMain,},
+    {name: 'Funnyizer (Gaming / Secondary)', icon: <YouTubeIcon/>, route: socialLinks.youtubeGaming, hidden: true},
+    {name: 'Live Streams', icon: <CustomIconOrSVG src={`/icons/twitch-white.svg`}/>, route: socialLinks.twitch, hidden: true},
 ];
 
 /**
@@ -98,11 +104,13 @@ export const contentList = [
  * - `name` : Displays the name of the menu option
  * - `icon` : Display Icon for Menu Option
  * - `route` : Redirect url when menu option clicked
+ * - `hidden` : Boolean (Optional) - If true, this menu option will be hidden by default.
+ *   It will only appear after clicking the "expand/more" icon in the corresponding section.
+ *
  */
 export const professionalSocials = [
     {name: 'Portfolio', icon: <LanguageIcon/>, route: routes.portfolio,},
     {name: 'LinkedIn', icon: <LinkedInIcon/>, route: socialLinks.linkedIn,},
     {name: 'GitHub', icon: <GitHub/>, route: socialLinks.github,},
-    {name: 'Projects', icon: <FolderCopyIcon/>, route: socialLinks.github,},
-    {name: 'InnoGreet', icon: <CustomIconOrSVG src={`/icons/innogreet-white.svg`}/>, route: socialLinks.innogreet,},
+    {name: 'InnoGreet', icon: <CustomIconOrSVG src={`/icons/innogreet-white.svg`}/>, route: socialLinks.innogreet, hidden: true},
 ];
