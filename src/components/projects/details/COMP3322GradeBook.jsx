@@ -58,17 +58,11 @@ function COMP3322GradeBook() {
                 <strong>App Usage gif</strong>
             </Typography>
             <MultimediaCarousel data={functionalityMedia}/>
-            <Box sx={{ width: '100%' }}>
-                <Divider variant="middle" sx={{ mb: '1rem' }} />
-            </Box>
 
             <Typography variant="body1" paragraph>
                 <strong>App Usage Images</strong>
             </Typography>
             <MultimediaCarousel data={functionalityMediaTwo} autoScrollInterval={4000} />
-            <Box sx={{ width: '100%' }}>
-                <Divider variant="middle" sx={{ mb: '1rem' }} />
-            </Box>
 
             <Typography variant="body1" paragraph>
                 <strong>Error Management</strong>

@@ -1,20 +1,26 @@
 import {contentList, professionalSocials, socialsList} from "../configs/menuConfig";
-import {Avatar, Box, Container, Typography} from "@mui/material";
+import {Avatar, Box, Button, Container, IconButton, Typography} from "@mui/material";
 import SocialMediaOvalItem from "../components/menu-items/SocialMediaOvalItem";
-import YouTubeIcon from "@mui/icons-material/YouTube";
 import {routes, socialLinks} from "../configs/routesConfig";
 import InfoIcon from '@mui/icons-material/Info';
 import {bio} from "../configs/misc";
 import MenuItemsWithIcons from "../components/menu-items/MenuItemsWithIcons";
 import MailIcon from "@mui/icons-material/Mail";
 import MainLayout from "../layouts/MainLayout";
+import UnfoldMoreIcon from '@mui/icons-material/UnfoldMore';
+import UnfoldLessIcon from '@mui/icons-material/UnfoldLess';
+import {useState} from "react";
 
 function Section({title, items}) {
-    return (<Box sx={{
-            marginBottom: '2rem',
-        }}>
-            {/* Section title */}
-            <Typography variant='h5' sx={{
+
+    const [showHidden, setShowHidden] = useState(false);
+
+    const visibleItems = items.filter(item => !item.hidden);
+    const hiddenItems = items.filter(item => item.hidden);
+
+    return (
+        <Box sx={{marginBottom: '2rem'}}>
+            <Typography variant="h5" sx={{
                 textAlign: 'center',
                 mt: '1rem',
                 mb: '1rem',
@@ -22,6 +28,7 @@ function Section({title, items}) {
             }}>
                 {title}
             </Typography>
+
             <Box sx={{
                 display: 'flex',
                 flexDirection: 'column',
@@ -30,9 +37,39 @@ function Section({title, items}) {
                 gap: '1rem',
                 color: 'inherit',
             }}>
-                {items.map((item, index) => (
+                {/* Render visible items */}
+                {visibleItems.map((item, index) => (
                     <SocialMediaOvalItem item={item} index={index} key={index}/>
                 ))}
+
+                {/* Render hidden items if expanded */}
+                {hiddenItems.length > 0 && (
+                    <>
+                        {showHidden && (
+                            hiddenItems.map((item, index) => (
+                                <SocialMediaOvalItem
+                                    item={item}
+                                    index={visibleItems.length + index}
+                                    key={visibleItems.length + index}
+                                />
+                            ))
+                        )}
+                        <IconButton
+                            onClick={() => setShowHidden(!showHidden)}
+                            sx={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
+                            {showHidden ? (
+                                <UnfoldLessIcon fontSize="small"/>
+                            ) : (
+                                <UnfoldMoreIcon fontSize="small"/>
+                            )}
+                        </IconButton>
+                    </>
+                )}
             </Box>
         </Box>
     );
@@ -72,9 +109,9 @@ function SocialsPage() {
                         {bio}
                     </Typography>
 
-                    <SocialMediaOvalItem
-                        item={{name: 'About Me', icon: <InfoIcon/>, route: routes.aboutMe,}} index={1}
-                        key={1}/>
+                    {/*<SocialMediaOvalItem*/}
+                    {/*    item={{name: 'About Me', icon: <InfoIcon/>, route: routes.aboutMe,}} index={1}*/}
+                    {/*    key={1}/>*/}
                 </Box>
 
                 {/* Sections */}
@@ -83,6 +120,20 @@ function SocialsPage() {
                 <Section title='Socials' items={socialsList}/>
 
                 <Section title='Professional' items={professionalSocials}/>
+
+                <Box sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '1rem',
+                    mb: '1rem',
+                }}>
+                    <Typography variant="body2" component="body2">
+                        Click <Box sx={{display: 'inline-block', height: '1rem'}}><UnfoldMoreIcon
+                        fontSize="small"/></Box> in each section to view more
+                    </Typography>
+                </Box>
 
                 {/* Mail icon */}
                 <Box sx={{
