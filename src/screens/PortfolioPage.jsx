@@ -49,6 +49,9 @@ function PortfolioPage() {
                     <Typography variant="h1" gutterBottom sx={{mt: '3rem', textAlign: 'center'}}>
                         Projects
                     </Typography>
+                    <Typography variant="body1" gutterBottom sx={{textAlign: 'center'}}>
+                        Click to expand
+                    </Typography>
                     <ProjectsCollection/>
                 </Container>
 

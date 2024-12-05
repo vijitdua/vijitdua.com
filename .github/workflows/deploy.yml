@@ -44,7 +44,7 @@ jobs:
       - name: Stop and remove existing container if running
         run: |
           sshpass -p "${{ secrets.SSH_PASSWORD }}" ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }} "
-            CONTAINER_ID=\$(sudo docker ps -q --filter name=www-vijitdua-com-container)
+            CONTAINER_ID=\$(sudo docker ps -a -q --filter name=www-vijitdua-com-container)
             if [ ! -z \$CONTAINER_ID ]; then
               echo 'Stopping container with ID: \$CONTAINER_ID'
               sudo docker stop \$CONTAINER_ID

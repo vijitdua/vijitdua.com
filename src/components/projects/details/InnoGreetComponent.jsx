@@ -4,6 +4,15 @@ import React from "react";
 import {socialLinks} from "../../../configs/routesConfig";
 import Divider from "@mui/material/Divider";
 
+const multimediaData = [
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/signup-light.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/signup-dark.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-desktop-light.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-mobile-light.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-desktop-dark.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-mobile-dark.png`},
+];
+
 function InnoGreetComponent(){
     return (
         <Box sx={{textAlign: 'justify'}}>
@@ -35,10 +44,10 @@ function InnoGreetComponent(){
                 </li>
                 <li>Currently a project with the potential to transition into a startup based on beta launch success.
                 </li>
-                <li>Frontend: JavaScript, React.js, Material UI; Backend: Node.js, Express.js, Sequelize, Passport.js,
-                    NodeMailer.
+                <li>Frontend: Next.js, JavaScript, React.js, Material UI, Wordpress (Next.js headless CMS integration)</li>
+                <li>
+                    Backend: Node.js, Express.js, Sequelize, Passport.js, NodeMailer, PostgreSQL, Docker Compose, Docker
                 </li>
-                <li>Database: PostgreSQL, MongoDB (for in-app messages only).</li>
             </ul>
 
             <Box sx={{ width: '100%' }}>
@@ -49,7 +58,11 @@ function InnoGreetComponent(){
                 <strong>Launching January 2025</strong>
             </Typography>
 
-            {/*<MultimediaCarousel/>*/}
+            <Typography variant="body1" paragraph>
+                <strong>Sneak Peaks (In Progress)</strong>
+            </Typography>
+
+            <MultimediaCarousel data={multimediaData} />
 
             <Box sx={{ width: '100%' }}>
                 <Divider variant="middle" sx={{mb:'1rem'}}/>
