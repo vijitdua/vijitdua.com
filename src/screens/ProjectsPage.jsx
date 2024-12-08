@@ -34,68 +34,6 @@ function PageMeta() {
     );
 }
 
-function TableOfContents({children}) {
-    const theme = useTheme();
-    const isNotDesktop = useMediaQuery(theme.breakpoints.down('lg'));
-
-    const widthOfContent = '13rem';
-
-    return (
-        <Box sx={{
-            height: '100vh',
-        }}>
-            {!isNotDesktop && (
-                <Box sx={{
-                    mt: '10rem',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '1rem',
-                    maxWidth: widthOfContent,
-                    position: 'fixed',
-                    overflowY: 'hidden',
-                    overflow: 'hidden',
-                }}>
-                    <Box>
-                        <List>
-
-                            <Typography variant="h4" sx={{marginLeft: '1rem'}}>Contents</Typography>
-
-                            <ListItem disablePadding>
-                                <ListItemButton component="a" href="#live">
-                                    <ListItemText primary="Live Projects"/>
-                                </ListItemButton>
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemButton component="a" href="#all">
-                                    <ListItemText primary="All Projects"/>
-                                </ListItemButton>
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemButton component="a" href="#status">
-                                    <ListItemText primary="Service Status"/>
-                                </ListItemButton>
-                            </ListItem>
-                            <ListItem disablePadding>
-                                <ListItemButton component="a" href="#report">
-                                    <ListItemText primary="Bug Report"/>
-                                </ListItemButton>
-                            </ListItem>
-                        </List>
-                    </Box>
-                </Box>
-            )}
-            <Box sx={{
-                display: 'flex',
-                marginLeft: isNotDesktop ? '0' : widthOfContent,
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-            }}>
-                {children}
-            </Box>
-        </Box>
-    );
-}
-
 function ProjectsPage() {
 
     const location = useLocation();
@@ -120,12 +58,11 @@ function ProjectsPage() {
         <MainLayout>
             <PageMeta/>
 
-            <TableOfContents>
                 <Container id='live' maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '2rem'}}>
                     <LiveProjectsList/>
                 </Container>
 
-                <Divider/>
+                <Divider sx={{mb: '4rem',}}/>
 
                 <Container id='all' maxWidth="xl" sx={{marginBottom: '5rem'}}>
 
@@ -152,7 +89,6 @@ function ProjectsPage() {
                 </Container>
 
                 <Divider/>
-            </TableOfContents>
 
         </MainLayout>
     );
