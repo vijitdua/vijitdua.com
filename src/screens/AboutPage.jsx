@@ -54,32 +54,32 @@ function AboutPage() {
                         />
 
                         <Box sx={{flexGrow: 1}}>
-                            <Typography variant="h4" gutterBottom>
-                                Who is Vijit?
+                            <Typography variant="body1" paragraph>
+                                I'm Vijit Dua, a builder developer, and change catalyst.
+                                As a student with a side quest in entrepreneurship, I'm all
+                                about blending coding with my dream to kick off something cool on my
+                                own. When I'm not buried in projects or busy being a student, you'll catch me:
                             </Typography>
                             <Typography variant="body1" paragraph>
-                                I'm Vijit, a CS student with a side quest in entrepreneurship. I'm all
-                                about blending coding with my dream to kick off something cool on my
-                                own. Outside of plotting to take over the tech world, you'll catch me
-                                hitting the pavement on my runs, flexing at the gym, crafting videos /
-                                edits for my{' '}
-                                <Typography variant="caption" style={{ fontStyle: 'italic' }}>inactive</Typography>
-                                {' '}
+                                🏃‍♂️ Biking the trails, hitting the pavement on my runs, or frequenting the gym to stay fit.
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                👥 Meeting new people and diving into conversations—from casual banter to deep discussions over physics & philosopphy.
+                            </Typography>
+                            <Typography variant="body1" paragraph>
+                                🎥 Creating and editing videos for my
                                 <Link href="https://youtube.com/@vijitdua" target="_blank">
                                     YouTube channel
-                                </Link>
-                                , or sometimes (rarely) even producing music.
+                                </Link>.
                             </Typography>
                             <Typography variant="body1" paragraph>
-                                When I'm not cooped up being productive, I tend to be an extremely
-                                outgoing person. I live for the thrill of meeting new folks and jumping
-                                into any convo, from debating the existential status of hotdogs
-                                (definitely sandwiches, right?) to unraveling the mysteries of physics.
+                                🎶 Occasionally dabbling in music production with Ableton.
                             </Typography>
                             <Typography variant="body1" paragraph>
-                                I'm also (rarely) a part-time gamer. Mostly just into BeatSaber, Population One, or
-                                Rocket League, but anything (primarily VR, MacOS, or game-porting / Whisky - MacOS) is
-                                cool by me.
+                                🎮 Wielding lightsabers in BeatSaber, hopping onto population one, flying away in Rocket League, or exploring other (primarily VR, MacOS, or game-porting / Whisky - MacOS) games.
+                            </Typography>
+                            <Typography variant="caption" style={{ fontStyle: 'italic', display: 'block', marginTop: '8px' }}>
+                                Some of these are rare indulgences, but still traits that are a part of who I am :).
                             </Typography>
                         </Box>
                     </Box>
