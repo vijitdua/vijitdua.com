@@ -3,7 +3,18 @@ import ProjectsCollection from '../components/projects/ProjectsCollection';
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
 import {routes} from "../configs/routesConfig";
-import {Container, Divider, Typography} from "@mui/material";
+import {
+    Box,
+    Container,
+    Divider,
+    Grid,
+    List,
+    ListItem,
+    ListItemButton, ListItemText,
+    Typography,
+    useMediaQuery,
+    useTheme
+} from "@mui/material";
 import ServiceStatus from "../components/service-and-bugs/ServiceStatus";
 import BugReport from "../components/service-and-bugs/BugReport";
 import LiveProjectsList from "../components/projects/LiveProjectsList";
@@ -46,37 +57,38 @@ function ProjectsPage() {
     return (
         <MainLayout>
             <PageMeta/>
-            <Container maxWidth="xl" sx={{marginBottom: '5rem'}}>
 
-                <Typography variant='h1' align='center'>
-                    Projects
-                </Typography>
+                <Container id='live' maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '2rem'}}>
+                    <LiveProjectsList/>
+                </Container>
 
-                <ProjectsCollection/>
+                <Divider sx={{mb: '4rem',}}/>
 
-            </Container>
+                <Container id='all' maxWidth="xl" sx={{marginBottom: '5rem'}}>
 
-            <Divider/>
+                    <Typography variant='h1' align='center'>
+                        All Projects
+                    </Typography>
 
-            <Container id='live' maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '2rem'}}>
-                <LiveProjectsList/>
-            </Container>
+                    <ProjectsCollection/>
 
-            <Divider/>
+                </Container>
 
-            {/* Service Status Section */}
-            <Container id="status" maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '3rem'}}>
-                <ServiceStatus/>
-            </Container>
+                <Divider/>
 
-            <Divider/>
+                {/* Service Status Section */}
+                <Container id="status" maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '3rem'}}>
+                    <ServiceStatus/>
+                </Container>
 
-            {/* Bug Report Section */}
-            <Container id="report" maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '5rem'}}>
-                <BugReport/>
-            </Container>
+                <Divider/>
 
-            <Divider/>
+                {/* Bug Report Section */}
+                <Container id="report" maxWidth="xl" sx={{marginTop: '3rem', marginBottom: '5rem'}}>
+                    <BugReport/>
+                </Container>
+
+                <Divider/>
 
         </MainLayout>
     );

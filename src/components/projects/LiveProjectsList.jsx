@@ -18,10 +18,13 @@ function LiveProjectsList() {
             <Typography variant='h1' align='center' gutterBottom>
                 Live Projects
             </Typography>
-            <Typography variant='body1' align='center' gutterBottom>
-                Projects live on the internet that you can check out now!
-            </Typography>
-            <List sx={{ width: '100%', maxWidth: 600, mx: 'auto' }}>
+            {(liveProjects.length > 0) && (
+                <Typography variant='body1' align='center' gutterBottom>
+                    Projects live on the internet that you can check out now!
+                </Typography>
+            )
+            }
+            <List sx={{width: '100%', maxWidth: 600, mx: 'auto'}}>
                 {liveProjects.map((project) => (
                     <ListItemButton
                         component="a"
@@ -35,10 +38,19 @@ function LiveProjectsList() {
                                 {project.title}
                             </Typography>
                         </ListItemText>
-                            <InsertLinkIcon />
+                        <InsertLinkIcon/>
                     </ListItemButton>
                 ))}
             </List>
+            {!(liveProjects.length > 0) && (
+                <Typography align="center" variant="body1" component="p">
+                    Previous projects have been retired due to poor quality. <br/>
+                    {/*If you are stalking my github logs, tho it never made it onto the webpage, i had tic.vijitdua.xyz and taskup.vijitdua.xyz for a while*/}
+                    Launching January: <Link href={'https://innogreet.com'}>InnoGreet</Link> & Another Exciting Project. <br/>
+                    Stay Tuned! <br/>
+                </Typography>
+
+            )}
         </Box>
     );
 }

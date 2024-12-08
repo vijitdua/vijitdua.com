@@ -32,7 +32,7 @@ export const projects = [
         route: 'innogreet',
         image: `${process.env.PUBLIC_URL}/assets/projects/innogreet/banner-logo.png`,
         tagline: 'Find your perfect collaborator. \n [Startup Project]',
-        category: 'Live',
+        category: 'Coming Soon',
         projectUrl: `https://innogreet.com`,
         time: `Sept 2024 – Present`,
         Component: InnoGreetComponent,
