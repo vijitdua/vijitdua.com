@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Avatar } from '@mui/material';
 import { motion } from 'framer-motion';
 
-function ProfileSection() {
+function ProfileSection({rectangleMode=false}) {
     // Bubble animation settings
     const bubbles = Array.from({ length: 25 });
 
@@ -17,6 +17,7 @@ function ProfileSection() {
         >
             {/* Profile Image */}
             <Avatar
+                variant={rectangleMode ? "rounded" : "circular"}
                 src={`${process.env.PUBLIC_URL}/assets/pfp.png`}
                 alt="Vijit Dua"
                 sx={{

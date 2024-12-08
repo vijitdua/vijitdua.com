@@ -1,12 +1,15 @@
 import MainLayout from "../layouts/MainLayout";
 import ProjectsCollection from "../components/projects/ProjectsCollection";
-import {Avatar, Box, Container, Divider, Link, Typography, useMediaQuery} from "@mui/material";
+import {Avatar, Box, Container, Divider, Grid, Link, Typography, useMediaQuery} from "@mui/material";
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
 import {routes, socialLinks} from "../configs/routesConfig";
 import {theme} from "../themes/primaryTheme";
 import Quote from "../components/typography/Quote";
 import Collapsible from "../components/typography/Collapsible";
+import IntroductionSection from "../components/home/IntroductionSection";
+import ProfileSection from "../components/home/ProfileSection";
+import InstrumentalToggle from "../components/about/InstrumentalToggle";
 
 function PageMeta() {
     return (
@@ -28,62 +31,211 @@ function AboutPage() {
     return (
         <MainLayout>
             <PageMeta/>
-            <Container maxWidth="lg">
+            <Container maxWidth="md">
 
                 <Box sx={{mt: '3rem', mb: '2rem'}}>
+
                     <Typography variant="h1" gutterBottom sx={{textAlign: 'center', mb: '3rem'}}>
                         About Me
                     </Typography>
 
+                    <Box sx={{
+                        display: 'flex',
+                        flexDirection: mobileView ? 'column-reverse' : 'row',
+                        justifyContent: mobileView ? 'center' : 'space-around',
+                        alignItems: mobileView ? 'center' : 'center',
+                        width: '100%',
+                        mb: '1rem',
+                        gap: '3rem',
+                    }}>
+                        <Grid item xs={12} md={6}>
+                            <IntroductionSection noTag={true}/>
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <ProfileSection rectangleMode={true}/>
+                        </Grid>
+                    </Box>
+
                     <Box
                         sx={{
                             display: 'flex',
-                            flexDirection: mobileView ? 'column' : 'row',
+                            flexDirection: 'column',
                             justifyContent: 'space-between',
                             alignItems: 'center',
                             gap: '2rem',
                         }}
                     >
-                        <Avatar
-                            alt="Vijit Dua"
-                            src={`${process.env.PUBLIC_URL}/assets/pfp.png`}
-                            sx={{
-                                height: mobileView ? '10rem' : '16rem',
-                                width: mobileView ? '10rem' : '16rem',
-                            }}
-                        />
+                        {/*<Avatar*/}
+                        {/*    alt="Vijit Dua"*/}
+                        {/*    src={`${process.env.PUBLIC_URL}/assets/pfp.png`}*/}
+                        {/*    sx={{*/}
+                        {/*        height: '10rem',*/}
+                        {/*        width: '10rem',*/}
+                        {/*    }}*/}
+                        {/*/>*/}
 
                         <Box sx={{flexGrow: 1}}>
                             <Typography variant="body1" paragraph>
                                 I'm Vijit Dua, a builder developer, and change catalyst.
                                 As a student with a side quest in entrepreneurship, I'm all
                                 about blending coding with my dream to kick off something cool on my
-                                own. When I'm not buried in projects or busy being a student, you'll catch me:
+                                own.
                             </Typography>
+
                             <Typography variant="body1" paragraph>
-                                🏃‍♂️ Biking the trails, hitting the pavement on my runs, or frequenting the gym to stay fit.
+                                When I'm not buried in projects or busy being a student, you'll catch me:
                             </Typography>
-                            <Typography variant="body1" paragraph>
-                                👥 Meeting new people and diving into conversations—from casual banter to deep discussions over physics & philosopphy.
-                            </Typography>
-                            <Typography variant="body1" paragraph>
-                                🎥 Creating and editing videos for my
-                                <Link href="https://youtube.com/@vijitdua" target="_blank">
-                                    YouTube channel
-                                </Link>.
-                            </Typography>
-                            <Typography variant="body1" paragraph>
-                                🎶 Occasionally dabbling in music production with Ableton.
-                            </Typography>
-                            <Typography variant="body1" paragraph>
-                                🎮 Wielding lightsabers in BeatSaber, hopping onto population one, flying away in Rocket League, or exploring other (primarily VR, MacOS, or game-porting / Whisky - MacOS) games.
-                            </Typography>
-                            <Typography variant="caption" style={{ fontStyle: 'italic', display: 'block', marginTop: '8px' }}>
+
+                            {/* Fitness Section */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: mobileView ? 'column-reverse' : 'row',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    justifyContent: 'space-between',
+                                    gap: '2rem',
+                                    mb: '3rem',
+                                }}
+                            >
+                                <Typography variant="body1" paragraph>
+                                    🏃‍♂️ Biking the trails, hitting the pavement on my runs, or frequenting the gym to
+                                    stay fit.
+                                </Typography>
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/about/fitness.gif`}
+                                    alt="Fitness activities"
+                                    style={{
+                                        maxWidth: mobileView? '18rem' : '25rem',
+                                        borderRadius: '8px',
+                                        height: 'auto',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                    }}
+                                />
+                            </Box>
+
+                            {/* Connecting Section */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: mobileView ? 'column' : 'row',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    justifyContent: 'space-between',
+                                    gap: '2rem',
+                                    mb: '3rem',
+                                }}
+                            >
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/about/meeting.gif`}
+                                    alt="Meeting people"
+                                    style={{
+                                        maxWidth: mobileView? '18rem' : '25rem',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                    }}
+                                />
+                                <Typography variant="body1" paragraph>
+                                    👥 Meeting new people and diving into conversations—from casual banter to deep
+                                    discussions over physics & philosophy.
+                                </Typography>
+                            </Box>
+
+                            {/* Content Creation Section */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: mobileView ? 'column-reverse' : 'row',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    justifyContent: 'space-between',
+                                    gap: '2rem',
+                                    mb: '3rem',
+                                }}
+                            >
+                                <Typography variant="body1" paragraph>
+                                    🎥 Creating and editing videos for my{' '}
+                                    <Link href="https://youtube.com/@vijitdua" target="_blank">
+                                        YouTube channel
+                                    </Link>.
+                                </Typography>
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/about/content-creation.gif`}
+                                    alt="Video editing / YouTube"
+                                    style={{
+                                        maxWidth: mobileView? '18rem' : '25rem',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                    }}
+                                />
+                            </Box>
+
+                            {/* Music Production Section */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: mobileView ? 'column' : 'row',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    justifyContent: 'space-between',
+                                    gap: '2rem',
+                                    mb: '3rem',
+                                }}
+                            >
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/about/music.gif`}
+                                    alt="Music production"
+                                    style={{
+                                        maxWidth: mobileView? '18rem' : '25rem',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                    }}
+                                />
+                                <Typography variant="body1" paragraph>
+                                    🎶 Occasionally dabbling in music production with Ableton.
+                                    <InstrumentalToggle/>
+                                </Typography>
+                            </Box>
+
+                            {/* Gaming Section */}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: mobileView ? 'column-reverse' : 'row',
+                                    alignItems: 'center',
+                                    width: '100%',
+                                    justifyContent: 'space-between',
+                                    gap: '2rem',
+                                    mb: '3rem',
+                                }}
+                            >
+                                <Typography variant="body1" paragraph>
+                                    🎮 Wielding lightsabers in BeatSaber, hopping onto population one, flying away in
+                                    Rocket League, or exploring other (primarily VR, MacOS, or game-porting / Whisky -
+                                    MacOS) games.
+                                </Typography>
+                                <img
+                                    src={`${process.env.PUBLIC_URL}/assets/about/gaming.gif`}
+                                    alt="Gaming activities"
+                                    style={{
+                                        maxWidth: mobileView? '18rem' : '25rem',
+                                        borderRadius: '8px',
+                                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                                    }}
+                                />
+                            </Box>
+
+                            <Typography
+                                variant="caption"
+                                style={{fontStyle: 'italic', display: 'block', marginTop: '8px'}}
+                            >
                                 Some of these are rare indulgences, but still traits that are a part of who I am :).
                             </Typography>
                         </Box>
                     </Box>
                 </Box>
+
+                {/*TODO: add something about "but most important – love building - why is it my goal - check out my projects etc. bla bla bla*/}
 
                 <Divider/>
 
@@ -94,10 +246,11 @@ function AboutPage() {
                     </Typography>
                     <Typography variant="body1" paragraph>
                         As I go through life, I like to try to live by certain principles / beliefs. All
-                        of these are self-written and keep getting updated here and there. (Click “⏵” to
+                        of these are self-written and are infrequently updated. (Click “⏵” to
                         expand)
                     </Typography>
-                    <Quote quote="<b>Complaining doesn’t help, finding a solution does (even in unfair situations).</b>"/>
+                    <Quote
+                        quote="<b>Complaining doesn’t help, finding a solution does (even in unfair situations).</b>"/>
                     <Collapsible title="More quotes">
                         <Quote
                             quote="<b>Hold yourself accountable for everything.</b> Even if it’s not your fault, you are the one who has to change the circumstances for yourself."/>
@@ -127,113 +280,10 @@ function AboutPage() {
 
                 <Divider/>
 
-                {/* Goals Section */}
-                <Box sx={{mt: '3rem', mb: '2rem'}}>
-                    <Typography variant="h4" gutterBottom>
-                        My Goals in Life
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        At multiple points of time in my life I’ve tried to justify the meaning of life
-                        and existence. If we all die at some point, why does it really even matter?
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        This is something I haven’t quite figured out yet, but at the moment I have
-                        justified this by giving myself two life-long goals that go hand in hand with
-                        each other: career goals and personal goals.
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        I’ve tried to isolate, to some extent, the meaning of my life to my ideals and
-                        principles. Instead of thinking of myself individualistically (in the long term),
-                        I prefer to think of myself as a cog in the bigger machine of the human race and
-                        its evolution (evolution of both knowledge & genetics). With my goal being to
-                        just be the best cog I can. A cog that never settles, even if I somehow make it
-                        to the top.
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        This gives me a bit of a trajectory. Though it still doesn’t directly answer my
-                        former question regarding the meaning of life.
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        I believe that what makes a person, a person, is their ways of living their
-                        life. Their thought process and decision making. Let’s extend this idea into us
-                        just slowly changing the evolution of ideas of the human race and detach
-                        yourself from your own intrinsic meaning.
-                    </Typography>
-
-                    {/* Optional Collapsible analogy */}
-                    <Collapsible
-                        title="Click to expand this if you want an analogy to better understand my thought process.">
-                        <Typography variant="body1" paragraph>
-                            If you don’t believe in souls, what would make you different from a clone of
-                            you with the exact same memories as you? Nothing, right? That’s my point.
-                            What makes a person, a person, is their ways of living their life. Their
-                            thought process and decision making. (And of course, their experiences and
-                            memories.)
-                        </Typography>
-                    </Collapsible>
-
-                    <Typography variant="body1" paragraph>
-                        With that, I have come to the temporary conclusion that my meaning in life is to
-                        essentially aid towards the development of people in general. Pass on my ideals
-                        and way in life, and that way be “immortalized” even after death to somewhat of
-                        an extent.
-                    </Typography>
-
-                    <Typography variant="h5" gutterBottom sx={{mt: '2rem'}}>
-                        Personal Goal
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        My personal goal is to constantly instigate, in whatever capacity, positive
-                        changes around myself everywhere I go.
-                    </Typography>
-
-                    <Typography variant="h5" gutterBottom sx={{mt: '2rem'}}>
-                        Career Goal
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        Ultimately, my goal is to either lead a startup or hold a significant position in
-                        a company that aligns with my interests. I envision a role where my decisions
-                        influence the trajectory of the company and lead to the betterment of society.
-                        However, this is just a tangential plan towards my final objective. My true aim
-                        is to consistently chase the “next best thing” in every moment and “never
-                        settle”, adapting in response to the opportunities I encounter.
-                    </Typography>
-
-                    <Typography variant="h5" gutterBottom sx={{mt: '2rem'}}>
-                        How They Intertwine
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        The goal in both cases is to eventually lead to positive change and/or
-                        development, and to constantly strive to achieve that to a greater extent.
-                    </Typography>
-                </Box>
-
-                <Divider/>
-
-                {/* Interesting Question Section */}
-                <Box sx={{mt: '3rem', mb: '2rem'}}>
-                    <Typography variant="h4" gutterBottom>
-                        An Interesting Question
-                    </Typography>
-                    <Typography variant="body1" paragraph>
-                        An interesting question that I ask myself, and would like to ask others is, if
-                        you could only choose one, which would you choose?
-                    </Typography>
-                    <Quote
-                        quote="Do you want to live a life to remember, or live a life to be remembered? Or perhaps lead to progress without being remembered…"/>
-                    <Typography variant="body1" paragraph>
-                        Of course, this is just a hypothetical question. I believe that it is possible
-                        to choose at least two of these at the same time. Although if you choose two, it
-                        comes at the cost of one of those not being as satisfactory as the other.
-                    </Typography>
-                </Box>
-
-                <Divider/>
-
                 {/* Closing Remark */}
                 <Box sx={{mt: '3rem', mb: '2rem', textAlign: 'center'}}>
                     <Typography variant="h5" gutterBottom>
-                        Anyways, that’s who I am. I am Vijit.
+                        More coming soon :)
                     </Typography>
                     <Typography variant="h5" gutterBottom>
                         Thanks for taking the time to get to know me :)
