@@ -27,7 +27,7 @@ export const experiences = [
         company: "Icarus Development",
         date: "July 2024 - September 2024",
         logo: `${process.env.PUBLIC_URL}/assets/experiences/icarus-logo.png`,
-        description: "Led a Web Development team of 6, and managed Dev. Ops.",
+        description: "Led a team of 7, and managed Dev. Ops.",
         category: "Technical",
         Component: IcarusWebDevExperienceComponent,
         year: 2024
@@ -41,17 +41,6 @@ export const experiences = [
         route: "kaist-deep-learning-research",
         category: "Technical, Research",
         Component: KAISTResearchExperienceComponent,
-        year: 2024
-    },
-    {
-        title: "Mobile Developer Intern",
-        company: "Icarus Development",
-        logo: `${process.env.PUBLIC_URL}/assets/experiences/icarus-logo.png`,
-        date: "June 2024 - July 2024",
-        description: "Developed a social app for iOS & Android.",
-        route: "icarus-mobile-development",
-        category: "Technical",
-        Component: IcarusMobileDevExperienceComponent,
         year: 2024
     },
     {
