@@ -15,7 +15,7 @@ function InstrumentalToggle() {
                         color="primary"
                     />
                 }
-                label="Toggle to play once of my songs"
+                label="Toggle to play one of my songs"
                 labelPlacement="start"
                 sx={{ display: 'flex', justifyContent: 'center', mb: '1rem' }}
             />

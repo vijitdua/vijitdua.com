@@ -58,15 +58,6 @@ export const projects = [
         Component: OutWatchComponent,
     },
     {
-        title: 'TeamSync',
-        route: 'team-sync',
-        tagline: 'Streamlined Team Management. \n [In Progress]',
-        category: 'Utility',
-        sourceCode: 'https://github.com/vijitdua/TeamSync',
-        time: `Sept 2024 – In Progress `,
-        Component: TeamSyncComponent,
-    },
-    {
         title: 'TaskUp',
         route: 'task-up',
         image: `${process.env.PUBLIC_URL}/assets/projects/task-up/banner-logo.jpg`,
@@ -76,6 +67,15 @@ export const projects = [
         sourceCode: 'https://github.com/vijitdua/HackDavis2024-TaskUp',
         time: `Apr 2024`,
         Component: TaskUpComponent,
+    },
+    {
+        title: 'TeamSync',
+        route: 'team-sync',
+        tagline: 'Streamlined Team Management. \n [Partial]',
+        category: 'Utility',
+        sourceCode: 'https://github.com/vijitdua/TeamSync',
+        time: `Sept 2024 `,
+        Component: TeamSyncComponent,
     },
     {
         title: 'Multiplayer TicTacToe',

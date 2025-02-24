@@ -55,7 +55,7 @@ function InnoGreetComponent(){
             </Box>
 
             <Typography variant="body1" paragraph>
-                <strong>Launching January 2025</strong>
+                <strong>Launching March 2025</strong>
             </Typography>
 
             <Typography variant="body1" paragraph>

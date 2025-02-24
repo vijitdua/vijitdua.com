@@ -22,6 +22,15 @@ import SchoolHouseTutorExperienceComponent from "../components/experience/detail
 
 export const experiences = [
     {
+        title: "Jr. Application Developer",
+        route: "ucd-jr-app-dev",
+        company: "UC Davis IET",
+        date: "February 2025 - Present",
+        logo: `${process.env.PUBLIC_URL}/assets/education/uc-davis.png`,
+        description: "Developing apps for UC Davis IET using Vue.js",
+        category: "Technical",
+    },
+    {
         title: "Team Lead - Web Development",
         route: "icarus-web-development",
         company: "Icarus Development",

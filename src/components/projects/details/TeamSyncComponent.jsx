@@ -29,6 +29,7 @@ function TeamSyncComponent() {
                 </li>
                 <li>Created a React.js web client, Discord.js Discord bot, and a Node.js Express.js backend.</li>
                 <li>Additional Utilities: Passport.js, Sequalize.js</li>
+                <li>Team Sync has a functional backend and a functional discord frontend but the project was abandoned prior to completing the web frontend</li>
             </ul>
 
             <Typography variant='body1' paragraph>
@@ -37,16 +38,6 @@ function TeamSyncComponent() {
                                                rel={"noopener noreferrer"}> Naomi Zhao</Link>
             </Typography>
 
-            <Box sx={{ width: '100%' }}>
-                <Divider variant="middle" sx={{mb:'1rem'}}/>
-            </Box>
-
-            <Typography variant="body1" paragraph>
-                <strong>In-Progress</strong>
-            </Typography>
-            <Typography varient={'body1'} paragraph> Media Coming soon. </Typography>
-
-            {/*<MultimediaCarousel/>*/}
             <Box sx={{ width: '100%' }}>
                 <Divider variant="middle" sx={{mb:'1rem'}}/>
             </Box>
