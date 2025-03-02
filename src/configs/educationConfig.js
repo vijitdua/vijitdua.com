@@ -14,7 +14,7 @@
 export const education = [
     {
         institute: 'University of California: Davis [UC Davis]',
-        date: 'September 2023 – December 2026 (expected)',
+        date: 'September 2023 – June 2027 (expected)',
         description: 'B.S. in Computer Science',
         route: 'uc-davis',
         logo: `${process.env.PUBLIC_URL}/assets/education/uc-davis.png`,
