@@ -26,11 +26,11 @@ export const education = [
         route: 'hku',
         logo: `${process.env.PUBLIC_URL}/assets/education/hku.png`,
     },
-    // {
-    //     institute: 'Korea Advanced Institute of Science & Technology [KAIST]',
-    //     date: 'July 2024',
-    //     description: 'Summer Research Program',
-    //     route: 'kaist',
-    // },
+    {
+        institute: 'Korea Advanced Institute of Science & Technology [KAIST]',
+        date: 'July 2024',
+        description: 'Summer Research Program',
+        route: 'kaist',
+    },
 
 ];
