@@ -25,6 +25,7 @@ import OutWatchComponent from "../components/projects/details/OutWatchComponent"
 import COMP3322GradeBook from "../components/projects/details/COMP3322GradeBook";
 import ECS36AMidTermConnectFour from "../components/projects/details/ECS36AMidTermConnectFour";
 import ECS36AFinalTerminalPainter from "../components/projects/details/ECS36AFinalTerminalPainter";
+import LavenderComponent from "../components/projects/details/LavenderComponent";
 
 export const projects = [
     {
@@ -36,6 +37,17 @@ export const projects = [
         projectUrl: `https://innogreet.com`,
         time: `Sept 2024 – Present`,
         Component: InnoGreetComponent,
+    },
+    {
+        title: 'Lavender',
+        route: 'lavender',
+        image: `${process.env.PUBLIC_URL}/assets/projects/lavender/banner-logo.png`,
+        tagline: 'Turn your notes into quizzes with AI and test your knowledge! SacHacks VI \'25',
+        projectUrl: `https://devpost.com/software/lavender`,
+        sourceCode: `https://github.com/vijitdua/lavender-frontend`,
+        category: `Hackathon`,
+        time: `Mar 2025`,
+        Component: LavenderComponent,
     },
     {
         title: 'AutoMap',
