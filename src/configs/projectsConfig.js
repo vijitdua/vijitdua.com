@@ -135,4 +135,13 @@ export const projects = [
         time: `Nov 2023`,
         Component: ECS36AMidTermConnectFour,
     },
+    {
+        title: 'Is My Wifi On',
+        route: `is-my-wifi-on`,
+        image: `${process.env.PUBLIC_URL}/assets/projects/is-my-wifi-on/banner-logo.png`,
+        category: 'Live',
+        tagline: 'Just a static html page that says "Yes"',
+        time: `Mar 2025`,
+        projectUrl: `https://ismywifion.com`,
+    }
 ];
