@@ -1,7 +1,7 @@
 import {Helmet} from "react-helmet";
 import {env} from "../configs/envConfig";
 import {routes} from "../configs/routesConfig";
-import {Box, Container, Grid, Typography, useMediaQuery} from "@mui/material";
+import {Box, Container, Divider, Grid, Typography, useMediaQuery} from "@mui/material";
 import MainLayout from "../layouts/MainLayout";
 import IntroductionSection from "../components/home/IntroductionSection";
 import ProfileSection from "../components/home/ProfileSection";
@@ -10,6 +10,7 @@ import ProjectsCollection from "../components/projects/ProjectsCollection";
 import {theme} from "../themes/primaryTheme";
 import EducationTimeline from "../components/education/EducationTimeline";
 import PDFViewer from "../components/PDFViewer";
+import LiveProjectsList from "../components/projects/LiveProjectsList";
 
 function PageMeta() {
     return (

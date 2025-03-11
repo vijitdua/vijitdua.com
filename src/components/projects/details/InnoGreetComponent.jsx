@@ -11,6 +11,9 @@ const multimediaData = [
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-mobile-light.png`},
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-desktop-dark.png`},
     {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/home-mobile-dark.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/profile.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/events.png`},
+    {type: 'image', url: `${process.env.PUBLIC_URL}/assets/projects/innogreet/articles.png`},
 ];
 
 function InnoGreetComponent(){
@@ -44,7 +47,7 @@ function InnoGreetComponent(){
                 </li>
                 <li>Currently a project with the potential to transition into a startup based on beta launch success.
                 </li>
-                <li>Frontend: Next.js, JavaScript, React.js, Material UI, Wordpress (Next.js headless CMS integration)</li>
+                <li>Frontend: Next.js, JavaScript, React.js, Material UI</li>
                 <li>
                     Backend: Node.js, Express.js, Sequelize, Passport.js, NodeMailer, PostgreSQL, Docker Compose, Docker
                 </li>
@@ -55,11 +58,7 @@ function InnoGreetComponent(){
             </Box>
 
             <Typography variant="body1" paragraph>
-                <strong>Launching March 2025</strong>
-            </Typography>
-
-            <Typography variant="body1" paragraph>
-                <strong>Sneak Peaks (In Progress)</strong>
+                <strong>Media</strong>
             </Typography>
 
             <MultimediaCarousel data={multimediaData} />
