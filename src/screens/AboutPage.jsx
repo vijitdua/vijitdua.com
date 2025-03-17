@@ -76,10 +76,10 @@ function AboutPage() {
 
                         <Box sx={{flexGrow: 1}}>
                             <Typography variant="body1" paragraph>
-                                Life’s short—dream big, ship fast, be happy. <br/>
+                                Life’s short—dream big, ship fast, be happy. <br/><br/>
                                 I'm Vijit Dua—a student with a side quest in entrepreneurship, all
-                                about blending coding with my dream to kick off something cool on my own.
-                                My philosophy? Make positive impacts wherever you go and enjoy life.
+                                about blending coding with my dream to kick off something cool on my own.<br/><br/>
+                                My philosophy? Collective contribution—make positive impacts wherever you go and enjoy life.
                             </Typography>
 
                             <Typography variant="body1" paragraph>
