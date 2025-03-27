@@ -13,7 +13,7 @@ export const routes = {
 
 // URLs to all social links
 export const socialLinks = {
-    email: 'mailto:inbox@vijitdua.com',
+    email: 'mailto:vijit@innogreet.com',
     twitter: 'https://x.com/vijitdua',
     instagram: 'https://instagram.com/vijitdua',
     discord: 'https://discordapp.com/users/933604018951974924',
@@ -24,5 +24,5 @@ export const socialLinks = {
     youtubeGaming: 'https://youtube.com/funnyizer',
     twitch: 'https://twitch.com/funnyizer',
     github: 'https://github.com/vijitdua',
-    innogreet: 'https://innogreet.com/',
+    innogreet: 'https://innogreet.com/u/vijitdua',
 };

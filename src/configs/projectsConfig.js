@@ -35,7 +35,7 @@ export const projects = [
         tagline: 'Find your perfect collaborator. \n [Startup Project]',
         category: 'Live',
         projectUrl: `https://innogreet.com`,
-        time: `Sept 2024 – Present`,
+        time: `Mar 2025 – Present`,
         Component: InnoGreetComponent,
     },
     {

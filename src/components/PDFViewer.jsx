@@ -99,7 +99,7 @@ function PdfViewer({fileOrUrl}) {
                 boxShadow: '10px 10px 10px #151515',
                 borderRadius: '20px',
             }}>
-                <canvas ref={canvasRef} style={{marginTop: '0.25rem', width: '100%'}}/>
+                <canvas ref={canvasRef} style={{marginTop: '0.25rem', width: '100%', borderRadius: '10px'}}/>
                 <Box sx={{
                     display: 'flex',
                     flexDirection: 'row',
@@ -107,7 +107,7 @@ function PdfViewer({fileOrUrl}) {
                 }}>
                     <Button onClick={prevPage} disabled={pageNumber <= 1}>Previous</Button>
                     <Typography
-                        style={{margin: '0 1rem'}}>Page {pageNumber} of {pdfDocument?.numPages || 0}</Typography>
+                        style={{margin: '0 1rem', padding: '1rem'}}>Page {pageNumber} of {pdfDocument?.numPages || 0}</Typography>
                     <Button onClick={nextPage}
                             disabled={pdfDocument && pageNumber >= pdfDocument.numPages}>Next</Button>
                 </Box>
