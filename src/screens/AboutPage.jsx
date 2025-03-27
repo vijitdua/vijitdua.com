@@ -76,10 +76,10 @@ function AboutPage() {
 
                         <Box sx={{flexGrow: 1}}>
                             <Typography variant="body1" paragraph>
-                                I'm Vijit Dua, a builder developer, and change catalyst.
-                                As a student with a side quest in entrepreneurship, I'm all
-                                about blending coding with my dream to kick off something cool on my
-                                own.
+                                Life’s short—dream big, ship fast, be happy. <br/><br/>
+                                I'm Vijit Dua—a student with a side quest in entrepreneurship, all
+                                about blending coding with my dream to kick off something cool on my own.<br/><br/>
+                                My philosophy? Collective contribution—make positive impacts wherever you go and enjoy life.
                             </Typography>
 
                             <Typography variant="body1" paragraph>
@@ -192,7 +192,7 @@ function AboutPage() {
                                     }}
                                 />
                                 <Typography variant="body1" paragraph>
-                                    🎶 Occasionally dabbling in music production with Ableton.
+                                    🎶 Occasionally dabbling in music production.
                                     <InstrumentalToggle/>
                                 </Typography>
                             </Box>
@@ -229,7 +229,7 @@ function AboutPage() {
                                 variant="caption"
                                 style={{fontStyle: 'italic', display: 'block', marginTop: '8px'}}
                             >
-                                Some of these are rare indulgences, but still traits that are a part of who I am :).
+                                Some of these are rare indulgences, but still traits that are a part of who I am :)
                             </Typography>
                         </Box>
                     </Box>
